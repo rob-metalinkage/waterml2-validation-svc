@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0 xNL.xsd">
+	<NameDetails PartyType="Person">
+		<PersonName>
+			<Title>Mr</Title>
+			<FirstName Type="GivenName">Ram</FirstName>
+			<MiddleName>Laxhman</MiddleName>
+			<MiddleName Type="Initial">B</MiddleName>
+			<LastName NameType="SurName">Kumar</LastName>
+			<Alias>Ram</Alias>
+			<FormerName>
+				<NameLine>Ramkumar</NameLine>
+			</FormerName>
+		</PersonName>
+		<DependencyName PartyType="Person" DependencyType="C/O">
+			<PersonName>
+				<Title>Mr</Title>
+				<FirstName Type="Official" NameType="GivenName">
+                    Venkat</FirstName>
+				<FirstName Type="Unofficial" NameType="GivenName"> 
+                    Venki</FirstName>
+				<LastName>Krishnan</LastName>
+			</PersonName>
+		</DependencyName>
+	</NameDetails>
+	<NameDetails PartyType="Person">
+		<PersonName>
+			<Title>Mrs</Title>
+			<FirstName>S</FirstName>
+			<MiddleName>Devi</MiddleName>
+			<LastName>Sadasivan</LastName>
+			<Alias>Baby</Alias>
+		</PersonName>
+		<DependencyName PartyType="Organisation">
+			<OrganisationNameDetails>
+				<OrganisationName NameType="New Name">NRMA ASSET MANAGEMENT</OrganisationName>
+				<OrganisationName NameType="Formerly">NRMA INVESTMENTS</OrganisationName>
+			</OrganisationNameDetails>
+		</DependencyName>
+	</NameDetails>
+	<NameDetails PartyType="Person">
+		<NameLine>Ram Kumar</NameLine>
+		<DependencyName PartyType="Organisation">
+			<NameLine>C/O MasterSoft International Pty. Ltd</NameLine>
+		</DependencyName>
+	</NameDetails>
+</xNL>

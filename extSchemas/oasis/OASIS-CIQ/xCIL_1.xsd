@@ -1,0 +1,2181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Modified by Ram Kumar (MSI) on 24 July 2002-->
+<xs:schema targetNamespace="urn:oasis:names:tc:ciq:xsdschema:xCIL:2.0" xmlns:n="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0" xmlns:a="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" xmlns="urn:oasis:names:tc:ciq:xsdschema:xCIL:2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:import namespace="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0" schemaLocation="xNL.xsd"/>
+	<xs:import namespace="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" schemaLocation="xAL.xsd"/>
+	<xs:annotation>
+		<xs:documentation>xCIL: eXtensible Customer Information Language 
+Date of Original Creation: 26 March 2002
+Copyright(c) 2002, OASIS. All Rights Reserved [http://www.oasis-open.org]
+Contact: Customer Information Quality Technical Committee, OASIS
+http://www.oasis-open.org/committees/ciq
+Version: 2.0 - Date of Creation: 01 May 2002 
+Last Update: 24 July 2002
+Previous Version: 1.4</xs:documentation>
+	</xs:annotation>
+	<!--Key top level elements-->
+	<xs:element name="xCIL">
+		<xs:annotation>
+			<xs:documentation>Root element to define the unique characteristics of a Customer (Person or Organisation) in detail</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CustomerDetails" maxOccurs="unbounded"/>
+				<xs:any namespace="##other" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Use this to import/use/reference other customer centric elements from other namespaces </xs:documentation>
+					</xs:annotation>
+				</xs:any>
+			</xs:sequence>
+			<xs:attribute name="Version">
+				<xs:annotation>
+					<xs:documentation>Used by DTD to indicate DTD version. The version for this schema is part of the assigned namespace </xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CustomerDetails">
+		<xs:annotation>
+			<xs:documentation>A container for defining the unique characteristics of a customer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="Record"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OrganisationInfo">
+		<xs:annotation>
+			<xs:documentation>Container to represent organisation details</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Branches" minOccurs="0"/>
+				<xs:element ref="ContactNumbers" minOccurs="0"/>
+				<xs:element ref="EmailAddresses" minOccurs="0"/>
+				<xs:element ref="FinancialAccounts" minOccurs="0"/>
+				<xs:element ref="ReferenceContacts" minOccurs="0"/>
+				<xs:element ref="RegistrationInfo" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Revenue" minOccurs="0"/>
+				<xs:element ref="SizeInfo" minOccurs="0"/>
+				<xs:element ref="StockMarkets" minOccurs="0"/>
+				<xs:element ref="URLs" minOccurs="0"/>
+				<xs:element ref="Vehicles" minOccurs="0"/>
+				<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Use this to import/use/reference other organisation related elements not covered here from other namespaces </xs:documentation>
+					</xs:annotation>
+				</xs:any>
+			</xs:sequence>
+			<xs:attribute name="OrganisationType">
+				<xs:annotation>
+					<xs:documentation>Company, Trust, Bank, Society, Club, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="OrganisationNature">
+				<xs:annotation>
+					<xs:documentation>Commercial, charity, non-commercial, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PersonInfo">
+		<xs:annotation>
+			<xs:documentation>Container to represent person details (only customer-centric data)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="AgeInfo" minOccurs="0"/>
+				<xs:element ref="BirthInfo" minOccurs="0"/>
+				<xs:element ref="ContactNumbers" minOccurs="0"/>
+				<xs:element ref="CountriesOfResidence" minOccurs="0"/>
+				<xs:element ref="EmailAddresses" minOccurs="0"/>
+				<xs:element ref="Ethnicity" minOccurs="0"/>
+				<xs:element ref="FinancialAccounts" minOccurs="0"/>
+				<xs:element ref="Gender" minOccurs="0"/>
+				<xs:element ref="Habits" minOccurs="0"/>
+				<xs:element ref="Hobbies" minOccurs="0"/>
+				<xs:element ref="IDCards" minOccurs="0"/>
+				<xs:element ref="Incomes" minOccurs="0"/>
+				<xs:element ref="Languages" minOccurs="0"/>
+				<xs:element ref="MaritalStatus" minOccurs="0"/>
+				<xs:element ref="Memberships" minOccurs="0"/>
+				<xs:element ref="Nationality" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Occupations" minOccurs="0"/>
+				<xs:element ref="Pagers" minOccurs="0"/>
+				<xs:element ref="Passports" minOccurs="0"/>
+				<xs:element ref="PhysicalInfo" minOccurs="0"/>
+				<xs:element ref="PhysicalStatus" minOccurs="0"/>
+				<xs:element ref="Qualifications" minOccurs="0"/>
+				<xs:element ref="ReferenceContacts" minOccurs="0"/>
+				<xs:element ref="FamilyMembers" minOccurs="0"/>
+				<xs:element ref="Religion" minOccurs="0"/>
+				<xs:element ref="TaxNumber" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="URLs" minOccurs="0"/>
+				<xs:element ref="Vehicles" minOccurs="0"/>
+				<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Use this to import/use/reference other  related person elements not covered here from other namespaces </xs:documentation>
+					</xs:annotation>
+				</xs:any>
+			</xs:sequence>
+			<xs:attribute name="PersonType">
+				<xs:annotation>
+					<xs:documentation> PersonType: Adult, Child, Baby, etc.. </xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<!--Attribute groups-->
+	<xs:attributeGroup name="grPostal">
+		<xs:annotation>
+			<xs:documentation>For postal services.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Code">
+			<xs:annotation>
+				<xs:documentation>Used by postal authorities to encode the element name.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="grCountryEncoding">
+		<xs:annotation>
+			<xs:documentation>For use by elements representing country names.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="EncodingScheme">
+			<xs:annotation>
+				<xs:documentation>Country code scheme possible values, but not limited to: iso.3166-2, iso.3166-3 for two and three character country codes.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:anyAttribute namespace="##other"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="grKeyRef">
+		<xs:annotation>
+			<xs:documentation>Key reference to Key attr of CustomerDetails.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="CustomerDetailsKeyRef">
+			<xs:annotation>
+				<xs:documentation>A foreign key to reference attribute Key of CustomerDetails.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<!--Complex types-->
+	<xs:complexType name="Record">
+		<xs:annotation>
+			<xs:documentation>Full details of one customer.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="CustomerID" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>A UNIQUE CUSTOMER IDENTIFIER</xs:documentation>
+				</xs:annotation>
+				<xs:complexType mixed="true">
+					<xs:attribute name="Type">
+						<xs:annotation>
+							<xs:documentation>May specify where the ID is applicable. Example:  when the same customer has different IDs in different DBs</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attributeGroup ref="grPostal"/>
+					<xs:anyAttribute namespace="##other"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="n:NameDetails" minOccurs="0"/>
+			<xs:element ref="a:AddressDetails" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:choice minOccurs="0">
+				<xs:element ref="OrganisationInfo"/>
+				<xs:element ref="PersonInfo"/>
+			</xs:choice>
+			<xs:any namespace="##other" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Use this to import/use/reference other customer centric elements from other namespaces </xs:documentation>
+				</xs:annotation>
+			</xs:any>
+		</xs:sequence>
+		<xs:attribute name="PartyType">
+			<xs:annotation>
+				<xs:documentation>Type of Party(customer). Example: Person, organisation, business, club, association, charity, etc.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="CustomerDetailsKey">
+			<xs:annotation>
+				<xs:documentation>Key identifier for the element for not reinforced references from other elements. Not required to be unique for the document to be valid, but application may get confused if not unique. Extend this schema adding unique constraint if needed.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:anyAttribute namespace="##other"/>
+	</xs:complexType>
+	<xs:complexType name="e" mixed="true">
+		<xs:annotation>
+			<xs:documentation>An empty element of anyType with anyAttribute from a different namespace.</xs:documentation>
+		</xs:annotation>
+		<xs:anyAttribute namespace="##other"/>
+	</xs:complexType>
+	<xs:complexType name="ee" mixed="true">
+		<xs:annotation>
+			<xs:documentation>An empty element of anyType with anyAttribute from a different namespace.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Type">
+			<xs:annotation>
+				<xs:documentation>If the element can be classified by different types, use this attribute to indicate the type or put some supplementary information, otherwise ignore it.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:anyAttribute namespace="##other"/>
+	</xs:complexType>
+	<xs:complexType name="Date">
+		<xs:annotation>
+			<xs:documentation>Universal structure for dates. To be used throughout this schema wherever date representation is required</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="Date" type="ee">
+				<xs:annotation>
+					<xs:documentation>Date as free text. Use this if you di not want to break the date. Example: 21/3/02, 21 Mar.2002, etc</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:sequence>
+				<xs:element name="Day" type="ee" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Day of month as free text. Example: Monday</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Month" type="ee" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Month as free text</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Year" type="ee" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Year as free text</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:choice>
+		<xs:attribute name="Date" type="xs:date">
+			<xs:annotation>
+				<xs:documentation>Date as full date format (xs:date)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:anyAttribute namespace="##other"/>
+	</xs:complexType>
+	<xs:complexType name="Measure" mixed="true">
+		<xs:annotation>
+			<xs:documentation>For elements that represent measurements.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Units">
+			<xs:annotation>
+				<xs:documentation>Defines the unit of measurement. Example: Inches, feet, cm, meters, days, months, years, kgs, pounds, etc.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:anyAttribute namespace="##other"/>
+	</xs:complexType>
+	<xs:complexType name="Language" mixed="true">
+		<xs:annotation>
+			<xs:documentation>A set of attributes for languages.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Type">
+			<xs:annotation>
+				<xs:documentation>Mother tongue, by birth, etc</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Speak">
+			<xs:annotation>
+				<xs:documentation>Indicates ability to speak: yes, no, poor</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Read">
+			<xs:annotation>
+				<xs:documentation>Indicates ability to read: yes, no, poor</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Write">
+			<xs:annotation>
+				<xs:documentation>Indicates ability to write: yes, no, poor</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Preference">
+			<xs:annotation>
+				<xs:documentation>Indicates preferred language of communication (read and/or write and/or speak)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:anyAttribute namespace="##other"/>
+	</xs:complexType>
+	<xs:complexType name="Colleague">
+		<xs:annotation>
+			<xs:documentation>Internal representation of a person's name.</xs:documentation>
+		</xs:annotation>
+		<xs:choice minOccurs="0">
+			<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Name as one line of text.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="n:PersonName"/>
+		</xs:choice>
+		<xs:attribute name="Position">
+			<xs:annotation>
+				<xs:documentation>Title of the position held by the person</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:anyAttribute namespace="##other"/>
+	</xs:complexType>
+	<xs:complexType name="NameOfOrganisation">
+		<xs:annotation>
+			<xs:documentation>Internal representation of an organisation's name.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="n:OrganisationNameDetails"/>
+		</xs:sequence>
+		<xs:anyAttribute namespace="##other"/>
+	</xs:complexType>
+	<xs:complexType name="OrganisationAddress">
+		<xs:annotation>
+			<xs:documentation>Internal representation of an organisation's address.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="a:AddressDetails"/>
+		</xs:sequence>
+		<xs:anyAttribute namespace="##other"/>
+	</xs:complexType>
+	<xs:complexType name="Amount">
+		<xs:annotation>
+			<xs:documentation>A container to define the amount details </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Amount" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Exact numeric amount as free text. Example: $12,756,000.75</xs:documentation>
+				</xs:annotation>
+				<xs:complexType mixed="true">
+					<xs:attribute name="CurrencyType">
+						<xs:annotation>
+							<xs:documentation>Currency name or symbol. Example: Dollar, $, Rupees, Rs., etc</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="FinancialYear">
+						<xs:annotation>
+							<xs:documentation>Defines the financial year. Example: 1999, 1999-2000, etc.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="Period">
+						<xs:annotation>
+							<xs:documentation>Defines the period in the financial year. Example: Quarter 1, Spring Quarter, January to March, July-Sept., etc</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="PeriodUnits">
+						<xs:annotation>
+							<xs:documentation>Units to measure the Period. Example: 374 Days, 32 Months, 2 Years, etc.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="Type">
+						<xs:annotation>
+							<xs:documentation>Defines the type of amount. Example: Total earning, profit, loss, turnover, etc.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:anyAttribute namespace="##other"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="AmountRange" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Approximate amount as free text. Example: $1 Million - 5 Million</xs:documentation>
+				</xs:annotation>
+				<xs:complexType mixed="true">
+					<xs:attribute name="CurrencyType">
+						<xs:annotation>
+							<xs:documentation>Currency name or symbol. Example: Dollar, $, Rupees, Rs., etc</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="FinancialYear">
+						<xs:annotation>
+							<xs:documentation>Defines the financial year. Example: 1999, 1999-2000, etc.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="Period">
+						<xs:annotation>
+							<xs:documentation>Defines the period in the financial year. Example: Quarter 1, Spring Quarter, January to March, July-Sept., etc</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="PeriodUnits">
+						<xs:annotation>
+							<xs:documentation>Units to measure the Period. Example: 374 Days, 32 Months, 2 Years, etc.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="Type">
+						<xs:annotation>
+							<xs:documentation>Defines the type of amount. Example: Total earning, profit, loss, turnover, etc.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:anyAttribute namespace="##other"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Use this to import/use/reference other Amount related elements not covered here from other namespaces </xs:documentation>
+				</xs:annotation>
+			</xs:any>
+		</xs:sequence>
+		<xs:anyAttribute namespace="##other"/>
+	</xs:complexType>
+	<!--Second level elements for reuse.-->
+	<xs:element name="AgeInfo">
+		<xs:annotation>
+			<xs:documentation>A container to define the age details of a customer(Person)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice>
+					<xs:element name="Age" type="Measure">
+						<xs:annotation>
+							<xs:documentation>Exact age as a free text. Example: 25 years</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:sequence>
+						<xs:element name="Years" minOccurs="0">
+							<xs:complexType mixed="true">
+								<xs:anyAttribute namespace="##other"/>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Months" minOccurs="0">
+							<xs:complexType mixed="true">
+								<xs:anyAttribute namespace="##other"/>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Days" minOccurs="0">
+							<xs:complexType mixed="true">
+								<xs:anyAttribute namespace="##other"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:element name="AgeRange" type="Measure">
+						<xs:annotation>
+							<xs:documentation>Free text expression of age range. E.g. 20-25, retired, teenager, etc</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:choice>
+				<xs:element name="CaptureDate" type="Date" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Date when age information was captured. </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BirthInfo">
+		<xs:annotation>
+			<xs:documentation>A container to define the Date of Birth Details of a customer (person)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="BirthDate" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Some have more than one birthdays. Eg. As per English Calender and Tamil/Chinese Calender</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="Date">
+								<xs:attribute name="CalenderType">
+									<xs:annotation>
+										<xs:documentation>Grigoran calendar, Moon clendar, etc</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute name="WeekDay">
+									<xs:annotation>
+										<xs:documentation>Monday to Sunday</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="BirthPlace" type="a:AddressDetails" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Defines the place of birth. Can be just a place name or a full address</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="BirthTime" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Exact time of birth</xs:documentation>
+					</xs:annotation>
+					<xs:complexType mixed="true">
+						<xs:attribute name="BirthTime" type="xs:time"/>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Latitude" type="e" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Absolute coordinate of place of birth</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Longitude" type="e" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Absolute coordinate of place of birth</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="BirthStar" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Star of birth as per Astrology. Can be multiple stars for some nationalities. Example: Chinese, Indians, etc.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType mixed="true">
+						<xs:attribute name="Type">
+							<xs:annotation>
+								<xs:documentation>Defines the type of the calendar or the system to figure out the birth star name. Example: Chinese/Tamil Calendar.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="BirthSign" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Sign of birth as per Astrology. Can be multiple signs for some nationalities. Example: Chinese, Indians, etc.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="Type">
+							<xs:annotation>
+								<xs:documentation>Defines the type of the calendar or the system to figure out the birth sign name. Example: Chinese/Tamil Calendar.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Use this to import/use/reference other birth related elements not covered here from other namespaces </xs:documentation>
+					</xs:annotation>
+				</xs:any>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Branches">
+		<xs:annotation>
+			<xs:documentation>A container to define the branches, franchaisees, etc. of the customer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Branch" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Branch, franchise or other subdivision details </xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="Record">
+								<xs:attributeGroup ref="grKeyRef"/>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ContactNumbers">
+		<xs:annotation>
+			<xs:documentation>A container to define all kinds of telecommunication lines of the customer. Example: faxes, landlines, mobiles, etc.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ContactNumber" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CountriesOfResidence">
+		<xs:annotation>
+			<xs:documentation>A container for all citizenships and residencies </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CountryOfResidence" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>A citizenship and residence</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="a:CountryName" minOccurs="0"/>
+							<xs:element name="IssueDate" type="Date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Issue of Residency status/citizenship</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element ref="Visas" minOccurs="0"/>
+							<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Use this to import/use/reference other  elements for country of residence not covered here from other namespaces </xs:documentation>
+								</xs:annotation>
+							</xs:any>
+						</xs:sequence>
+						<xs:attribute name="CitizenshipNumber">
+							<xs:annotation>
+								<xs:documentation>Some countries provide citizenship certificates</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ResidencyType">
+							<xs:annotation>
+								<xs:documentation>Work, permanent resident, temporary resident, citizen, refugee, etc.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EmailAddresses">
+		<xs:annotation>
+			<xs:documentation>A container to define the email addresses of the customer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="EmailAddress" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Ethnicity" type="e">
+		<xs:annotation>
+			<xs:documentation>Asian, African, etc,</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="FinancialAccounts">
+		<xs:annotation>
+			<xs:documentation>A container to define the financial accounts of the customer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FinancialAccount" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Container for a financial account of the customer</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="Number" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Financial account number</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="BranchNumber" minOccurs="0">
+								<xs:complexType mixed="true">
+									<xs:attribute name="Type">
+										<xs:annotation>
+											<xs:documentation>Indicates encoding scheme used for defining branch number</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OwnershipInfo" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Container for information about the owners of the account.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+										<xs:element ref="n:NameDetails" minOccurs="0" maxOccurs="unbounded"/>
+										<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Use this to import/use/reference other ownership information elements not covered here from other namespaces </xs:documentation>
+											</xs:annotation>
+										</xs:any>
+									</xs:sequence>
+									<xs:attribute name="OwnershipType">
+										<xs:annotation>
+											<xs:documentation>Joint, Individual</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="FinancialInstitutionDetails" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Container for information about the financial institution</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Name or address or both as free text</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element ref="n:NameDetails" minOccurs="0"/>
+										<xs:element ref="a:AddressDetails" minOccurs="0"/>
+										<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Use this to import/use/reference other financial institution information elements not covered here from other namespaces </xs:documentation>
+											</xs:annotation>
+										</xs:any>
+									</xs:sequence>
+									<xs:attribute name="Type">
+										<xs:annotation>
+											<xs:documentation>Credit Union, Bank, etc</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="IDCode">
+										<xs:annotation>
+											<xs:documentation>Code of the institution</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attributeGroup ref="grKeyRef"/>
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="AccountBalance" type="Amount" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Account Balance</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="JoinDate" type="Date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Date of account creation</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Use this to import/use/reference other financial account elements not covered here from other namespaces </xs:documentation>
+								</xs:annotation>
+							</xs:any>
+						</xs:sequence>
+						<xs:attribute name="Type">
+							<xs:annotation>
+								<xs:documentation>Could be savings, cheque, home loan, etc.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FreeTextLine">
+		<xs:annotation>
+			<xs:documentation>Use this element to define any data specific to the container element of this element as a free format text</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:attribute name="Type">
+				<xs:annotation>
+					<xs:documentation>Type of data defined as a free format text.  For example if the free format text is 12345678, then define what "Type" it is say, a phone number, or a customer ID, etc. </xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Gender">
+		<xs:annotation>
+			<xs:documentation>Defines the Gender. Example: Male, female, etc</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="e"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Habits">
+		<xs:annotation>
+			<xs:documentation>A container to define customer habits </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Habit" type="ee" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Personal habits of a cutomer. E.g. smoking, drinking, gambling, etc.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Hobbies">
+		<xs:annotation>
+			<xs:documentation>A container to define customer hobbies </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Hobby" type="ee" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>A hobby of the person. E.g.  craft, sport, recreational activity, etc.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="IDCards">
+		<xs:annotation>
+			<xs:documentation>A container to define ID cards of the customer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="IDCard" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>ID CARD Eg. License, Credit Card, Mileage Card, Bank card, others</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="IssuerName" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>credit union, visa international, etc</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:complexContent>
+										<xs:extension base="n:NameDetails"/>
+									</xs:complexContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="IDCardName" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>VISA, KEYCARD, etc.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType mixed="true">
+									<xs:attribute name="Code">
+										<xs:annotation>
+											<xs:documentation>Code: codes for card issuers</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="GroupName" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Eg. Star Alliance</xs:documentation>
+								</xs:annotation>
+								<xs:complexType mixed="true">
+									<xs:attribute name="GroupType">
+										<xs:annotation>
+											<xs:documentation>Example: Mileage Program Group for the name Star Alliance</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element ref="Number" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Number on the ID card</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="SeriesCode" type="e" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Some cards have series ID. Example: Verification digits printed on credit cards following the embossed number</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="IDCardIssuePlace" type="a:AddressDetails" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Place of issue of the ID Card. Could be an address, country, city, etc</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="IssueDate" type="Date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Date of issue of the ID Card</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="JoinDate" type="Date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Date of joining the program</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ExpiryDate" type="Date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Date of expiry of the ID Card</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="NameOnIDCard" type="n:NameDetails" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Customer Name as on the ID card</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="PrivilegeType" type="e" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Gold, Silver, etc</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="Status" type="e" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Full driver's license, full member, etc</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="Validity" type="e" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>International license, etc</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="Restriction" type="ee" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Eg. 2 wheelers in a license. Type Attribute example: Driving</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="CreditAmount" type="Amount" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Applies to credit cards</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Use this to import/use/reference other ID Card related elements not covered here from other namespaces </xs:documentation>
+								</xs:annotation>
+							</xs:any>
+						</xs:sequence>
+						<xs:attribute name="Type">
+							<xs:annotation>
+								<xs:documentation>Type of the card: License, Credit Card, Mileage Card, Bank card, etc</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Incomes">
+		<xs:annotation>
+			<xs:documentation>A container to define the Income Details of the customer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Income" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>A container for an Income Details description</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="Amount">
+								<xs:attribute name="IncomeSource">
+									<xs:annotation>
+										<xs:documentation>Where this income comes from</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute name="PaymentType">
+									<xs:annotation>
+										<xs:documentation>Type of payment: daily, weekly, monthly, etc. </xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Languages">
+		<xs:annotation>
+			<xs:documentation>A container to define the Languages Spoken by the customer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Language" type="Language" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Mother tongue, by birth, second language, etc.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MaritalStatus" type="e">
+		<xs:annotation>
+			<xs:documentation>Marital Status of the customer. Example: Single, Married, Widow, Divorcee, etc</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Memberships">
+		<xs:annotation>
+			<xs:documentation>A container to define the memberships of the customer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Membership" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Membership Details</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="MembershipName" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Name of the membership. Example: Australian Computer Society</xs:documentation>
+								</xs:annotation>
+								<xs:complexType mixed="true">
+									<xs:attribute name="Type">
+										<xs:annotation>
+											<xs:documentation>Type of name. Example: Abbreviation</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element ref="Number" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Membership number</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element ref="a:CountryName" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Country where the membership is held. Free text. Can be encoded.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="NameOfOrganisation" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Name of the organisation where the membership is held</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:complexContent>
+										<xs:extension base="NameOfOrganisation">
+											<xs:attributeGroup ref="grKeyRef"/>
+										</xs:extension>
+									</xs:complexContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OrganisationAddress" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Address of the organisation where the membership is held</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:complexContent>
+										<xs:extension base="OrganisationAddress">
+											<xs:attributeGroup ref="grKeyRef"/>
+										</xs:extension>
+									</xs:complexContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Level" type="e" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Associate, Full, Gold, Silver, etc</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="CurrentStatus" type="e" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>valid, dis-continued, etc.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="JoinDate" type="Date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Date of joining the organisation.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="LeaveDate" type="Date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Date of leaving the organisation.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ExpiryDate" type="Date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Date when the membership expires.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Use this to import/use/reference other membership related elements not covered here from other namespaces </xs:documentation>
+								</xs:annotation>
+							</xs:any>
+						</xs:sequence>
+						<xs:attribute name="Type">
+							<xs:annotation>
+								<xs:documentation>High level description of the membership. E.g. professional association, golf club, sport club, etc.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Nationality" type="ee">
+		<xs:annotation>
+			<xs:documentation>Nationality/Residency of the customer. Type attribute example: By birth, by naturalization, etc</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Occupations">
+		<xs:annotation>
+			<xs:documentation>A container to define the occupations of the customer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Occupation" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Occupation Details</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="Position" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Position details</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+										<xs:element name="PositionTitle" type="e" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>The name of the position. Example: CEO, Manager, etc</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="Role" type="ee" minOccurs="0" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>The nature of the position and key responsibilities. Example: Decision Maker, Influencer, etc</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="WorkType" type="e" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>full-time (FT),part-time (PT), etc.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element ref="a:Department" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>School of Science in Victoria University, NZSC in EDS NZ, etc</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="NameOfOrganisation" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Organisation name as free text or a structure</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:complexContent>
+										<xs:extension base="NameOfOrganisation">
+											<xs:attributeGroup ref="grKeyRef"/>
+										</xs:extension>
+									</xs:complexContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OrganisationAddress" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Address of the organisation</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:complexContent>
+										<xs:extension base="OrganisationAddress">
+											<xs:attributeGroup ref="grKeyRef"/>
+										</xs:extension>
+									</xs:complexContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ManagerName" type="Colleague" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Manager name as free text or a structure</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="AssistantName" type="Colleague" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Assistant name as free text or a structure</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="CostCentre" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Customer's cost centre details</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+										<xs:element name="CostCentreName" type="e" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Name of the cost centre associated with the customer</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="CostCentreNumber" type="e" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Cost centre number of the customer</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="OccupationStartDate" type="Date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Start date of the employment</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="OccupationEndDate" type="Date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>End/Finish date of the employment</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Use this to import/use/reference other occupation related elements not covered here from other namespaces </xs:documentation>
+								</xs:annotation>
+							</xs:any>
+						</xs:sequence>
+						<xs:attribute name="Status">
+							<xs:annotation>
+								<xs:documentation>Status of Occupation. Example: Current, Previous, etc.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Pagers">
+		<xs:annotation>
+			<xs:documentation>A container to define pagers of the customer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Pager" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Passports">
+		<xs:annotation>
+			<xs:documentation>A container to define the passports for the customer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Passport" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Passport Details</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="a:CountryName" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Country the passport belongs to</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element ref="Number" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Passport Number</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="IssueDate" type="Date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Date of issue of the passport</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="IssuePlace" type="ee" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Specific place of issue of the passport. Could be a city, town, or a state, etc.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="IssueCountry" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Country where the passport was issued.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType mixed="true">
+									<xs:attributeGroup ref="grCountryEncoding"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ExpiryDate" type="Date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Passport expiry date.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="NativeScriptName" type="n:PersonName" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Some Passports contain different versions of spelling the name in native languages.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Use this to import/use/reference other passport related elements not covered here from other namespaces </xs:documentation>
+								</xs:annotation>
+							</xs:any>
+						</xs:sequence>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PhysicalInfo">
+		<xs:annotation>
+			<xs:documentation>A container to define the Physical Characteristics of the customer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Height" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Height of the customer</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="Measure">
+								<xs:attribute name="Type">
+									<xs:annotation>
+										<xs:documentation>Defines the type. Example: Tall, Short, Average, etc</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Weight" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Weight of the customer</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="Measure">
+								<xs:attribute name="Type">
+									<xs:annotation>
+										<xs:documentation>Defines the type. Example: Over Weight, Average, Under weight etc.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ColorInfo" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Color characteristics</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Eye" type="e" minOccurs="0"/>
+							<xs:element name="Hair" type="e" minOccurs="0"/>
+							<xs:element name="Skin" type="e" minOccurs="0"/>
+						</xs:sequence>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Marks" type="ee" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Any specific visible and unique physical marks. Example: A dimple on the left chin</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="BloodGroup" type="e" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Blood group of the customer. Example: A+, B-, etc</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Disability" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Description of person's disability.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DisabilityType" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Disability type: dumb, deaf, etc.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType mixed="true">
+									<xs:attribute name="Cause">
+										<xs:annotation>
+											<xs:documentation>Cause:  Natural, accident, etc.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="OtherPhysicalInfo" type="Measure" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Any other information such as body build info,different body sizes and measurements, etc</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Use this to import/use/reference other physical charcteristics related elements not covered here from other namespaces </xs:documentation>
+					</xs:annotation>
+				</xs:any>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PhysicalStatus">
+		<xs:annotation>
+			<xs:documentation>Physical status of the customer. Example: Living, Deceased, retired, etc.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Qualifications">
+		<xs:annotation>
+			<xs:documentation>A container to define the qualifications of the customer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Qualification" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Educational Qualification</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="QualificationName" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Name of the qualification. Example: Bachelor of Science, etc. </xs:documentation>
+								</xs:annotation>
+								<xs:complexType mixed="true">
+									<xs:attribute name="Type">
+										<xs:annotation>
+											<xs:documentation>Diploma, 4 year degree, certificate, apprenticeship, etc..</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="Mode">
+										<xs:annotation>
+											<xs:documentation>Mode of study: Course work, Research</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Major" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Major subject</xs:documentation>
+								</xs:annotation>
+								<xs:complexType mixed="true">
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Minor" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Minor subject</xs:documentation>
+								</xs:annotation>
+								<xs:complexType mixed="true">
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="CourseDuration" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Course duration as free text. Example: 4 years</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:complexContent>
+										<xs:extension base="Measure">
+											<xs:attribute name="Type">
+												<xs:annotation>
+													<xs:documentation>Type of study. Example: Part-time, full-time</xs:documentation>
+												</xs:annotation>
+											</xs:attribute>
+										</xs:extension>
+									</xs:complexContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NameOfOrganisation" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Name of the organisation (here institution) where the studied</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:complexContent>
+										<xs:extension base="NameOfOrganisation">
+											<xs:attributeGroup ref="grKeyRef"/>
+										</xs:extension>
+									</xs:complexContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element ref="a:CountryName" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Country as free text or encoded with one of the encoding standards.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="OrganisationAddress" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Address of the organisation (here oinstitution) where studied</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:complexContent>
+										<xs:extension base="OrganisationAddress">
+											<xs:attributeGroup ref="grKeyRef"/>
+										</xs:extension>
+									</xs:complexContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Award" type="ee" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Special distinction award. E.g. Gold Medal, Honor, etc.Type attribute example: Special Performance Award</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="StartDate" type="Date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Start date of the course to obtain the qualification</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="CompletionDate" type="Date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Completion date of the course to obtain the qualification</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ExpiryDate" type="Date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Expiry date of the qualification</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Use this to import/use/reference other qualification related elements not covered here from other namespaces </xs:documentation>
+								</xs:annotation>
+							</xs:any>
+						</xs:sequence>
+						<xs:attribute name="Status">
+							<xs:annotation>
+								<xs:documentation>E.g. completed, incomplete, on hold, under suspension, etc.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ReferenceContacts">
+		<xs:annotation>
+			<xs:documentation>A container to define reference contacts about the customer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ReferenceContact" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Full details of the contact</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="n:NameDetails" minOccurs="0"/>
+							<xs:element ref="a:AddressDetails" minOccurs="0"/>
+							<xs:element ref="ContactNumbers" minOccurs="0"/>
+							<xs:element ref="EmailAddresses" minOccurs="0"/>
+							<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Use this to import/use/reference other reference contact related elements not covered here from other namespaces </xs:documentation>
+								</xs:annotation>
+							</xs:any>
+						</xs:sequence>
+						<xs:attribute name="Type">
+							<xs:annotation>
+								<xs:documentation>Could be personal reference check, credit reference check, etc..</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attributeGroup ref="grKeyRef"/>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RegistrationInfo">
+		<xs:annotation>
+			<xs:documentation>A container to define the registration details of the customer. Example: Company registration</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="RegistrationNumber" type="ee" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Registration Number of the customer</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="TaxNumber" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="FormationDate" type="Date" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Date of formation of the organisation.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="OrganisationCode" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Codes assigned to the organisation by different bodies, agencies, headquarters, etc.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType mixed="true">
+						<xs:attribute name="Type">
+							<xs:annotation>
+								<xs:documentation>Description of the code. E.g. statistical, taxation, industry, internal, etc.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="AssignedBy">
+							<xs:annotation>
+								<xs:documentation>Name of the organisation that produced the code. eg. Australian Industry Association</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Use this to import/use/reference other registration related elements not covered here from other namespaces </xs:documentation>
+					</xs:annotation>
+				</xs:any>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FamilyMembers">
+		<xs:annotation>
+			<xs:documentation>A container to define closely associated people of the customer. Example: partner, Parents, Children, Spouse, etc. To define detailed relationships between the customer and the family member, use xCRL standard</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FamilyMember" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Family member details</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="n:PersonName" minOccurs="0"/>
+							<xs:element ref="Gender" minOccurs="0"/>
+							<xs:element name="SpecialDate" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Any special date associated with the relative. Example: If spouse of the customer, say, anniversary date, birth date, etc. </xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:complexContent>
+										<xs:extension base="Date">
+											<xs:attribute name="Type">
+												<xs:annotation>
+													<xs:documentation>Anniversary date, first date date, adoption date, etc. </xs:documentation>
+												</xs:annotation>
+											</xs:attribute>
+										</xs:extension>
+									</xs:complexContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Use this to import/use/reference other  related elements not covered here from other namespaces </xs:documentation>
+								</xs:annotation>
+							</xs:any>
+						</xs:sequence>
+						<xs:attribute name="RelationshipType">
+							<xs:annotation>
+								<xs:documentation>Type of relationship example: living together, fiance, married, etc</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="Type">
+							<xs:annotation>
+								<xs:documentation>Type of family member: Parent, child, partner, uncle, aunt, etc.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attributeGroup ref="grKeyRef"/>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Religion">
+		<xs:annotation>
+			<xs:documentation>Specific name of the religion: Christian Orthodox, Marmon, Hindu, etc.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="ReligionName" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Name of the religion. Eg. Hindu, Muslim, Christian, etc</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="Classification">
+							<xs:annotation>
+								<xs:documentation>Classification of Religion. Example: Catholics, Protestants as in Christianity Religion </xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Caste" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Some countries like India and Sri Lanka have Caste system in addition to religion. Example: Gounder, Pillai, etc</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="Type">
+							<xs:annotation>
+								<xs:documentation>Defines the type of caste. Example: Kongu Vellalar, Naattu Gounder, etc. for a caste "Gounder".</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Revenue" type="Amount">
+		<xs:annotation>
+			<xs:documentation>A container to define the Revenue details of the customer</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="SizeInfo">
+		<xs:annotation>
+			<xs:documentation>A container to define the size of the organisation in terms of its number of employees</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="Size" type="Measure">
+					<xs:annotation>
+						<xs:documentation>Exact number of employees. Eg. 100, 200, 223, etc.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="SizeRange" type="Measure">
+					<xs:annotation>
+						<xs:documentation>Number range of employees. Eg. 100-200, orund 100, etc</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="StockMarkets">
+		<xs:annotation>
+			<xs:documentation>A container to define the details of listing of the organisation in stock markets </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="StockMarket" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>A Stock market listing details</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="a:CountryName" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Country name as free text. Country name can also be encoded using some encoding standards. Example: "AU" for Australia</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="StockMarketName" type="ee" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Stock Exchange name where  the stock is listed. Example: NASDAQ, Singapore Stock Exchange, etc</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ListedCode" type="ee" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>The code that is used to list the organisation on the stock exchange. Example: XYZB for XYZ Bank, etc</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ListedDate" type="Date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Date when the organisation was listed on the stock exchange</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ListedValue" type="Amount" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Value of the stock when listed on the stock exchange</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Use this to import/use/reference other  related stock market elements not covered here from other namespaces </xs:documentation>
+								</xs:annotation>
+							</xs:any>
+						</xs:sequence>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TaxNumber">
+		<xs:annotation>
+			<xs:documentation>Government assigned tax numbers</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:attribute name="Type">
+				<xs:annotation>
+					<xs:documentation>Type of tax number: number. Example: ACN, ABN as in Australia</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="URLs">
+		<xs:annotation>
+			<xs:documentation>A container to define the URLs of the customer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="URL" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Vehicles">
+		<xs:annotation>
+			<xs:documentation>A container to define all the vehicles of the customer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Vehicle" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Vehicle Details</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="Make" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Manufacturer of the vehicle. Example: Toyota, BMW, TATA, etc</xs:documentation>
+								</xs:annotation>
+								<xs:complexType mixed="true">
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Model" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Model of the vehicle. Example: Landcruiser as in Toyota, MX-6 as in Mazda, etc</xs:documentation>
+								</xs:annotation>
+								<xs:complexType mixed="true">
+									<xs:attribute name="Type">
+										<xs:annotation>
+											<xs:documentation>Some special features. E.g. sedan/station vagon, soft top/hard top, etc.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ManufactureDate" type="Date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Date of manufacture of the vehicle</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="EngineNumber" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Engine number of the vehicle as defined by the manufacturer</xs:documentation>
+								</xs:annotation>
+								<xs:complexType mixed="true">
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ChassisNumber" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Chassis/suspension number of the vehicle as defined by the manufacturer</xs:documentation>
+								</xs:annotation>
+								<xs:complexType mixed="true">
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="BodyNumber" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Body number of the vehicle as defined by the manufacturer</xs:documentation>
+								</xs:annotation>
+								<xs:complexType mixed="true">
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="VehicleRegistration" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Container to define the Registration details of the vehicle</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="Number" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Registration number plate. Example: SNR 999</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:choice minOccurs="0">
+											<xs:element name="RegistrationAddress" type="a:AddressDetails">
+												<xs:annotation>
+													<xs:documentation>Address of registration</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+											<xs:sequence>
+												<xs:element name="RegistrationPlace" type="ee" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>Place of registration, but not the country name. E.g. state, city, etc.</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element ref="a:CountryName" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>Country name as free text. Country name can also be encoded using some encoding scheme.</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+											</xs:sequence>
+										</xs:choice>
+										<xs:element name="RegistrationDate" type="Date" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Date of registration of the vehicle</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="ExpiryDate" type="Date" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Expiry date of the registration</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Use this to import/use/reference other  related registration elements not covered here from other namespaces </xs:documentation>
+											</xs:annotation>
+										</xs:any>
+									</xs:sequence>
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Use this to import/use/reference other related vehicle elements not covered here from other namespaces </xs:documentation>
+								</xs:annotation>
+							</xs:any>
+						</xs:sequence>
+						<xs:attribute name="Type">
+							<xs:annotation>
+								<xs:documentation>Type of vehicle. Example: Truck, Jeep, Car, motorbike, Boat, etc</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Visas">
+		<xs:annotation>
+			<xs:documentation>A container to define the VISAs of the customer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Visa" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>All information about Visa details.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="Number" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Viisa number</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="VisaCategoryNumber" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Visa category number depending upon the type of visa. Example: H-1 for employment visa as in the USA</xs:documentation>
+								</xs:annotation>
+								<xs:complexType mixed="true">
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="IssueDate" type="Date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Date of issue of the visa</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="IssuePlace" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Place of issue of the visa (not country). Example: City name, town name, embassy name, etc</xs:documentation>
+								</xs:annotation>
+								<xs:complexType mixed="true">
+									<xs:attribute name="Type">
+										<xs:annotation>
+											<xs:documentation>Type of the place: city, embassy, state, high commission, etc.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element ref="a:CountryName" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Country name as free text or country name encoded with some encoding scheme</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ExpiryDate" type="Date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Date of expiry of the visa</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="EntryExpiryDate" type="Date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Once the visa is issued, the customer can enter the country before a certain date. if not, the visa cannot be used.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="MaximumStay" type="Measure" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Maximum allowed length of stay.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="SpecialConditions" type="ee" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Any special conditions as free text. Example: Multiple entry, cannot work, etc. Type attribute example: work restrictions, entry restrictions, etc</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Use this to import/use/reference other related visa elements not covered here from other namespaces </xs:documentation>
+								</xs:annotation>
+							</xs:any>
+						</xs:sequence>
+						<xs:attribute name="Type">
+							<xs:annotation>
+								<xs:documentation>Type of VISA. Example: Worker's Visa, Visitor's visa, Permanent Residency Visa, etc.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Number">
+		<xs:annotation>
+			<xs:documentation>This element is reused across this schema and can have different meanings.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:attribute name="Type">
+				<xs:annotation>
+					<xs:documentation>Extended information if the number includes any of additional pieces such as area code or extension.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ContactNumber">
+		<xs:annotation>
+			<xs:documentation>Universal telecommunication number structure</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="CountryCode" type="e" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Only clean country code</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="AreaCode" type="ee" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Only clean area code. Type Attribute example: National Code, City Code, etc</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:choice minOccurs="0">
+					<xs:element ref="Number">
+						<xs:annotation>
+							<xs:documentation>Phone number, please.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:sequence>
+						<xs:element name="NumberRangeFrom" type="e">
+							<xs:annotation>
+								<xs:documentation>First number in a corporate range of numbers (numeration plan)</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="NumberRangeTo" type="e">
+							<xs:annotation>
+								<xs:documentation>Last number in a corporate range of numbers (numeration plan)</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:choice>
+				<xs:element name="Extension" type="e" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Only clean extension number</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ContactHours" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Time as free text or comments on the contact period. Text can be combined with the attributes</xs:documentation>
+					</xs:annotation>
+					<xs:complexType mixed="true">
+						<xs:attribute name="Start">
+							<xs:annotation>
+								<xs:documentation>Can be contacted/used from this time.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="End">
+							<xs:annotation>
+								<xs:documentation>Can be contacted/used till this time.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="TimeType">
+							<xs:annotation>
+								<xs:documentation>12HR, 24HR, etc.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Pin" type="ee" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Pin-code to access the phone /fax line</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Use this to import/use/reference other contact number elements not covered here from other namespaces </xs:documentation>
+					</xs:annotation>
+				</xs:any>
+			</xs:sequence>
+			<xs:attribute name="Type">
+				<xs:annotation>
+					<xs:documentation>Type of Contact defined. Example: Telephone, Mobile or Fax</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="NumberType">
+				<xs:annotation>
+					<xs:documentation>Type of contact number. Example: Free Call number, Toll Free number, Residential number, Business number, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ContactNature">
+				<xs:annotation>
+					<xs:documentation>Nature of contact. Example: Business or Personal</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="Business"/>
+						<xs:enumeration value="Personal"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EmailAddress">
+		<xs:annotation>
+			<xs:documentation>Email address details</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:attribute name="Type">
+				<xs:annotation>
+					<xs:documentation>Work, home, temporary, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Pager">
+		<xs:annotation>
+			<xs:documentation>Pager details</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="URL" minOccurs="0"/>
+				<xs:element ref="ContactNumber" minOccurs="0"/>
+				<xs:element ref="Number" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Pager number</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Use this to import/use/reference other pager related elements not covered here from other namespaces </xs:documentation>
+					</xs:annotation>
+				</xs:any>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="URL">
+		<xs:annotation>
+			<xs:documentation>URL details</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:attribute name="Title">
+				<xs:annotation>
+					<xs:documentation>An informative title for  the URL to display.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

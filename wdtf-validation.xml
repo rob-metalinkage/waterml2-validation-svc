@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- define application context for WDTF Validator -->
+
+<Context path="/jsp/wdtf/wdtf-validation" docBase="/web/webapps/wdtf/wdtf-validation" debug="0" reloadable="true">
+<!--
+<Context path="/jsp/wdtf/wdtf-validation" docBase="/web/tomcat/webapps/wdtf-validation" debug="0" reloadable="true">
+    -->
+
+<!--
+<Context path="/wdtf-validation" docBase="/web/tomcat/webapps/wdtf-validation" debug="0" reloadable="true">
+-->
+
+  <!-- don't limit number of active sessions (default) -->
+  <Manager maxActiveSessions="-1"/>
+
+  <!-- define log files (file logger, system out, err out) for this context -->
+  <Logger className="org.apache.catalina.logger.FileLogger" prefix="wdtf-validation-log." suffix=".txt" timestamp="true"/>
+
+</Context>
+

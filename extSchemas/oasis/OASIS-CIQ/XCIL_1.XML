@@ -1,0 +1,289 @@
+<?xml version="1.0"?>
+<xCIL xmlns="urn:oasis:names:tc:ciq:xsdschema:xCIL:2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:a="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" xmlns:n="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0" xsi:schemaLocation="urn:oasis:names:tc:ciq:xsdschema:xCIL:2.0 xCIL.xsd">
+	<CustomerDetails>
+		<CustomerID>AUS12345678</CustomerID>
+		<!-- *************** NAME ************ -->
+		<n:NameDetails PartyType="Person">
+			<n:PersonName>
+				<n:Title>Mr</n:Title>
+				<n:FirstName>Ram</n:FirstName>
+				<n:MiddleName>Laxhman</n:MiddleName>
+				<n:MiddleName>Bharathan</n:MiddleName>
+				<n:LastName>Kumar</n:LastName>
+				<n:Alias>Ram</n:Alias>
+				<n:FormerName>
+					<n:NameLine>Matias Otero</n:NameLine>
+				</n:FormerName>
+			</n:PersonName>
+		</n:NameDetails>
+		<!-- *************** ADDRESS ************* -->
+		<a:AddressDetails AddressType="Postal" CurrentStatus="Investment" ValidFromDate="1 Jan 2000" ValidToDate="31 March 2000">
+			<a:Country>
+				<a:CountryName>Australia</a:CountryName>
+				<a:AdministrativeArea Type="State">
+					<a:AdministrativeAreaName>NSW</a:AdministrativeAreaName>
+					<a:Locality>
+						<a:LocalityName>NORTH RYDE</a:LocalityName>
+						<a:Thoroughfare>
+							<a:ThoroughfareNumber>47</a:ThoroughfareNumber>
+							<a:ThoroughfareName>KINGSTON</a:ThoroughfareName>
+							<a:ThoroughfareTrailingType>AVENUE</a:ThoroughfareTrailingType>
+							<a:ThoroughfarePostDirection>NORTH</a:ThoroughfarePostDirection>
+							<a:Premise Type="BUILDING">
+								<a:PremiseName TypeOccurrence="After">RIPPON</a:PremiseName>
+								<a:SubPremise Type="BLOCK">
+									<a:SubPremiseNumber>2</a:SubPremiseNumber>
+									<a:SubPremise Type="LEVEL">
+										<a:SubPremiseNumber>2</a:SubPremiseNumber>
+										<a:SubPremise Type="SUITE">
+											<a:SubPremiseNumber>1</a:SubPremiseNumber>
+											<a:SubPremiseNumberSuffix>A</a:SubPremiseNumberSuffix>
+										</a:SubPremise>
+									</a:SubPremise>
+								</a:SubPremise>
+							</a:Premise>
+						</a:Thoroughfare>
+						<a:PostalCode>
+							<a:PostalCodeNumber>2113</a:PostalCodeNumber>
+						</a:PostalCode>
+					</a:Locality>
+				</a:AdministrativeArea>
+			</a:Country>
+		</a:AddressDetails>
+		<!-- ******************** PERSON INFOR **************** -->
+		<PersonInfo>
+			<AgeInfo>
+				<Age>33</Age>
+			</AgeInfo>
+			<BirthInfo>
+				<BirthDate>
+					<Day>22</Day>
+					<Month>Jan</Month>
+					<Year>1977</Year>
+				</BirthDate>
+			</BirthInfo>
+			<!-- ***************** TELEPHONE DETAILS *********** -->
+			<ContactNumbers>
+				<ContactNumber Type="Telephone" NumberType="Business Line" ContactNature="Business">
+					<CountryCode>61</CountryCode>
+					<AreaCode>2</AreaCode>
+					<Number>94338765</Number>
+					<ContactHours>9:00AM - 5:00PM</ContactHours>
+				</ContactNumber>
+				<ContactNumber Type="Telephone" NumberType="Residential Line">
+					<CountryCode>61</CountryCode>
+					<AreaCode>2</AreaCode>
+					<Number>98644646</Number>
+					<ContactHours Start="6:00PM" End=" 10:00PM"/>
+				</ContactNumber>
+			</ContactNumbers>
+			<!-- ************** EMAIL DETAILS ****************** -->
+			<EmailAddresses>
+				<EmailAddress Type="Business">ram@ram.com.au</EmailAddress>
+				<EmailAddress Type="Personal">rk@aol.com.au</EmailAddress>
+			</EmailAddresses>
+			<!-- ********** ACCOUNT DETAILS ******************** -->
+			<FinancialAccounts>
+				<FinancialAccount Type="Cheque">
+					<Number>1351980101</Number>
+					<BranchNumber>402</BranchNumber>
+					<OwnershipInfo OwnershipType="Joint Account">
+						<n:NameDetails>
+							<n:PersonName>
+								<n:FirstName>Shantha</n:FirstName>
+								<n:LastName>Devi</n:LastName>
+							</n:PersonName>
+						</n:NameDetails>
+						<n:NameDetails>
+							<n:PersonName>
+								<n:FirstName>Ram</n:FirstName>
+								<n:LastName>Kumar</n:LastName>
+							</n:PersonName>
+						</n:NameDetails>
+					</OwnershipInfo>
+					<FinancialInstitutionDetails Type="Bank">
+						<n:NameDetails>
+							<n:NameLine>Commonwealth Bank of Australia</n:NameLine>
+						</n:NameDetails>
+						<a:AddressDetails>
+							<a:Address>
+     			123 Victoria Avenue
+     			Chatswood, NSW 2067
+     	   </a:Address>
+						</a:AddressDetails>
+					</FinancialInstitutionDetails>
+					<JoinDate>
+						<Date>11 January 2000</Date>
+					</JoinDate>
+				</FinancialAccount>
+			</FinancialAccounts>
+			<!-- ***************** ID CARD DETAILS ********************** -->
+			<IDCards>
+				<IDCard Type="Credit Card">
+					<IssuerName>
+						<n:NameLine>Visa International, Inc</n:NameLine>
+					</IssuerName>
+					<IDCardName>Visa</IDCardName>
+					<Number>4509 4567 2012 3244</Number>
+					<ExpiryDate>
+						<Month>April</Month>
+						<Year>2002</Year>
+					</ExpiryDate>
+					<NameOnIDCard>
+						<n:NameLine>Ram Kumar</n:NameLine>
+					</NameOnIDCard>
+				</IDCard>
+				<IDCard Type="Credit Card">
+					<IDCardName>AMEX</IDCardName>
+					<Number>3777 3017 771100</Number>
+					<ExpiryDate>
+						<Date>22 April 2003</Date>
+					</ExpiryDate>
+					<NameOnIDCard>
+						<n:PersonName>
+							<n:FirstName>Venkiapurappu</n:FirstName>
+							<n:MiddleName>Venkata</n:MiddleName>
+							<n:MiddleName>Sai</n:MiddleName>
+							<n:LastName>Laxman</n:LastName>
+						</n:PersonName>
+					</NameOnIDCard>
+				</IDCard>
+				<IDCard Type="Driver License">
+					<Number>74183768C</Number>
+					<IDCardIssuePlace>
+						<a:Country>
+							<a:CountryName>Australia</a:CountryName>
+							<a:AdministrativeArea Type="State">
+								<a:AdministrativeAreaName>NSW</a:AdministrativeAreaName>
+							</a:AdministrativeArea>
+						</a:Country>
+					</IDCardIssuePlace>
+					<ExpiryDate>
+						<Day>22</Day>
+						<Month>April</Month>
+						<Year>2000</Year>
+					</ExpiryDate>
+					<PrivilegeType>Silver</PrivilegeType>
+					<Validity>Australia</Validity>
+					<Restriction>Car</Restriction>
+				</IDCard>
+				<IDCard Type="Driver License">
+					<Number>M1234567</Number>
+					<IDCardIssuePlace>
+						<a:Country>
+							<a:CountryName>India</a:CountryName>
+							<a:AdministrativeArea Type="State">
+								<a:AdministrativeAreaName>Tamil Nadu</a:AdministrativeAreaName>
+								<a:Locality Type="City">
+									<a:LocalityName>Chennai</a:LocalityName>
+								</a:Locality>
+							</a:AdministrativeArea>
+						</a:Country>
+					</IDCardIssuePlace>
+					<ExpiryDate>
+						<Date>27 November 2000</Date>
+					</ExpiryDate>
+					<Restriction>Two Wheeler</Restriction>
+				</IDCard>
+				<IDCard Type="Mileage Program">
+					<GroupName GroupType="Alliance">One World-Qantas</GroupName>
+					<Number>99405678</Number>
+					<IssueDate>
+						<Day>5</Day>
+						<Month>December</Month>
+						<Year>1995</Year>
+					</IssueDate>
+					<PrivilegeType>Gold</PrivilegeType>
+				</IDCard>
+				<IDCard Type="Mileage Program">
+					<GroupName>Star Alliance-Ansett</GroupName>
+					<Number>667891234</Number>
+					<IssueDate>
+						<Date>8 November 1998</Date>
+					</IssueDate>
+				</IDCard>
+			</IDCards>
+			<!-- ********************  LANGUAGE *********************** -->
+			<Languages>
+				<Language Type="Mother Tongue" Speak="yes" Read="yes" Write="yes">
+     		      Tamil
+        </Language>
+				<Language Type="Second Language" Speak="yes" Read="yes" Write="yes">
+     		      English
+        </Language>
+				<Language Type="Second Language" Speak="yes" Read="no" Write="no">
+     		      Hindi
+        </Language>
+			</Languages>
+			<!-- ***************  MEMBERSHIP DETAILS *************** -->
+			<Memberships>
+				<Membership>
+					<MembershipName>Australian Computer Society</MembershipName>
+				</Membership>
+			</Memberships>
+			<!-- ******************** 	OCCUPATION DETAILS ************* -->
+			<Occupations>
+				<Occupation>
+					<Position>
+						<PositionTitle>Technology Manager</PositionTitle>
+					</Position>
+					<WorkType>FullTime</WorkType>
+					<a:Department>
+						<a:DepartmentName>Technology Division</a:DepartmentName>
+					</a:Department>
+					<NameOfOrganisation>
+						<n:OrganisationNameDetails>
+							<n:OrganisationName>MSI</n:OrganisationName>
+						</n:OrganisationNameDetails>
+					</NameOfOrganisation>
+				</Occupation>
+			</Occupations>
+			<!-- **************** PASSPORT DETAILS ************** -->
+			<Passports>
+				<Passport>
+					<a:CountryName>Australia</a:CountryName>
+					<Number>K27345678</Number>
+					<IssueDate>
+						<Date>23 April 1997</Date>
+					</IssueDate>
+					<IssuePlace Type="City">Sydney</IssuePlace>
+					<IssueCountry>Australia</IssueCountry>
+					<ExpiryDate>
+						<Day>22</Day>
+						<Month>April</Month>
+						<Year>2007</Year>
+					</ExpiryDate>
+				</Passport>
+			</Passports>
+			<!-- ************ QUALIFICATION DETAILS ************* -->
+			<Qualifications>
+				<Qualification>
+					<QualificationName>BComp.Sc.</QualificationName>
+					<Major>Mathematics</Major>
+					<Minor>Statistics</Minor>
+					<NameOfOrganisation>
+						<n:OrganisationNameDetails>
+							<n:OrganisationName>University of Technology Sydney</n:OrganisationName>
+						</n:OrganisationNameDetails>
+					</NameOfOrganisation>
+					<Award>Honours</Award>
+				</Qualification>
+			</Qualifications>
+			<!-- **************** FAMILY MEMBERS ***************** -->
+			<FamilyMembers>
+				<FamilyMember Type="Parent" RelationshipType="Father">
+					<n:PersonName>
+						<n:NameLine Type="Full Name">John Thomas</n:NameLine>
+					</n:PersonName>
+				</FamilyMember>
+				<FamilyMember Type="Parent" RelationshipType="Mother">
+					<n:PersonName>
+						<n:Title>Mrs</n:Title>
+						<n:FirstName>Maria</n:FirstName>
+						<n:LastName>Thomas</n:LastName>
+					</n:PersonName>
+				</FamilyMember>
+			</FamilyMembers>
+		</PersonInfo>
+	</CustomerDetails>
+</xCIL>

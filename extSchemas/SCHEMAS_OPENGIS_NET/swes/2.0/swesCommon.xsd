@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swes="http://www.opengis.net/swes/2.0" targetNamespace="http://www.opengis.net/swes/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <!-- ================================================= -->
+  <element name="AbstractSWES" type="swes:AbstractSWESType" abstract="true"/>
+  <complexType name="AbstractSWESType" abstract="true">
+    <sequence>
+      <element name="description" type="string" minOccurs="0"/>
+      <element name="identifier" type="gml:CodeType" minOccurs="0"/>
+      <element name="name" type="gml:CodeType" minOccurs="0" maxOccurs="unbounded"/>
+      <element name="extension" type="anyType" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+    <attribute name="id" type="ID"/>
+  </complexType>
+  <complexType name="AbstractSWESPropertyType">
+    <sequence minOccurs="0">
+      <element ref="swes:AbstractSWES"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <element name="SensorDescription" type="swes:SensorDescriptionType"/>
+  <complexType name="SensorDescriptionType">
+    <sequence>
+      <element name="validTime" minOccurs="0">
+        <complexType>
+          <sequence>
+            <element ref="gml:AbstractTimeGeometricPrimitive"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="data" type="anyType"/>
+    </sequence>
+  </complexType>
+  <complexType name="SensorDescriptionPropertyType">
+    <sequence minOccurs="0">
+      <element ref="swes:SensorDescription"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <element name="ExtensibleResponse" type="swes:ExtensibleResponseType" abstract="true"/>
+  <complexType name="ExtensibleResponseType" abstract="true">
+    <sequence>
+      <element name="extension" type="anyType" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+  <complexType name="ExtensibleResponsePropertyType">
+    <sequence minOccurs="0">
+      <element ref="swes:ExtensibleResponse"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <element name="ExtensibleRequest" type="swes:ExtensibleRequestType" abstract="true"/>
+  <complexType name="ExtensibleRequestType" abstract="true">
+    <sequence>
+      <element name="extension" type="anyType" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+    <attribute name="version" type="string" use="required"/>
+    <attribute name="service" type="string" use="required"/>
+  </complexType>
+  <complexType name="ExtensibleRequestPropertyType">
+    <sequence minOccurs="0">
+      <element ref="swes:ExtensibleRequest"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+</schema>

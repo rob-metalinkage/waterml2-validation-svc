@@ -1,0 +1,1 @@
+Add schematron rules in this dir (contentRules)

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+<!ENTITY xmmlhome "schemas/externalSchemas" >
+<!ENTITY waterml2 "schemas/waterml_2" >
+]>
+
+<catalog
+	xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:oasis:names:tc:entity:xmlns:xml:catalog &xmmlhome;/oasis/entity/1.1/catalog.xsd">
+
+	<!-- An example OASIS Catalog document, for entity resolution. -->
+
+	<uri
+		name="http://www.w3.org/XML/1998/namespace"
+		uri="http://www.w3.org/2001/xml.xsd"/>
+
+	<!-- ===================================================== -->
+	<!-- The first three pairs of elements provide local copies for three specific XML Schema documents -->
+	<!-- The first entry in each pair uses the "uri" version, and the second the "system" version of the redirect -->
+	<!-- the two alternatives are provided in order to support various processing environments, which appear to behave slightly differently -->
+
+	<!-- The OASIS Entity ResolutionCatalog schema -->
+	<uri
+		name="urn:oasis:names:tc:entity:xmlns:xml:catalog"
+		uri="&xmmlhome;/oasis/entity/1.1/catalog.xsd"/>
+	<system
+		systemId="urn:oasis:names:tc:entity:xmlns:xml:catalog"
+		uri="&xmmlhome;/oasis/entity/1.1/catalog.xsd"/>
+
+	<!-- The XML Namespace schema -->
+	<uri
+		name="http://www.w3.org/2001/xml.xsd"
+		uri="&xmmlhome;/w3c/xsd/xml.xsd"/>
+	<system
+		systemId="http://www.w3.org/2001/xml.xsd"
+		uri="&xmmlhome;/w3c/xsd/xml.xsd"/>
+
+	<!-- The OGC-supplied XML Schema for XLINKS -->
+	<uri
+		name="http://schemas.opengis.net/xlink/1.0.0/xlinks.xsd"
+		uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/xlink/1.0.0/xlinks.xsd"/>
+	<system
+		systemId="http://schemas.opengis.net/xlink/1.0.0/xlinks.xsd"
+		uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/xlink/1.0.0/xlinks.xsd"/>
+
+	<!-- the schemas in the OGC rep use relpaths for schemaLocation references to other OGC schemas - yuck -->
+	<uri
+		name="../../xlink/1.0.0/xlinks.xsd"
+		uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/xlink/1.0.0/xlinks.xsd"/>
+	<system
+		systemId="../../xlink/1.0.0/xlinks.xsd"
+		uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/xlink/1.0.0/xlinks.xsd"/>
+
+	<!-- the schemas in the IGN EDEN rep use relpaths for schemaLocation references to other ISO schemas - yuck -->
+	<uri
+		name="../gml/gml.xsd"
+		uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/gml/3.2.1/gml.xsd"/>
+	<system
+		systemId="../gml/gml.xsd"
+		uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/gml/3.2.1/gml.xsd"/>
+	<uri
+		name="../gmd/gmd.xsd"
+		uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/iso/19139/20070417/gmd/gmd.xsd"/>
+	<system
+		systemId="../gmd/gmd.xsd"
+		uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/iso/19139/20070417/gmd/gmd.xsd"/>
+	<uri
+		name="../gco/gco.xsd"
+		uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/iso/19139/20070417/gco/gco.xsd"/>
+	<system
+		systemId="../gco/gco.xsd"
+		uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/iso/19139/20070417/gco/gco.xsd"/>
+	<uri
+		name="../gss/gss.xsd"
+		uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/iso/19139/20070417/gss/gss.xsd"/>
+	<system
+		systemId="../gss/gss.xsd"
+		uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/iso/19139/20070417/gss/gss.xsd"/>
+	<uri
+		name="../gmx/gmx.xsd"
+		uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/iso/19139/20070417/gmx/gmx.xsd"/>
+	<system
+		systemId="../gmx/gmx.xsd"
+		uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/iso/19139/20070417/gmx/gmx.xsd"/>
+	
+	<!-- ===================================================== -->
+	<!-- The following groups of elements provide local paths for a set of resources as an alternative to web paths -->
+	<!-- The first entry in each pair uses the "uri" version, and the second the "system" version of the redirect -->
+	<!-- the two alternatives are provided in order to support various processing environments, which appear to behave slightly differently -->
+
+	<!-- Exact copy of  OGC repository  -->
+	<rewriteURI
+		uriStartString="http://schemas.opengis.net"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET"/>
+	<rewriteSystem
+		systemIdStartString="http://schemas.opengis.net"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET"/>
+	
+	<!-- Exact copy of  Discrete Coverages schema, v 0.2.1  -->
+	<rewriteURI
+		uriStartString="http://bp.schemas.opengis.net/06-188r1/cv/0.2.1"
+		rewritePrefix="&xmmlhome;/cv/0.2.1"/>
+	<rewriteSystem
+		systemIdStartString="http://bp.schemas.opengis.net/06-188r1/cv/0.2.1"
+		rewritePrefix="&xmmlhome;/cv/0.2.1"/>
+
+	<!-- GML 3.1.1 profile
+	 with deprecated components removed, 
+	 and with one member from a choice group selected for cases where the choice represents only a syntax preference
+	<rewriteURI
+		uriStartString="http://schemas.opengis.net/gml/3.1.1"
+		rewritePrefix="&xmmlhome;/OGC/branches/gml_s/3.1.1"/>
+	<rewriteSystem
+		systemIdStartString="http://schemas.opengis.net/gml/3.1.1"
+		rewritePrefix="&xmmlhome;/OGC/branches/gml_s/3.1.1"/> -->
+
+        <!-- GML 3.2
+        -->
+        <rewriteURI
+		uriStartString="http://www.opengis.net/gml/3.2"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET/gml/3.2.1"/>
+	<rewriteSystem
+		systemIdStartString="http://www.opengis.net/gml/3.2"
+		rewritePrefix="&xmmlhome;/gml/3.2.1"/> -->
+
+	<!-- Exact copy of  SWE Common schema  -->
+	<!-- the schemas in the OGC rep use relpaths for schemaLocation references to other OGC schemas - yuck -->
+	<rewriteURI
+		uriStartString="../../sweCommon"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET/sweCommon"/>
+	<rewriteSystem
+		systemIdStartString="../../sweCommon"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET/sweCommon"/>
+
+    <rewriteURI
+		uriStartString="http://www.opengis.net/om/2.0"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET/om/2.0"/>
+	<rewriteSystem
+		systemIdStartString="http://www.opengis.net/om/2.0"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET/om/2.0"/>
+        
+    <rewriteURI
+		uriStartString="http://www.opengis.net/sampling/2.0"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET/sampling/2.0"/>
+	<rewriteSystem
+		systemIdStartString="http://www.opengis.net/sampling/2.0"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET/sampling/2.0"/>
+        
+    <rewriteURI
+		uriStartString="http://www.opengis.net/samplingSpatial/2.0"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET/samplingSpatial/2.0"/>
+	<rewriteSystem
+		systemIdStartString="http://www.opengis.net/samplingSpatial/2.0"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET/samplingSpatial/2.0"/>
+
+	<!-- Exact copy of  SensorML schema  -->
+	<!-- the schemas in the OGC rep use relpaths for schemaLocation references to other OGC schemas - yuck -->
+	<rewriteURI
+		uriStartString="../../sensorML"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET/sensorML"/>
+	<rewriteSystem
+		systemIdStartString="../../sensorML"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET/sensorML"/>
+
+	<!-- Exact copy of Intelligence Community Intelligence Security Marking (IC ISM) Data Element
+    Dictionary Version 2.0 -->
+	<!-- the schemas in the OGC rep use relpaths for schemaLocation references to other OGC schemas - yuck -->
+	<rewriteURI
+		uriStartString="../../ic/2.0"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET/ic/2.0"/>
+	<rewriteSystem
+		systemIdStartString="../../ic/2.0"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET/ic/2.0"/>
+        
+       
+  
+    <!-- ISO19115  -->
+    <rewriteURI
+		uriStartString="http://www.isotc211.org/2005/gco"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET/iso/19139/20070417/gco"/>
+	<rewriteSystem
+		systemIdStartString="http://www.isotc211.org/2005/gco"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET/iso/19139/20070417/gco"/>
+        
+    <rewriteURI
+		uriStartString="http://www.isotc211.org/2005/gmd"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET/iso/19139/20070417/gmd"/>
+	<rewriteSystem
+		systemIdStartString="http://www.isotc211.org/2005/gmd"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET/iso/19139/20070417/gmd"/>
+  
+
+
+        <!-- -->
+        <rewriteURI
+		uriStartString="file:///C:/OGC/SCHEMAS_OPENGIS_NET/sampling/2.0"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET/sampling/2.0"/>
+	<rewriteSystem
+		systemIdStartString="file:///C:/OGC/SCHEMAS_OPENGIS_NET/sampling/2.0"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET/sampling/2.0"/>
+
+
+        <rewriteURI
+		uriStartString="file:///C:/OGC/SCHEMAS_OPENGIS_NET"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET"/>
+	<rewriteSystem
+		systemIdStartString="file:///C:/OGC/SCHEMAS_OPENGIS_NET"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET"/>
+	<!-- ===================================================== -->
+
+	<systemSuffix systemIdSuffix="WaterCollection.xsd" uri="&waterml2;/WaterCollection.xsd"/>
+        <systemSuffix systemIdSuffix="waterml2.xsd" uri="&waterml2;/waterml2.xsd"/>
+
+        <systemSuffix systemIdSuffix="waterSampling.xsd" uri="&waterml2;/waterSampling.xsd"/>
+        <systemSuffix systemIdSuffix="waterProperty.xsd" uri="&waterml2;/waterProperty.xsd"/>
+        <systemSuffix systemIdSuffix="waterObservation.xsd" uri="&waterml2;/waterObservation.xsd"/>
+        <systemSuffix systemIdSuffix="waterResultsCoverage.xsd" uri="&waterml2;/waterResultsCoverage.xsd"/>
+
+
+</catalog>

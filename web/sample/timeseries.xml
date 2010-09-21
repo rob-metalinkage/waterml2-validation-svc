@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<wdtf:HydroCollection
+	xmlns:sa="http://www.opengis.net/sampling/1.0/sf1"
+	xmlns:om="http://www.opengis.net/om/1.0/sf1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:gml="http://www.opengis.net/gml"
+	xmlns:wdtf="http://www.bom.gov.au/std/water/xml/wdtf0.3"
+	xmlns:ahgf="http://www.bom.gov.au/std/water/xml/ahgf0.1"
+	xsi:schemaLocation="http://www.opengis.net/sampling/1.0/sf1 ../sampling/sampling.xsd
+	http://www.bom.gov.au/std/water/xml/wdtf0.3 ../wdtf/water.xsd
+	http://www.bom.gov.au/std/water/xml/ahgf0.1 ../ahgf/waterFeatures.xsd"
+	gml:id="HC-t1">
+	<!--  Change log
+		12 September 2008	Gavin Walker	Gavin.Walker@csiro.au
+		Changed all the wml namespace prefixes to wdtf.
+		Removed the procedure name from the time series observation name.
+		Modified shemaLocation for release.
+
+		19 September 2008	Gavin Walker	Gavin.Walker@csiro.au
+		Converted all URIs to wio0.2
+		Incremented wdtf version to 0.2
+
+		28 November 2008	Gavin Walker	Gavin.Wallker@csiro.au
+		Change wdtf namespace to 0.3
+		Added DocumentInfo/version tag (now mandatory).
+
+		8 January 2008		Gavin Walker	Gavin.Walker@csiro.au
+		Changed schemaLocations to refer to new locations of schemas in release not build environment.
+		i.e. removed one level of ../
+	-->
+	<gml:description> This document encodes timeseries.
+
+		This uses a "generic" observation and sampling-features schema, based on the OGC OandM
+		Parts 1 and 2 implemented as a GML-SF level 1 conformant XML Schema.
+
+		This implementation assumes the existence of several identifier schemes, expressed as URIs -
+		as indicated in comments below.
+
+		The semantics of the groupings are provided more precisely by the links and cross-references
+		embedded in the features. In this document the data is presented in a normalized form, with sites,
+		locations, samples and	measurements all shown as "members" at the same level in the collection.
+		The "nesting" of the various components is provided through typed links (relatedObservation,
+		sampledFeature, relatedSamplingFeature) etc. The justification is that it is more flexible,
+		and allows features to be effectively nested within various collections, rather than just
+		one.
+
+		The full GML "inline or by reference" pattern allows child features to be nested inline
+		instead of using an xlink:href most places. However, deep nesting is not allowed by the
+		GML-SF profile, which has been used here. While heterogeneous feature collections are
+		permitted by the WFS standard, most implementations require multiple queries, one type at a
+		time, to satisfy.  In this case the feature identifiers would have to be persistent and
+		global, and all the cross-references would have to use full URLs rather than fragment
+		identifiers (e.g. "#l1"). That implies a robust identifier management system.</gml:description>
+
+	<gml:name codeSpace="http://www.bom.gov.au/std/water/xml/wio0.2/feature/HydroCollection/w00001/">HC-t1</gml:name>
+
+	<wdtf:metadata>
+		<wdtf:DocumentInfo>
+			<!-- specify the version of the data package -->
+			<wdtf:version>wdtf-package-v0.3</wdtf:version>
+			<wdtf:dataOwner codeSpace="http://www.bom.gov.au/std/water/xml/wio0.2/party/person/bom/">w00001</wdtf:dataOwner>
+			<wdtf:dataProvider codeSpace="http://www.bom.gov.au/std/water/xml/wio0.2/party/person/bom/">w00001</wdtf:dataProvider>
+			<!-- All dates and time should include a time zone or terminate in Z for UTC -->
+			<wdtf:generationDate>2008-07-11T00:00:00+10:00</wdtf:generationDate>
+			<wdtf:generationSystem>AWRIPS</wdtf:generationSystem>
+		</wdtf:DocumentInfo>
+	</wdtf:metadata>
+
+	<!-- transaction Members indicate the transactions associated with the document -->
+	<wdtf:transactionMember>
+		<!-- A synchronizationTransaction is used to replace a block in the time period -->
+
+		<wdtf:SynchronizationTransaction
+			gml:id="synch1">
+			<!-- a nil period would indicate that the new data replaces the entire existing data set -->
+			<wdtf:period>
+				<om:TimePeriod>
+					<om:begin>2001-07-31T20:12:01</om:begin>
+					<om:end>2001-08-02T20:10:01</om:end>
+				</om:TimePeriod>
+			</wdtf:period>
+		</wdtf:SynchronizationTransaction>
+	</wdtf:transactionMember>
+
+	<!-- defining data time series -->
+	<!-- one Time series observation per obseration  member but any number of observation members -->
+	<wdtf:observationMember>
+		<wdtf:TimeSeriesObservation
+			gml:id="TS1">
+			<!-- the value of gml:id is unique within the document context.
+				Recommended that gml:name inidicate a data stream that can be used to stream
+				fragments encoded as TimeSeriesObservation.  Time series observation is the exception
+				to the rule in name creation.  The BoM requires the TimeSeriesObservation name be an
+				integer.  Data providers have two options.  The first is to assign unique integers to all TimeSeriesObservation
+				stream.  This would allow the more conventional codespace of
+				http://www.bom.gov.au/std/water/xml/wio0.2/feature/TimeSeriesObservation/providerid/
+				to be used.  The second option is only assign integers to observation streams of the same SamplingPoint,
+				ObservedProperty and procedure.  In this case the codespace will need to be qualified by these (or an id
+				equivalent) to retain the name value as an integer.  The second option is used below -->
+
+			<gml:description>Telemetry data, and other unstructured information</gml:description>
+			<gml:name codeSpace="http://www.bom.gov.au/std/water/xml/wio0.2/feature/TimeSeriesObservation/w00001/410729/1/level/">1</gml:name>
+
+			<!-- resultTime indicates the time at which this time series was last revised (validation, annotation, etc) as opposed
+			to when the data was collected -->
+			<om:resultTime>2008-07-10T10:30:00</om:resultTime>
+
+			<!-- here a procedure unique across all sites for w0001 or a generic procedure type is used so it is not
+				qualified by either the sampling point or group ids -->
+			<om:procedure
+				xlink:href="http://www.bom.gov.au/std/water/xml/wio0.2/procedure//w00001/gaugeABC"/>
+			<om:observedProperty
+				xlink:href="http://www.bom.gov.au/std/water/xml/wio0.2/property//bom/WaterCourseLevel_m"/>
+			<!-- mandatory link back to the Sampling point or location -->
+			<om:featureOfInterest
+				xlink:href="http://www.bom.gov.au/std/water/xml/wio0.2/feature/SamplingPoint/w00001/410729/1"/>
+			<!-- overall quality  -->
+			<om:resultQuality>quality-A</om:resultQuality>
+			<!-- mandatory link back to the sampling Group or site -->
+			<wdtf:relatedSamplingFeature
+				xlink:href="http://www.bom.gov.au/std/water/xml/wio0.2/feature/SamplingGroup/w00001/410729"/>
+			<wdtf:metadata>
+				<wdtf:TimeSeriesObservationMetadata>
+					<wdtf:relatedTransaction xlink:href="#synch1"/>
+					<!-- the regulation property  these measurements relate to -->
+					<wdtf:regulationProperty>Reg200806.s3.1a</wdtf:regulationProperty>
+					<wdtf:securityConstraints>CommerciallySensitive</wdtf:securityConstraints>
+					<!-- the next report is expected in a day -->
+					<wdtf:reportingFrequency>P1D</wdtf:reportingFrequency>
+					<wdtf:status>validated</wdtf:status>
+				</wdtf:TimeSeriesObservationMetadata>
+			</wdtf:metadata>
+
+			<wdtf:result>
+				<wdtf:TimeSeries>
+					<wdtf:defaultInterpolationType>InstVal</wdtf:defaultInterpolationType>
+					<wdtf:defaultUnitsOfMeasure>m</wdtf:defaultUnitsOfMeasure>
+					<wdtf:defaultQuality>quality-A</wdtf:defaultQuality>
+					<wdtf:timeValuePair
+						time="2001-07-31T20:12:01+10:00">1.25</wdtf:timeValuePair>
+					<!-- This time point is missing -->
+					<wdtf:timeValuePair
+						time="2001-08-01T20:15:01+10:00"
+						comment="text"
+						interpolationType="InstVal"
+						xsi:nil="true"/>
+					<wdtf:timeValuePair
+						time="2001-08-02T20:10:01+10:00"
+						comment="this is a mutiline comment
+but that new line will be replaced by a space.  To preserve new lines we must use character references such as
+&#xA;which will preserve a new line
+unlike this one.  Extra spaces at the start of the line are preserved too so best to start on the left margin.  Tabs are preserved with
+&#xA;&#x9;-this
+&#xA;&#x9;-tab
+&#xA;&#x9;-indent
+&#xA;&#x9;-section
+&#xA;An off the shelf encoder can do this for you"
+						quality="quality-B">1.28</wdtf:timeValuePair>
+				</wdtf:TimeSeries>
+			</wdtf:result>
+		</wdtf:TimeSeriesObservation>
+	</wdtf:observationMember>
+</wdtf:HydroCollection>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swes="http://www.opengis.net/swes/2.0" targetNamespace="http://www.opengis.net/swes/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+    <include schemaLocation="swesCommon.xsd"/><!-- ================================================= -->
+    <element name="DescribeSensorResponse" substitutionGroup="swes:ExtensibleResponse" type="swes:DescribeSensorResponseType"/>
+    <complexType name="DescribeSensorResponseType">
+        <complexContent>
+            <extension base="swes:ExtensibleResponseType">
+                <sequence>
+                    <element name="procedureDescriptionFormat" type="gml:CodeType"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="description">
+                        <complexType>
+                            <sequence>
+                                <element ref="swes:SensorDescription"/>
+                            </sequence>
+                        </complexType>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="DescribeSensorResponsePropertyType">
+        <sequence minOccurs="0">
+            <element ref="swes:DescribeSensorResponse"/>
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup"/>
+        <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="DescribeSensor" substitutionGroup="swes:ExtensibleRequest" type="swes:DescribeSensorType"/>
+    <complexType name="DescribeSensorType">
+        <complexContent>
+            <extension base="swes:ExtensibleRequestType">
+                <sequence>
+                    <element name="procedureIdentifier" type="gml:CodeType"/>
+                    <element name="procedureDescriptionFormat" type="gml:CodeType"/>
+                    <element maxOccurs="1" minOccurs="0" name="validTime">
+                        <complexType>
+                            <sequence>
+                                <element ref="gml:AbstractTimeGeometricPrimitive"/>
+                            </sequence>
+                        </complexType>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="DescribeSensorPropertyType">
+        <sequence minOccurs="0">
+            <element ref="swes:DescribeSensor"/>
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup"/>
+        <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+    </complexType>
+</schema>

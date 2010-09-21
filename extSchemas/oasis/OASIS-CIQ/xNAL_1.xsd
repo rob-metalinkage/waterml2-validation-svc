@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Modified by Ram Kumar (MSI) on 24 July 2002-->
+<xs:schema targetNamespace="urn:oasis:names:tc:ciq:xsdschema:xNAL:2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:a="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" xmlns:n="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0" xmlns="urn:oasis:names:tc:ciq:xsdschema:xNAL:2.0" elementFormDefault="qualified">
+	<xs:import namespace="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0" schemaLocation="xNL.xsd"/>
+	<xs:import namespace="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" schemaLocation="xAL.xsd"/>
+	<xs:annotation>
+		<xs:documentation>xNAL: eXtensible Name and Address Language
+Original Date of Creation: 26 March 2001
+Copyright(c) 2002, OASIS. All Rights Reserved [http://www.oasis-open.org]
+Contact: Customer Information Quality Technical Committee, OASIS
+http://www.oasis-open.org/committees/ciq
+Version: 2.0 - Date of Creation: 05 May 2002
+Last Update: 24 July 2002
+Previous Version: V1.0 </xs:documentation>
+	</xs:annotation>
+	<xs:element name="xNAL" type="xNAL">
+		<xs:annotation>
+			<xs:documentation>A container for names and addresses. Any number of names can be assosiated with any number of addresses.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="xNAL">
+		<xs:sequence>
+			<xs:element ref="Record" maxOccurs="unbounded"/>
+			<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Use this to import/use/reference other elements not defined here from other namespaces </xs:documentation>
+				</xs:annotation>
+			</xs:any>
+		</xs:sequence>
+		<xs:anyAttribute namespace="##other"/>
+	</xs:complexType>
+	<xs:element name="Record">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="n:xNL" minOccurs="0"/>
+				<xs:element ref="a:xAL" minOccurs="0"/>
+				<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Use this to import/use/reference other elements not defined here from other namespaces </xs:documentation>
+					</xs:annotation>
+				</xs:any>
+			</xs:sequence>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

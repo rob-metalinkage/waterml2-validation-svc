@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" targetNamespace="http://www.opengis.net/swes/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+    <import namespace="http://www.opengis.net/swe/2.0" schemaLocation="http://schemas.opengis.net/sweCommon/2.0.0/swe.xsd"/>
+    <include schemaLocation="swesCommon.xsd"/><!-- ================================================= -->
+    <element name="InsertSensor" substitutionGroup="swes:ExtensibleRequest" type="swes:InsertSensorType"/>
+    <complexType name="InsertSensorType">
+        <complexContent>
+            <extension base="swes:ExtensibleRequestType">
+                <sequence>
+                    <element name="procedureDescriptionFormat" type="gml:CodeType"/>
+                    <element name="procedureDescription" type="anyType"/>
+                    <element maxOccurs="unbounded" minOccurs="1" name="observableProperty" type="gml:CodeType"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="relatedFeature" type="gml:FeaturePropertyType"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="metadata">
+                        <complexType>
+                            <sequence>
+                                <element ref="swes:InsertionMetadata"/>
+                            </sequence>
+                        </complexType>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="InsertSensorPropertyType">
+        <sequence minOccurs="0">
+            <element ref="swes:InsertSensor"/>
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup"/>
+        <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element abstract="true" name="InsertionMetadata" type="swes:InsertionMetadataType"/>
+    <complexType abstract="true" name="InsertionMetadataType"/>
+    <complexType name="InsertionMetadataPropertyType">
+        <sequence minOccurs="0">
+            <element ref="swes:InsertionMetadata"/>
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup"/>
+        <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="InsertSensorResponse" substitutionGroup="swes:ExtensibleResponse" type="swes:InsertSensorResponseType"/>
+    <complexType name="InsertSensorResponseType">
+        <complexContent>
+            <extension base="swes:ExtensibleResponseType">
+                <sequence>
+                    <element name="assignedProcedureIdentifier" type="gml:CodeType"/>
+                    <element name="assignedOfferingIdentifier" type="gml:CodeType"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="InsertSensorResponsePropertyType">
+        <sequence minOccurs="0">
+            <element ref="swes:InsertSensorResponse"/>
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup"/>
+        <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+    </complexType>
+</schema>

@@ -1,0 +1,25 @@
+</content>
+
+              </schema>
+
+       </schemas>
+
+       <properties>
+
+              <format>Text</format>
+
+              <phase>#DEFAULT</phase>
+
+              <diagnose>true</diagnose>
+
+              <foreign>false</foreign>
+
+              <context>recursive</context>
+
+              <parser>Native</parser>
+
+       </properties>
+
+</request>
+
+

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<request xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:csiro:schematron:request">
+
+       <document>
+
+              <content uri="basic-01.xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;contacts&gt;
+
+       &lt;person&gt;
+
+              &lt;name&gt;
+
+                     &lt;title&gt;Mr&lt;/title&gt;
+
+                     &lt;first&gt;Pavel&lt;/first&gt;
+
+                     &lt;last&gt;Golodoniuc&lt;/last&gt;
+
+              &lt;/name&gt;
+
+              &lt;gender&gt;Male&lt;/gender&gt;
+
+              &lt;company&gt;CSIRO&lt;/company&gt;
+
+       &lt;/person&gt;
+
+       &lt;person&gt;
+
+              &lt;name&gt;
+
+                     &lt;title&gt;Dr&lt;/title&gt;
+
+                     &lt;first&gt;Simon&lt;/first&gt;
+
+                     &lt;last&gt;Cox&lt;/last&gt;
+
+              &lt;/name&gt;
+
+              &lt;gender&gt;Male&lt;/gender&gt;
+
+              &lt;company&gt;CSIRO&lt;/company&gt;
+
+       &lt;/person&gt;
+
+       &lt;person&gt;
+
+              &lt;name&gt;
+
+                     &lt;title&gt;Dr&lt;/title&gt;
+
+                     &lt;first&gt;Jess&lt;/first&gt;
+
+                     &lt;last&gt;Cooper&lt;/last&gt;
+
+              &lt;/name&gt;
+
+              &lt;gender&gt;Female&lt;/gender&gt;
+
+              &lt;company&gt;Corporation&lt;/company&gt;
+
+       &lt;/person&gt;
+
+       &lt;person&gt;
+
+              &lt;name&gt;
+
+                     &lt;title&gt;Ms&lt;/title&gt;
+
+                     &lt;first&gt;Bob&lt;/first&gt;
+
+                     &lt;last&gt;Thomson&lt;/last&gt;
+
+              &lt;/name&gt;
+
+              &lt;gender&gt;Male&lt;/gender&gt;
+
+              &lt;company&gt;CSIRO&lt;/company&gt;
+
+       &lt;/person&gt;
+
+       &lt;person&gt;
+
+              &lt;name&gt;
+
+                     &lt;title&gt;Mr&lt;/title&gt;
+
+                     &lt;first&gt;Ann&lt;/first&gt;
+
+                     &lt;last&gt;Johnson&lt;/last&gt;
+
+              &lt;/name&gt;
+
+              &lt;gender&gt;Female&lt;/gender&gt;
+
+              &lt;company&gt;CSIRO&lt;/company&gt;
+
+       &lt;/person&gt;
+
+&lt;/contacts&gt;</content>
+
+       </document>
+
+       <schemas>
+
+              <schema>
+
+                     <content uri="basic-01.sch">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;schema xmlns="http://purl.oclc.org/dsdl/schematron"&gt;
+
+       &lt;p&gt;Asserts consistency between person's gender and title.&lt;/p&gt;
+
+       &lt;pattern id="title"&gt;
+
+              &lt;title&gt;Person's gender must be consistent with the title.&lt;/title&gt;
+
+              &lt;rule context="/contacts/person"&gt;
+
+                     &lt;let name="isMaleTitle" value="name/title/text() = 'Mr'" /&gt;
+
+                     &lt;let name="isFemaleTitle" value="name/title/text() = 'Ms' or name/title/text() = 'Mrs' or name/title/text() = 'Miss'" /&gt;
+
+                     &lt;assert test="not($isMaleTitle) or ($isMaleTitle and gender/text() = 'Male')" diagnostics="diag"&gt;"Mr" title may be assigned to a male only.&lt;/assert&gt;
+
+                     &lt;assert test="not($isFemaleTitle) or ($isFemaleTitle and gender/text() = 'Female')" diagnostics="diag"&gt;"&lt;value-of select="name/title" /&gt;" title may be assigned to a female only.&lt;/assert&gt;
+
+              &lt;/rule&gt;
+
+       &lt;/pattern&gt;
+
+       &lt;diagnostics&gt;
+
+              &lt;diagnostic id="diag"&gt;
+
+                     Incorrect title is used for &lt;value-of select="concat(./name/first, ' ', ./name/last)" /&gt;.
+
+              &lt;/diagnostic&gt;
+
+       &lt;/diagnostics&gt;
+
+&lt;/schema&gt;
+
+</content>
+
+              </schema>
+
+       </schemas>
+
+       <properties>
+
+              <format>Text</format>
+
+              <phase>#DEFAULT</phase>
+
+              <diagnose>true</diagnose>
+
+              <foreign>false</foreign>
+
+              <context>recursive</context>
+
+              <parser>Native</parser>
+
+       </properties>
+
+</request>
+
+

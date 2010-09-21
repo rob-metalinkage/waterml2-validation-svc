@@ -1,0 +1,9 @@
+</content>
+
+       </document>
+
+       <schemas>
+
+              <schema>
+
+                     <content uri="basic-01.sch">

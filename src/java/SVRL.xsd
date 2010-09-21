@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://purl.oclc.org/dsdl/svrl"
+    xmlns:tns="http://purl.oclc.org/dsdl/svrl"
+    elementFormDefault="qualified">
+    
+    <xsd:complexType name="schematron-output">
+        <xsd:sequence>
+            <xsd:element name="diagnostic-reference">
+                <xsd:complexType>
+                    <xsd:attribute name="diagnostic" type="xsd:string"/>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

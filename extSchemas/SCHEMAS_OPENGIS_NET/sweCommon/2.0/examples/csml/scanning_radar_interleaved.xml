@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swe:DataRecord definition="urn:ogc:def:data:CSML:ScanningRadar:Interleaved" 
+   xmlns:swe="http://www.opengis.net/swe/2.0"
+   xmlns:gml="http://www.opengis.net/gml/3.2"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xsi:schemaLocation="http://www.opengis.net/swe/2.0 ../../swe.xsd">  
+   <!-- -->
+   <swe:field name="radarLocation">
+      <swe:Vector definition="urn:ogc:def:property:OGC:SamplingLocation" referenceFrame="urn:ogc:def:crs:EPSG:7.1:4979">
+         <gml:name>Radar Location</gml:name>
+         <swe:coordinate name="lat">
+            <swe:Quantity definition="urn:ogc:def:property:OGC:GeodeticLatitude" axisID="Y">
+               <swe:uom code="deg"/>
+            </swe:Quantity>
+         </swe:coordinate>
+         <swe:coordinate name="lon">
+            <swe:Quantity definition="urn:ogc:def:property:OGC:Longitude" axisID="X">
+               <swe:uom code="deg"/>
+            </swe:Quantity>
+         </swe:coordinate>
+         <swe:coordinate name="alt">
+            <swe:Quantity definition="urn:ogc:def:property:OGC:EllipsoidalHeight" axisID="Z">
+               <swe:uom code="m"/>
+            </swe:Quantity>
+         </swe:coordinate>
+      </swe:Vector>
+   </swe:field>
+   <!-- -->
+   <swe:field name="elevation">
+      <swe:Quantity definition="urn:ogc:def:property:OGC:Angle" referenceFrame="urn:ogc:def:crs:OGC:ENU" axisID="X">
+         <gml:description>Elevation of the radar scanning beam</gml:description>
+         <gml:name>Beam Elevation</gml:name>
+         <swe:uom code="deg"/>
+      </swe:Quantity>
+   </swe:field>
+   <!-- -->
+   <swe:field name="radarData">
+      <swe:DataArray>
+         <swe:elementCount>
+            <swe:Count>
+               <swe:value>253</swe:value>
+            </swe:Count>
+         </swe:elementCount>
+         <swe:elementType name="profile">
+            <swe:DataRecord>
+               <swe:field name="azimuth">
+                  <swe:Quantity definition="urn:ogc:def:property:OGC:Angle" referenceFrame="urn:ogc:def:crs:OGC:ENU" axisID="Z">
+                     <gml:description>Azimuth of the radar scanning beam</gml:description>
+                     <gml:name>Beam Azimuth</gml:name>
+                     <swe:uom code="deg"/>
+                  </swe:Quantity>
+               </swe:field>
+               <swe:field name="profilePoints">
+                  <swe:DataArray>
+                     <swe:elementCount>
+                        <swe:Count>
+                           <swe:value>500</swe:value>
+                        </swe:Count>
+                     </swe:elementCount>
+                     <swe:elementType name="profilePoint">
+                        <swe:DataRecord>
+                           <swe:field name="rangeDistance">
+                              <swe:Quantity definition="urn:ogc:def:property:OGC:Distance" referenceFrame="urn:ogc:def:crs:OGC:ENU" axisID="R">
+                                 <gml:name>Range Distance</gml:name>
+                                 <swe:uom code="m"/>
+                              </swe:Quantity>
+                           </swe:field>
+                           <swe:field name="reflectivity">
+                              <swe:Time definition="urn:ogc:def:property:OGC:DopplerReflectivity">
+                                 <gml:name>Reflectivity</gml:name>
+                                 <swe:uom code="dBZ"/>
+                              </swe:Time>
+                           </swe:field>
+                           <swe:field name="velocity">
+                              <swe:Time definition="urn:ogc:def:property:OGC:DopplerVelocity">
+                                 <gml:name>Velocity</gml:name>
+                                 <swe:uom code="m/s"/>
+                              </swe:Time>
+                           </swe:field>
+                        </swe:DataRecord>                        
+                     </swe:elementType>
+                  </swe:DataArray>
+               </swe:field>
+            </swe:DataRecord>            
+         </swe:elementType>
+      </swe:DataArray>
+   </swe:field>
+</swe:DataRecord>

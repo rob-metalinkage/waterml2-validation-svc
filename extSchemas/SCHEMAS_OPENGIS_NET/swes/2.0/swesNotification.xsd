@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:wstop="http://docs.oasis-open.org/wsn/t-1" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:ows="http://www.opengis.net/ows/1.1" targetNamespace="http://www.opengis.net/swes/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <import namespace="http://www.w3.org/2005/08/addressing" schemaLocation="http://www.w3.org/2005/08/addressing/ws-addr.xsd"/>
+  <import namespace="http://docs.oasis-open.org/wsn/t-1" schemaLocation="http://docs.oasis-open.org/wsn/t-1.xsd"/>
+  <import namespace="http://www.opengis.net/ows/1.1" schemaLocation="http://schemas.opengis.net/ows/1.1.0/owsAll.xsd"/>
+  <include schemaLocation="swesCommon.xsd"/>
+  <!-- ================================================= -->
+  <element name="NotificationProducerMetadata" type="swes:NotificationProducerMetadataType" substitutionGroup="swes:AbstractSWES"/>
+  <complexType name="NotificationProducerMetadataType">
+    <complexContent>
+      <extension base="swes:AbstractSWESType">
+        <sequence>
+          <element name="producerEndpoint">
+            <complexType>
+              <sequence>
+                <element ref="wsa:EndpointReference"/>
+              </sequence>
+            </complexType>
+          </element>
+          <element name="supportedDialects">
+            <complexType>
+              <sequence>
+                <element ref="swes:FilterDialectMetadata"/>
+              </sequence>
+            </complexType>
+          </element>
+          <element name="fixedTopicSet" type="boolean"/>
+          <element name="servedTopics">
+            <complexType>
+              <sequence>
+                <element ref="wstop:TopicSet"/>
+              </sequence>
+            </complexType>
+          </element>
+          <element name="usedTopicNamespace" type="swes:TopicNamespacePropertyType" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="NotificationProducerMetadataPropertyType">
+    <sequence minOccurs="0">
+      <element ref="swes:NotificationProducerMetadata"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <element name="NotificationBrokerMetadata" type="swes:NotificationBrokerMetadataType" substitutionGroup="swes:NotificationProducerMetadata"/>
+  <complexType name="NotificationBrokerMetadataType">
+    <complexContent>
+      <extension base="swes:NotificationProducerMetadataType">
+        <sequence>
+          <element name="requiresRegistration" type="boolean"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="NotificationBrokerMetadataPropertyType">
+    <sequence minOccurs="0">
+      <element ref="swes:NotificationBrokerMetadata"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <element name="SWESEvent" type="swes:SWESEventType" substitutionGroup="swes:AbstractSWES"/>
+  <complexType name="SWESEventType">
+    <complexContent>
+      <extension base="swes:AbstractSWESType">
+        <sequence>
+          <element name="eventTime" type="dateTime"/>
+          <element name="code" type="gml:CodeType">
+            <annotation>
+              <appinfo>
+                <gml:defaultCodeSpace>http://www.opengis.net/swes/2.0</gml:defaultCodeSpace>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="message" type="ows:LanguageStringType" minOccurs="0" maxOccurs="unbounded"/>
+          <element name="service">
+            <complexType>
+              <sequence>
+                <element ref="wsa:EndpointReference"/>
+              </sequence>
+            </complexType>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SWESEventPropertyType">
+    <sequence minOccurs="0">
+      <element ref="swes:SWESEvent"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <element name="SensorChanged" type="swes:SensorChangedType" substitutionGroup="swes:SWESEvent"/>
+  <complexType name="SensorChangedType">
+    <complexContent>
+      <extension base="swes:SWESEventType">
+        <sequence>
+          <element name="procedureIdentifier" type="gml:CodeType"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SensorChangedPropertyType">
+    <sequence minOccurs="0">
+      <element ref="swes:SensorChanged"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <element name="FilterDialectMetadata" type="swes:FilterDialectMetadataType" substitutionGroup="swes:AbstractSWES"/>
+  <complexType name="FilterDialectMetadataType">
+    <complexContent>
+      <extension base="swes:AbstractSWESType">
+        <sequence>
+          <element name="topicExpressionDialect" type="gml:CodeType" minOccurs="0" maxOccurs="unbounded"/>
+          <element name="messageContentDialect" type="gml:CodeType" minOccurs="0" maxOccurs="unbounded"/>
+          <element name="producerPropertiesDialect" type="gml:CodeType" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FilterDialectMetadataPropertyType">
+    <sequence minOccurs="0">
+      <element ref="swes:FilterDialectMetadata"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <element name="OfferingChanged" type="swes:OfferingChangedType" substitutionGroup="swes:SWESEvent"/>
+  <complexType name="OfferingChangedType">
+    <complexContent>
+      <extension base="swes:SWESEventType">
+        <sequence>
+          <element name="offeringIdentifier" type="gml:CodeType" minOccurs="0"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="OfferingChangedPropertyType">
+    <sequence minOccurs="0">
+      <element ref="swes:OfferingChanged"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <element name="SensorDescriptionUpdated" type="swes:SensorDescriptionUpdatedType" substitutionGroup="swes:SensorChanged"/>
+  <complexType name="SensorDescriptionUpdatedType">
+    <complexContent>
+      <extension base="swes:SensorChangedType">
+        <sequence>
+          <element name="validTime" minOccurs="0">
+            <complexType>
+              <sequence>
+                <element ref="gml:AbstractTimeGeometricPrimitive"/>
+              </sequence>
+            </complexType>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SensorDescriptionUpdatedPropertyType">
+    <sequence minOccurs="0">
+      <element ref="swes:SensorDescriptionUpdated"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <!-- ================================================= -->
+  <complexType name="TopicNamespacePropertyType">
+    <sequence minOccurs="0">
+      <element ref="wstop:TopicNamespace"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+</schema>

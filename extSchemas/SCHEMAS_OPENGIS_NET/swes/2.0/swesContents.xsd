@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" targetNamespace="http://www.opengis.net/swes/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+    <import namespace="http://www.opengis.net/swe/2.0" schemaLocation="http://schemas.opengis.net/sweCommon/2.0.0/swe.xsd"/>
+    <include schemaLocation="swesCommon.xsd"/><!-- ================================================= -->
+    <element abstract="true" name="AbstractOffering" substitutionGroup="swes:AbstractSWES" type="swes:AbstractOfferingType"/>
+    <complexType abstract="true" name="AbstractOfferingType">
+        <complexContent>
+            <extension base="swes:AbstractSWESType">
+                <sequence>
+                    <element name="procedureIdentifier" type="gml:CodeType"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="procedureDescriptionFormat" type="gml:CodeType"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="observableProperty" type="gml:CodeType"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="relatedFeature" type="gml:FeaturePropertyType">
+                        <annotation>
+                            <documentation>feature that is directly or indirectly observed / observable by the procedure; can be any feature that the service provider thinks the procedure can make valuable observations for</documentation>
+                        </annotation>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="AbstractOfferingPropertyType">
+        <sequence minOccurs="0">
+            <element ref="swes:AbstractOffering"/>
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup"/>
+        <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element abstract="true" name="AbstractContents" substitutionGroup="swes:AbstractSWES" type="swes:AbstractContentsType"/>
+    <complexType abstract="true" name="AbstractContentsType">
+        <complexContent>
+            <extension base="swes:AbstractSWESType">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="procedureDescriptionFormat" type="gml:CodeType"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="observableProperty" type="gml:CodeType"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="relatedFeature" type="gml:FeaturePropertyType">
+                        <annotation>
+                            <documentation>feature that is directly or indirectly observed / observable by the procedure; can be any feature that the service provider thinks the procedure can make valuable observations for</documentation>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="offering">
+                        <annotation>
+                            <documentation>contains metadata about a procedure / sensor hosted by the service</documentation>
+                        </annotation>
+                        <complexType>
+                            <sequence>
+                                <element ref="swes:AbstractOffering"/>
+                            </sequence>
+                        </complexType>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="AbstractContentsPropertyType">
+        <sequence minOccurs="0">
+            <element ref="swes:AbstractContents"/>
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup"/>
+        <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+    </complexType>
+</schema>

@@ -1,0 +1,600 @@
+<?xml version="1.0"?>
+<xNAL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNAL:2.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:a="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" 
+xmlns:n="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0" xsi:schemaLocation="urn:oasis:names:tc:ciq:xsdschema:xNAL:2.0 xNAL.xsd">
+	<Record>
+		<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+			<NameDetails PartyType="Person">
+				<PersonName>
+					<Title>Mr</Title>
+					<FirstName NameType="GivenName">Ram</FirstName>
+					<MiddleName Type="Initial">V</MiddleName>
+					<LastName NameType="SurName">Kumar</LastName>
+				</PersonName>
+				<DependencyName PartyType="Organisation" DependencyType="C/O">
+					<OrganisationNameDetails>
+						<NameLine>PrivacyLink</NameLine>
+					</OrganisationNameDetails>
+				</DependencyName>
+			</NameDetails>
+		</xNL>
+		<xAL xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+			<!-- POBox: 773, Chatswood,NSW 2057, Australia -->
+			<AddressDetails AddressType="Postal" CurrentStatus="Investment" ValidFromDate="1 Jan 2000" ValidToDate="31 March 2000">
+				<Country>
+					<CountryName>Australia</CountryName>
+					<AdministrativeArea Type="State">
+						<AdministrativeAreaName>NSW</AdministrativeAreaName>
+						<Locality>
+							<LocalityName>CHATSWOOD</LocalityName>
+							<PostBox Type="POBox">
+								<PostBoxNumber>773</PostBoxNumber>
+								<PostalCode>
+									<PostalCodeNumber>2057</PostalCodeNumber>
+								</PostalCode>
+							</PostBox>
+						</Locality>
+					</AdministrativeArea>
+				</Country>
+			</AddressDetails>
+		</xAL>
+	</Record>
+	<!-- Captain James Ruddock, C/O Australian Armed Forces in East Timor -->
+	<Record>
+		<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+			<NameDetails PartyType="Person">
+				<PersonName>
+					<Title>Captain</Title>
+					<FirstName>James</FirstName>
+					<LastName>Ruddock</LastName>
+				</PersonName>
+				<DependencyName PartyType="Organisation" DependencyType="C/O">
+					<OrganisationNameDetails Type="Militiary">
+						<OrganisationName>Australian Armed Forces</OrganisationName>
+					</OrganisationNameDetails>
+				</DependencyName>
+			</NameDetails>
+		</xNL>
+		<xAL xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+			<AddressDetails>
+				<Country>
+					<CountryName>East Timor</CountryName>
+				</Country>
+			</AddressDetails>
+		</xAL>
+	</Record>
+	<!-- Professor and Chairman, School of Computer Science and Engineering,
+      Asian Institute of Technology, G.P.O. Box 4, Klong Luang, 
+      Pathumthani 12120, Thailand -->
+	<Record>
+		<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+			<NameDetails PartyType="Person">
+				<Function>Professor and Chairman</Function>
+			</NameDetails>
+		</xNL>
+		<xAL xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+			<AddressDetails>
+				<Country>
+					<CountryName>Thailand</CountryName>
+					<AdministrativeArea Type="Province">
+						<AdministrativeAreaName>Pathumthani</AdministrativeAreaName>
+						<Locality Type="District">
+							<LocalityName>Klong Luang</LocalityName>
+							<PostBox Type="G.P.O">
+								<PostBoxNumber>4</PostBoxNumber>
+								<Firm Type="University">
+									<FirmName>Asian Institute Of Technology</FirmName>
+									<Department>
+										<DepartmentName>School of Computer Science and Engineering</DepartmentName>
+									</Department>
+								</Firm>
+							</PostBox>
+							<PostalCode>
+								<PostalCodeNumber>12120</PostalCodeNumber>
+							</PostalCode>
+						</Locality>
+					</AdministrativeArea>
+				</Country>
+			</AddressDetails>
+		</xAL>
+	</Record>
+	<!--           
+		ATTN THE MANAGER
+		FLORIDA SHOPPING MALL
+		287 VICTORIA STREET
+		MIAMI FLORIDA 33136
+	-->
+	<Record>
+		<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+			<NameDetails PartyType="Person">
+				<AddresseeIndicator>ATTN</AddresseeIndicator>
+				<Function>THE MANAGER</Function>
+			</NameDetails>
+		</xNL>
+		<xAL xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+			<AddressDetails>
+				<AdministrativeArea>
+					<AdministrativeAreaName>FLORIDA</AdministrativeAreaName>
+					<Locality>
+						<LocalityName>MIAMI</LocalityName>
+						<Thoroughfare>
+							<ThoroughfareNumber>287</ThoroughfareNumber>
+							<ThoroughfareName>VICTORIA</ThoroughfareName>
+							<ThoroughfareTrailingType>STREET</ThoroughfareTrailingType>
+							<Premise Type="SHOPPING MALL">
+								<PremiseName TypeOccurrence="After">FLORIDA</PremiseName>
+							</Premise>
+						</Thoroughfare>
+						<PostalCode>
+							<PostalCodeNumber>33136</PostalCodeNumber>
+						</PostalCode>
+					</Locality>
+				</AdministrativeArea>
+			</AddressDetails>
+		</xAL>
+	</Record>
+	<!--  K.S.Palanisamy Gounder, Balu Illam,
+         Attukkaaran Thottam, Karattoor, Kuppandapalayam (P.O)
+         Via-Athani, Kovai District, 638012, Tamilnadu, India
+ -->
+	<Record>
+		<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+			<NameDetails PartyType="Person">
+				<PersonName>
+					<FirstName Type="Initial">K</FirstName>
+					<MiddleName Type="Initial">S</MiddleName>
+					<MiddleName>Palanisamy</MiddleName>
+					<LastName>Gounder</LastName>
+				</PersonName>
+			</NameDetails>
+		</xNL>
+		<xAL xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+			<AddressDetails>
+				<Country>
+					<CountryName>India</CountryName>
+					<AdministrativeArea Type="State">
+						<AdministrativeAreaName>Tamilnadu</AdministrativeAreaName>
+						<SubAdministrativeArea Type="District" Indicator="(Dist)">
+							<SubAdministrativeAreaName>Kovai</SubAdministrativeAreaName>
+						</SubAdministrativeArea>
+						<Locality>
+							<LocalityName>Athani</LocalityName>
+							<PostOffice Indicator="(P.O)">
+								<PostOfficeName>Kuppaandapalayam</PostOfficeName>
+								<PostalCode>
+									<PostalCodeNumber>638012</PostalCodeNumber>
+								</PostalCode>
+							</PostOffice>
+							<DependentLocality Type="Town" Connector="Via">
+								<DependentLocalityName>Karattoor</DependentLocalityName>
+								<Premise Type="Farm">
+									<PremiseName>Attukkaaran Thottam</PremiseName>
+									<SubPremise Type="House">
+										<SubPremiseName>Balu Illam</SubPremiseName>
+									</SubPremise>
+								</Premise>
+							</DependentLocality>
+						</Locality>
+					</AdministrativeArea>
+				</Country>
+			</AddressDetails>
+		</xAL>
+	</Record>
+	<!-- Jessica Wood
+      Standard Chartered Bank  
+      30th Floor, Standard Chartered Tower
+      388 Kwun Tong Rd, Kwun Tong
+      Hong Kong
+ -->
+	<Record>
+		<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+			<NameDetails PartyType="Person">
+				<PersonName>
+					<FirstName>Jessica</FirstName>
+					<LastName>Wood</LastName>
+				</PersonName>
+			</NameDetails>
+		</xNL>
+		<xAL xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+			<AddressDetails>
+				<Country>
+					<CountryName>Hong Kong</CountryName>
+					<Locality>
+						<LocalityName>Kwun Tong</LocalityName>
+						<Thoroughfare>
+							<ThoroughfareNumber>388</ThoroughfareNumber>
+							<ThoroughfareName>Kwun Tong</ThoroughfareName>
+							<ThoroughfareTrailingType>Rd</ThoroughfareTrailingType>
+							<Premise Type="Building">
+								<PremiseName>Standard Chartered Tower</PremiseName>
+								<SubPremise Type="Floor">
+									<SubPremiseNumber>30</SubPremiseNumber>
+									<Firm Type="Bank">
+										<FirmName>Standard Chartered Bank</FirmName>
+									</Firm>
+								</SubPremise>
+							</Premise>
+						</Thoroughfare>
+					</Locality>
+				</Country>
+			</AddressDetails>
+		</xAL>
+	</Record>
+	<!-- Juci & Duso Arnon           Arnon is the surname
+Gaaton                               A Kibbutz [collective farming community]
+DN Ashrat   25130           Mobile Post   Ashrat with Post code 25130
+ISRAEL -->
+	<Record>
+		<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+			<NameDetails PartyType="Person">
+				<NameLine NameType="Joint Name">Juch and Duso Arnon</NameLine>
+			</NameDetails>
+		</xNL>
+		<xAL xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+			<AddressDetails>
+				<Country>
+					<CountryName>ISRAEL</CountryName>
+					<Locality Type="Collective Farming Community">
+						<LocalityName>Gaaton A Kibbutz</LocalityName>
+						<PostOffice Type="Mobile Post">
+							<PostalRoute>
+								<PostalRouteName>DN Ashrat</PostalRouteName>
+							</PostalRoute>
+						</PostOffice>
+						<PostalCode>
+							<PostalCodeNumber>25130</PostalCodeNumber>
+						</PostalCode>
+					</Locality>
+				</Country>
+			</AddressDetails>
+		</xAL>
+	</Record>
+	<!--	C/ W A GORRY AND CO STE 140     
+        14TH FL MLC CENTRE  
+        CNR GEORGE & ADELAIDE STS
+        BRISBANE   QLD   4000
+-->
+	<Record>
+		<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+			<NameDetails PartyType="Organisation">
+				<DependencyName DependencyType="C/">
+					<OrganisationNameDetails>
+						<NameLine>W A GORRY AND CO</NameLine>
+					</OrganisationNameDetails>
+				</DependencyName>
+			</NameDetails>
+		</xNL>
+		<xAL xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+			<AddressDetails>
+				<AdministrativeArea>
+					<AdministrativeAreaName>QLD</AdministrativeAreaName>
+					<Locality>
+						<LocalityName>BRISBANE</LocalityName>
+						<Thoroughfare DependentThoroughfares="Yes" DependentThoroughfaresIndicator="CORNER OF" DependentThoroughfaresConnector="AND" DependentThoroughfaresType="STS">
+							<ThoroughfareName>GEORGE</ThoroughfareName>
+							<DependentThoroughfare>
+								<ThoroughfareName>ADELAIDE</ThoroughfareName>
+							</DependentThoroughfare>
+							<Premise Type="Building">
+								<PremiseName>MLC CENTRE</PremiseName>
+								<SubPremise Type="FL">
+									<SubPremiseNumber Indicator="TH" IndicatorOccurrence="After" NumberTypeOccurrence="Before">14</SubPremiseNumber>
+									<SubPremise Type="STE">
+										<SubPremiseNumber NumberTypeOccurrence="After">140</SubPremiseNumber>
+									</SubPremise>
+								</SubPremise>
+							</Premise>
+						</Thoroughfare>
+						<PostalCode>
+							<PostalCodeNumber>4000</PostalCodeNumber>
+						</PostalCode>
+					</Locality>
+				</AdministrativeArea>
+			</AddressDetails>
+		</xAL>
+	</Record>
+	<!-- Egon Beispiel
+       Zypressenweg 11
+       DE-22605 Hamburg
+       GERMANY
+  -->
+	<Record>
+		<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+			<NameDetails PartyType="Person">
+				<PersonName>
+					<FirstName NameType="GivenName">Egon</FirstName>
+					<LastName NameType="SurName">Beispiel</LastName>
+				</PersonName>
+			</NameDetails>
+		</xNL>
+		<xAL xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+			<AddressDetails>
+				<Country>
+					<CountryNameCode Scheme="ISO 3166-1">DE</CountryNameCode>
+					<CountryName>GERMANY</CountryName>
+					<Locality Type="Town">
+						<LocalityName>Hamburg</LocalityName>
+						<Thoroughfare>
+							<ThoroughfareNumber>11</ThoroughfareNumber>
+							<ThoroughfareName>Zypressenweg</ThoroughfareName>
+						</Thoroughfare>
+						<PostalCode>
+							<PostalCodeNumber>22605</PostalCodeNumber>
+						</PostalCode>
+					</Locality>
+				</Country>
+			</AddressDetails>
+		</xAL>
+	</Record>
+	<!-- Pilar Vasquez
+       c/o Luis Gomez
+       Calle Agazador, 23
+       Molino de la Hoz
+       Las Rosas
+       ES-28230 MADRID
+       SPAIN
+  -->
+	<Record>
+		<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+			<NameDetails PartyType="Person">
+				<PersonName>
+					<FirstName NameType="GivenName">Pilar</FirstName>
+					<LastName NameType="SurName">Vasquez</LastName>
+				</PersonName>
+				<DependencyName PartyType="Person" DependencyType="c/o">
+					<PersonName>
+						<FirstName NameType="GivenName">Luis</FirstName>
+						<LastName NameType="SurName">Gomez</LastName>
+					</PersonName>
+				</DependencyName>
+			</NameDetails>
+		</xNL>
+		<xAL xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+			<AddressDetails>
+				<Country>
+					<CountryNameCode>ES</CountryNameCode>
+					<CountryName>SPAIN</CountryName>
+					<Locality Type="Proximate Town">
+						<LocalityName>MADRID</LocalityName>
+						<DependentLocality Type="Town">
+							<DependentLocalityName>Las Rosas</DependentLocalityName>
+							<DependentLocality Type="District">
+								<DependentLocalityName>Molino de la Hoz</DependentLocalityName>
+								<Thoroughfare>
+									<ThoroughfareNumber>23</ThoroughfareNumber>
+									<ThoroughfareLeadingType>Calle</ThoroughfareLeadingType>
+									<ThoroughfareName>Agazador</ThoroughfareName>
+								</Thoroughfare>
+							</DependentLocality>
+						</DependentLocality>
+						<PostalCode>
+							<PostalCodeNumber>28230</PostalCodeNumber>
+						</PostalCode>
+					</Locality>
+				</Country>
+			</AddressDetails>
+		</xAL>
+	</Record>
+	<!-- Matti Manninen
+       Makelankatu 25 B 13
+       FI-00550 HELSINKI
+       FINLAND
+  -->
+	<Record>
+		<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+			<NameDetails PartyType="Person">
+				<PersonName>
+					<FirstName NameType="GivenName">Matti</FirstName>
+					<LastName NameType="SurName">Manninen</LastName>
+				</PersonName>
+			</NameDetails>
+		</xNL>
+		<xAL xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+			<AddressDetails>
+				<Country>
+					<CountryNameCode Scheme="ISO 3166-1">FI</CountryNameCode>
+					<CountryName>FINLAND</CountryName>
+					<Locality Type="Town">
+						<LocalityName>HELSINKI</LocalityName>
+						<Thoroughfare>
+							<ThoroughfareNumber>25</ThoroughfareNumber>
+							<ThoroughfareName>Makelankatu</ThoroughfareName>
+							<Premise Type="House">
+								<PremiseNumber>B</PremiseNumber>
+								<PremiseNumberSuffix>13</PremiseNumberSuffix>
+							</Premise>
+						</Thoroughfare>
+						<PostalCode>
+							<PostalCodeNumber>00550</PostalCodeNumber>
+						</PostalCode>
+					</Locality>
+				</Country>
+			</AddressDetails>
+		</xAL>
+	</Record>
+	<!-- La Poste
+       Service Natiolan de l'Adresse
+       103 B Avenue Louis Didier
+       BP 238
+       FR-33506 LIBOURNE CEDEX
+       FRANCE
+ -->
+	<Record>
+		<xAL xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+			<AddressDetails>
+				<Country>
+					<CountryNameCode>FR</CountryNameCode>
+					<CountryName>FRANCE</CountryName>
+					<Locality Type="Town">
+						<LocalityName>LIBOURNE</LocalityName>
+						<LargeMailUser>
+							<LargeMailUserIdentifier>CEDEX</LargeMailUserIdentifier>
+							<PostBox Type="BP">
+								<PostBoxNumber>238</PostBoxNumber>
+							</PostBox>
+							<Thoroughfare Type="Avenue">
+								<ThoroughfareNumber>103</ThoroughfareNumber>
+								<ThoroughfareNumberSuffix>B</ThoroughfareNumberSuffix>
+								<ThoroughfareLeadingType>Avenue</ThoroughfareLeadingType>
+								<ThoroughfareName>Louis Didier</ThoroughfareName>
+							</Thoroughfare>
+						</LargeMailUser>
+						<PostalCode>
+							<PostalCodeNumber>33506</PostalCodeNumber>
+						</PostalCode>
+					</Locality>
+				</Country>
+			</AddressDetails>
+		</xAL>
+	</Record>
+	<!-- Mr. John W. Smith
+       Russell House
+       4395 Station Road
+       Porchester
+       FAREHAM
+       PO16 8BQ
+       UNITED KINGDOM
+  -->
+	<Record>
+		<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+			<NameDetails PartyType="Person">
+				<PersonName>
+					<Title>Mr</Title>
+					<FirstName NameType="GivenName">John</FirstName>
+					<MiddleName Type="Initial">W</MiddleName>
+					<LastName NameType="SurName">Smith</LastName>
+				</PersonName>
+			</NameDetails>
+		</xNL>
+		<xAL xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+			<AddressDetails>
+				<Country>
+					<CountryNameCode Scheme="ISO 3166-1">DE</CountryNameCode>
+					<CountryName>UNITED KINGDOM</CountryName>
+					<Locality Type="Proximate Town">
+						<LocalityName>FAREHAM</LocalityName>
+						<DependentLocality Type="Town">
+							<DependentLocalityName>Porchester</DependentLocalityName>
+							<Thoroughfare>
+								<ThoroughfareNumber>11</ThoroughfareNumber>
+								<ThoroughfareName>Zypressenweg</ThoroughfareName>
+								<Premise Type="Building">
+									<PremiseName>Russell House</PremiseName>
+								</Premise>
+							</Thoroughfare>
+						</DependentLocality>
+						<PostalCode>
+							<PostalCodeNumber>PO16 8BQ</PostalCodeNumber>
+						</PostalCode>
+					</Locality>
+				</Country>
+			</AddressDetails>
+		</xAL>
+	</Record>
+	<!-- PTT Post BV
+       t.a.v. de heer W Klein
+       POSTBUS 30250
+       NL-2500 GG HAAG
+       THE NETHERLANDS
+  -->
+	<Record>
+		<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+			<NameDetails PartyType="Organisation">
+				<OrganisationNameDetails Type="legal">
+					<OrganisationName>PTT Post</OrganisationName>
+					<OrganisationType>BV</OrganisationType>
+				</OrganisationNameDetails>
+				<DependencyName PartyType="Person" DependencyType="t.a.v">
+					<PersonName>
+						<PrecedingTitle>De heer</PrecedingTitle>
+						<FirstName NameType="GivenName" Type="Initial">W</FirstName>
+						<LastName NameType="SurName">Klein</LastName>
+					</PersonName>
+				</DependencyName>
+			</NameDetails>
+		</xNL>
+		<xAL xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+			<AddressDetails>
+				<Country>
+					<CountryNameCode>NL</CountryNameCode>
+					<CountryName>THE NETHERLANDS</CountryName>
+					<Locality Type="Town">
+						<LocalityName>DEN HAAG</LocalityName>
+						<LargeMailUser>
+							<LargeMailUserName>POSTBUS</LargeMailUserName>
+							<LargeMailUserIdentifier>30250</LargeMailUserIdentifier>
+						</LargeMailUser>
+						<PostalCode>
+							<PostalCodeNumber>2500 GG</PostalCodeNumber>
+						</PostalCode>
+					</Locality>
+				</Country>
+			</AddressDetails>
+		</xAL>
+	</Record>
+	<!-- CTT - Correios de Portugal, SA
+       Rua de S. Jose, 20
+       PT-1166-001 LISBOA
+       PORTUGAL
+  -->
+	<Record>
+		<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+			<NameDetails PartyType="Organisation">
+				<OrganisationNameDetails>
+					<OrganisationName>CTT - Correios de Portugal</OrganisationName>
+					<OrganisationType>SA</OrganisationType>
+				</OrganisationNameDetails>
+			</NameDetails>
+		</xNL>
+		<xAL xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+			<AddressDetails>
+				<Country>
+					<CountryNameCode>PT</CountryNameCode>
+					<CountryName>PORTUGAL</CountryName>
+					<Locality Type="Town">
+						<LocalityName>LISBOA</LocalityName>
+						<Thoroughfare>
+							<ThoroughfareNumber>20</ThoroughfareNumber>
+							<ThoroughfareName>Rua de S. Jose</ThoroughfareName>
+						</Thoroughfare>
+						<PostalCode>
+							<PostalCodeNumber>1166-001</PostalCodeNumber>
+						</PostalCode>
+					</Locality>
+				</Country>
+			</AddressDetails>
+		</xAL>
+	</Record>
+	<!-- Sven Nilsson
+       Nybyn 10
+       SE-234 56 Lillbyn
+       SWEDEN
+  -->
+	<Record>
+		<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+			<NameDetails PartyType="Person">
+				<PersonName>
+					<FirstName NameType="GivenName">Sven</FirstName>
+					<LastName NameType="SurName">Nilsson</LastName>
+				</PersonName>
+			</NameDetails>
+		</xNL>
+		<xAL xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+			<AddressDetails>
+				<Country>
+					<CountryNameCode Scheme="ISO 3166-1">SE</CountryNameCode>
+					<CountryName>SWEDEN</CountryName>
+					<Locality Type="Town">
+						<Thoroughfare>
+							<ThoroughfareNumber>10</ThoroughfareNumber>
+							<ThoroughfareName>Nybyn</ThoroughfareName>
+						</Thoroughfare>
+						<PostalCode>
+							<PostalCodeNumber>234 56</PostalCodeNumber>
+						</PostalCode>
+					</Locality>
+				</Country>
+			</AddressDetails>
+		</xAL>
+	</Record>
+</xNAL>

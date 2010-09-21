@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Modified by Ram Kumar (MSI) on 24 July 2002-->
+<xs:schema targetNamespace="urn:oasis:names:tc:ciq:xsdschema:xCRL:2.0" xmlns:i="urn:oasis:names:tc:ciq:xsdschema:xCIL:2.0" xmlns:n="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0" xmlns:a="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" xmlns="urn:oasis:names:tc:ciq:xsdschema:xCRL:2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0" schemaLocation="xNL.xsd"/>
+	<xs:import namespace="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" schemaLocation="xAL.xsd"/>
+	<xs:import namespace="urn:oasis:names:tc:ciq:xsdschema:xCIL:2.0" schemaLocation="xCIL.xsd"/>
+	<xs:annotation>
+		<xs:documentation>xCRL: eXtensible Customer Relationships Language
+This is an XML Schema for xCRL V1.1
+Original Date of Creation: 16 November 2001
+Copyright(c) 2001, OASIS. All Rights Reserved [http://www.oasis-open.org]
+Contact: Customer Information Quality Technical Committee, OASIS
+http://www.oasis-open.org/committees/ciq
+Version: 1.1 - Date of Creation: 01 May 2002
+Last Update: 24 July 2002
+Previous Version: 1.0</xs:documentation>
+	</xs:annotation>
+	<xs:element name="xCRL">
+		<xs:annotation>
+			<xs:documentation>Root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RelationshipRecord" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Reflects single or multiple relationships between one  or more customers. If more than one customer say, Mrs Shantha Ramkumar and Mr.Ramkumar, then use the attributes to define that this is more than one customer and the group type is say, "Joint customer"</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="Customer" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="InRelationshipWith" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+						<xs:attribute name="RelationshipRecordKey">
+							<xs:annotation>
+								<xs:documentation>Key identifier for the element for not reinforced references from other elements. Not required to be unique for the document to be valid, but application may get confused if not unique. Extend this schema adding unique contraint if needed.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="Version">
+				<xs:annotation>
+					<xs:documentation>Used for compatibility with DTD</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Customer">
+		<xs:annotation>
+			<xs:documentation>One record from xCIL representing a customer. Here a Customer can be defined or a group of Customers say, Joint Customers, ie. Eg. Customer "A" or Group "A" of Customers</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="i:Record">
+					<xs:sequence>
+						<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="InRelationshipWith" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InRelationshipWith">
+		<xs:annotation>
+			<xs:documentation>Primary Customer element is in relationship with a Secondary Customer or a group of secondary customers. Eg. Customer "A" or Group "A" of Customers are "InRelationshipWith" Customer "B" or a group "B" of Customers.  Group "B" of Customers or Customer "B" are "InRelationshipWith" Group "C" of Customers or Customer "C" and so on... Customer "A" is Primary Customer and Customer "B" is Secondary Customer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Customer" maxOccurs="unbounded"/>
+				<xs:element name="RelationshipInformation" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Description of the relationship. Direction: Primary Customer(s) to Secondary Customer(s).</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="RelationshipTitle" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Relationship Title between Primary and Secondary Customer. Eg.:  in trust for, doing business as, trading as, etc</xs:documentation>
+								</xs:annotation>
+								<xs:complexType mixed="true">
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="PrimaryCustomerRelationshipTitle" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Relationship Title of the Primary Customer with the Secondary Customer. Example: Customer A "In Trust For" Customer B. Here Customer A is the Primary Customer and the title is "Trustee"</xs:documentation>
+								</xs:annotation>
+								<xs:complexType mixed="true">
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SecondaryCustomerRelationshipTitle" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Relationship Title of the Secondary Customer with the Primary Customer. Example: Customer A "In Trust For" Customer B. Here Customer B is the Secondary Customer and the title is "Trustee"</xs:documentation>
+								</xs:annotation>
+								<xs:complexType mixed="true">
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="RelationshipNature" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Relationship nature between Primary and Secondary Customers. Direction: Primary to Secondary Customer. Example: Formal, Informal, Legal, Illegal, Business Contact, Personal Contact, Personal, etc</xs:documentation>
+								</xs:annotation>
+								<xs:complexType mixed="true">
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="CommonEntities" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Customer centric data that are common to/shared by both Primary and Secondary Customers. Example: Telephone, account, email, postal address, etc</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:choice>
+										<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+										<xs:element ref="a:AddressDetails" minOccurs="0"/>
+										<xs:choice minOccurs="0">
+											<xs:element ref="i:PersonInfo"/>
+											<xs:element ref="i:OrganisationInfo"/>
+										</xs:choice>
+										<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:choice>
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="RelationshipPrivilege" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Privilee level: Gold Customer, Silver Customer, etc</xs:documentation>
+								</xs:annotation>
+								<xs:complexType mixed="true">
+									<xs:attribute name="Type">
+										<xs:annotation>
+											<xs:documentation>Type of priviledge</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="RelationshipEstablishedDate" type="i:Date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Date of establishment of the relationship</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="RelationshipStatus" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Potential Customer, Former Customer, Current Customer, etc. </xs:documentation>
+								</xs:annotation>
+								<xs:complexType mixed="true">
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="RelationshipLapsedDate" type="i:Date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Date the relationship lapsed</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="RelationshipLapsedReason" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Reason for the relationship lapse. Eg. Contract expired, etc</xs:documentation>
+								</xs:annotation>
+								<xs:complexType mixed="true">
+									<xs:attribute name="Type">
+										<xs:annotation>
+											<xs:documentation>Type of reason</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="RelationshipSuspendedDate" type="i:Date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Date of suspension of relationship</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="RelationshipSuspendedReason" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Reason for suspension of relationship. Example: Unpaid bills</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="Type">
+										<xs:annotation>
+											<xs:documentation>Type of reason</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element ref="Account" minOccurs="0"/>
+							<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ContactHistory" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Information on who, how and when contacted the customer.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="ContactDetails" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Contact details as structured information.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+										<xs:element name="ContactDate" type="i:Date" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Date of contact</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="ContactTime" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Time of contact</xs:documentation>
+											</xs:annotation>
+											<xs:complexType mixed="true">
+												<xs:attribute name="TimeType">
+													<xs:annotation>
+														<xs:documentation>12HR, 24HR, etc.</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element ref="n:NameDetails" minOccurs="0"/>
+										<xs:element name="ContactVenue" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Where the contact happens</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+													<xs:element ref="i:ContactNumbers" minOccurs="0"/>
+													<xs:element ref="a:AddressDetails" minOccurs="0"/>
+													<xs:element ref="i:EmailAddresses" minOccurs="0"/>
+													<xs:element ref="i:URL" minOccurs="0"/>
+												</xs:sequence>
+												<xs:anyAttribute namespace="##other"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="ContactDescription" minOccurs="0" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Additional contact information.</xs:documentation>
+											</xs:annotation>
+											<xs:complexType mixed="true">
+												<xs:attribute name="Type">
+													<xs:annotation>
+														<xs:documentation>Type of contact description</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:anyAttribute namespace="##other"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="ContactMode" minOccurs="0" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Mode of contact. Example: In person, Phone, e-mail, fax, etc</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="Type">
+													<xs:annotation>
+														<xs:documentation>Type of contact mode</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:anyAttribute namespace="##other"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:any namespace="##other" minOccurs="0"/>
+						</xs:sequence>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="UpdateHistory" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Information of the last update for this information.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="UpdateDetails" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Stuctured information about update: who updated and when.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+										<xs:element name="UpdateDate" type="i:Date" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Date updated</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="UpdateTime" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Time of update</xs:documentation>
+											</xs:annotation>
+											<xs:complexType mixed="true">
+												<xs:attribute name="TimeType">
+													<xs:annotation>
+														<xs:documentation>12HR, 24HR, etc.</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element ref="n:NameDetails" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Person who updated the information.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="UpdateDescription" minOccurs="0" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Additional contact information.</xs:documentation>
+											</xs:annotation>
+											<xs:complexType mixed="true">
+												<xs:attribute name="Type">
+													<xs:annotation>
+														<xs:documentation>Type of update</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:anyAttribute namespace="##other"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="InRelationshipWith" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="RelationshipRecordKeyRef">
+				<xs:annotation>
+					<xs:documentation>Use this element to break up the chain of deeply nested relationships and start it from the top again. At the same time the logical chain of relationships will be preserved.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="RelationshipType">
+				<xs:annotation>
+					<xs:documentation>Who to who: person to person, person to organisation, biz to biz and etc. Can be any variation or even encoded. Different parties have to agree on the list of values for this attribute prior to information exchange, if required.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FreeTextLine">
+		<xs:annotation>
+			<xs:documentation>Free Text information</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:attribute name="Type">
+				<xs:annotation>
+					<xs:documentation>Type of the description to distinguish between identically named elements carrying different content - application dependent.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:anyAttribute namespace="##other"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Account">
+		<xs:annotation>
+			<xs:documentation>Account information held by a customer about another customer. Eg. A service provider holds its client's account information</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="AccountDescription" type="i:ee" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Description of the account</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ServiceProvided" type="i:ee" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Describes the type of services provided for this account. Eg. Maintenance of software, ISP, etc</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="BillPaymentOption" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Options for bill payment. Type attribute: Direct Debit, Cash, Cheque, Credit Card, etc.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="i:ee">
+								<xs:sequence>
+									<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+									<xs:element ref="i:IDCards" minOccurs="0"/>
+									<xs:element ref="i:FinancialAccounts" minOccurs="0"/>
+									<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CurrentBillingCycle" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Billing cycle. eg. monthly, quarterly, etc. </xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="i:ee">
+								<xs:sequence>
+									<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+									<xs:element name="FirstBillingDate" type="i:Date" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Date of first billing</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="LastBillingDate" type="i:Date" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Indicates the date that the Customer's last account is billed up to</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="PaymentDueDate" type="i:Date" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Date of payment due for the billing amount. Example: 10 days from billing date</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="NextBillingDate" type="i:Date" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Next billing date in the billing cycle</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="BillingAmount" type="i:Amount" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Amount to be billed for the next billing date</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="FinalBillingDate" type="i:Date" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Final date of billing in the billing cycle</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+								</xs:sequence>
+								<xs:attribute name="Period">
+									<xs:annotation>
+										<xs:documentation>Period of billing cycle. For example, 26 months contract, 25 years contract. Example: 36 months, 5 years, 325 days, etc</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CurrentBalance" type="i:Amount" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Current balance on this account</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="OverDueAmount" type="i:Amount" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Any outstanding amount on this account</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PreviousBalance" type="i:Amount" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Any previous balance amount</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="LastPayment" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Details of last payment made by the customer</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="PaymentDate" type="i:Date" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Date of payment</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="AmountPaid" type="i:Amount" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Amount paid</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="PaymentReferenceNumber" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Payment reference. Example: Reference number</xs:documentation>
+								</xs:annotation>
+								<xs:complexType mixed="true">
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="BillReferenceNumber" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Bill reference for which the payment was made</xs:documentation>
+								</xs:annotation>
+								<xs:complexType mixed="true">
+									<xs:anyAttribute namespace="##other"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+						<xs:anyAttribute namespace="##other"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="BillingAddress" type="a:AddressDetails" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Address to which bills are sent</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="OtherCharges" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Any other charges. Eg. Interest, Penalty, re-issue bill, etc</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="i:ee">
+								<xs:sequence>
+									<xs:element ref="FreeTextLine" minOccurs="0" maxOccurs="unbounded"/>
+									<xs:element name="AmountCharged" type="i:Amount" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The amount charged</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="DateCharged" type="i:Date" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The date the amount was charged</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="InterestRate" type="i:ee" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Interest Rate charged on over due amount. Example: 7.5%. Type Attribute: Type of interest. Example: Compound, daily, fixed, etc.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Any elements from other namespaces</xs:documentation>
+					</xs:annotation>
+				</xs:any>
+			</xs:sequence>
+			<xs:attribute name="AccountID">
+				<xs:annotation>
+					<xs:documentation>Unique account identifier</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ForeignSystemAccountID">
+				<xs:annotation>
+					<xs:documentation>If this account information is present in more than one system, this attribute can be used to link the accounts in different systems</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="AccountStatus">
+				<xs:annotation>
+					<xs:documentation>Current Account status, such as:  Active, Inactive, Locked, Suspended, Disputed, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

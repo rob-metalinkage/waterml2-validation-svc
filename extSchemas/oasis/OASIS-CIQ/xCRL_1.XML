@@ -1,0 +1,999 @@
+<?xml version="1.0"?>
+<xCRL xmlns="urn:oasis:names:tc:ciq:xsdschema:xCRL:2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:a="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" xmlns:n="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0" xmlns:i="urn:oasis:names:tc:ciq:xsdschema:xCIL:2.0" xsi:schemaLocation="urn:oasis:names:tc:ciq:xsdschema:xCRL:2.0 xCRL.xsd">
+	<!-- 
+Ram V. Kumar
+C/o PrivacyLink Pty. Ltd
+
+CONTACTS:
+
+1. 123456
+   Mr.Albert Einstein
+   C/O PrivacyLink Pty. Ltd
+   EGIS Building
+   Level 12, 67 Archert Street
+   Chatswood, NSW 2067, Australia
+   Phone: 61-2-94338765(Business)
+   Fax: 61-2-94338000(Business
+   Email: albert@pl.com.au (Business)
+          albert@albert.com.au  (Personal)
+   Last Contact: 31 May 2002
+   Last Update: 31 May 2002
+   
+2. 123457
+   Mr.Rodney Freeman
+   C/O Jack Freedman
+   Postal Address (effective from Jan1. 2001):
+   PO Box: 773
+   Chatswood, NSW 2057
+   Residential Address:
+   Level 12, 67 Albert Avenue
+   Chatswood, NSW 2209, Australia
+   Old Residential Address (15 Sept. 1999 - 30 Dec. 1999):
+   SUITE 1A, LEVEL 2, BLOCK 2, RIPPON BUILDING
+   47 KINGSTON AVENUE NORTH, NORTH RYDE, NSW 2113, AUSTRALIA
+   
+   Account Manager
+   Insurance Dept.
+   MasterSoft International
+   Tel: 02-94128333
+   Fax: 02-94134275
+   Email: msi@msi.com.au
+-->
+	<RelationshipRecord>
+		<!--  PRIMARY CUSTOMER -->
+		<Customer PartyType="Person">
+			<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+				<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+					<PersonName>
+						<Title>Mr</Title>
+						<FirstName NameType="GivenName">Ram</FirstName>
+						<MiddleName Type="Initial">V</MiddleName>
+						<LastName NameType="SurName">Kumar</LastName>
+					</PersonName>
+					<DependencyName PartyType="Organisation" DependencyType="C/O">
+						<OrganisationNameDetails>
+							<OrganisationName>PrivacyLink</OrganisationName>
+							<OrganisationType>Pty.Ltd</OrganisationType>
+						</OrganisationNameDetails>
+					</DependencyName>
+				</NameDetails>
+			</xNL>
+		</Customer>
+		<!--  RELATIONSHIP WITH OTHER CUSTOMERS -->
+		<InRelationshipWith RelationshipType="Person-Person">
+			<!-- SECONDARY CUSTOMER -->
+			<Customer PartyType="Person">
+				<i:CustomerID>123456</i:CustomerID>
+				<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+					<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+						<PersonName>
+							<Title>Mr</Title>
+							<FirstName NameType="GivenName">Albert</FirstName>
+							<LastName NameType="SurName">Einstein</LastName>
+						</PersonName>
+						<DependencyName PartyType="Organisation" DependencyType="C/O">
+							<OrganisationNameDetails>
+								<OrganisationName>PrivacyLink</OrganisationName>
+								<OrganisationType>Pty.Ltd</OrganisationType>
+							</OrganisationNameDetails>
+						</DependencyName>
+					</NameDetails>
+				</xNL>
+				<xAL xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+					<AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+						<Country>
+							<CountryName>Australia</CountryName>
+							<AdministrativeArea>
+								<AdministrativeAreaName>NSW</AdministrativeAreaName>
+								<Locality>
+									<LocalityName>Chatswood</LocalityName>
+									<Thoroughfare>
+										<ThoroughfareNumber>67</ThoroughfareNumber>
+										<ThoroughfareName>Archer Street</ThoroughfareName>
+										<Premise Type="Building">
+											<BuildingName>Egis</BuildingName>
+											<SubPremise Type="LEVEL">
+												<SubPremiseNumber>12</SubPremiseNumber>
+											</SubPremise>
+										</Premise>
+									</Thoroughfare>
+									<PostalCode>
+										<PostalCodeNumber>2067</PostalCodeNumber>
+									</PostalCode>
+								</Locality>
+							</AdministrativeArea>
+						</Country>
+					</AddressDetails>
+				</xAL>
+				<PersonInfo xmlns="urn:oasis:names:tc:ciq:xsdschema:xCIL:2.0">
+					<ContactNumbers>
+						<ContactNumber Type="Telephone" ContactNature="Business">
+							<CountryCode>61</CountryCode>
+							<AreaCode>2</AreaCode>
+							<Number>94338765</Number>
+						</ContactNumber>
+						<ContactNumber Type="Fax" ContactNature="Business">
+							<CountryCode>61</CountryCode>
+							<AreaCode>2</AreaCode>
+							<Number>94338000</Number>
+						</ContactNumber>
+					</ContactNumbers>
+					<EmailAddresses>
+						<EmailAddress Type="Business">albert@pl.com.au</EmailAddress>
+						<EmailAddress Type="Personal">albert@albert.com.au</EmailAddress>
+					</EmailAddresses>
+				</PersonInfo>
+			</Customer>
+			<RelationshipInformation>
+				<RelationshipNature>BUSINESS CONTACT</RelationshipNature>
+			</RelationshipInformation>
+			<ContactHistory>
+				<ContactDetails>
+					<ContactDate>
+						<i:Day>22</i:Day>
+						<i:Month>April</i:Month>
+						<i:Year>2001</i:Year>
+					</ContactDate>
+					<ContactTime TimeType="24 Hours">13:00</ContactTime>
+				</ContactDetails>
+			</ContactHistory>
+			<UpdateHistory>
+				<UpdateDetails>
+					<UpdateDate>
+						<i:Date>22 April 2001</i:Date>
+					</UpdateDate>
+				</UpdateDetails>
+			</UpdateHistory>
+		</InRelationshipWith>
+		<InRelationshipWith RelationshipType="Person-Person">
+			<!-- SECONDARY CUSTOMER -->
+			<Customer>
+				<i:CustomerID>123457</i:CustomerID>
+				<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+					<NameDetails PartyType="Person">
+						<PersonName>
+							<NameLine>Mr.Rodney Freeman</NameLine>
+						</PersonName>
+						<DependencyName>
+							<OrganisationNameDetails>
+								<NameLine>C/O Jack Freeman</NameLine>
+							</OrganisationNameDetails>
+						</DependencyName>
+					</NameDetails>
+				</xNL>
+				<xAL xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+					<AddressDetails AddressType="postal" CurrentStatus="valid" ValidFromDate="1 Jan 2000">
+						<Address>
+                   PO Box: 773
+                   Chatswood, NSW 2057
+                </Address>
+					</AddressDetails>
+					<AddressDetails AddressType="residential" CurrentStatus="living">
+						<AddressLines>
+							<AddressLine>Level 12, 67 Albert Avenue</AddressLine>
+							<AddressLine>Chatswood</AddressLine>
+							<AddressLine>NSW 2209</AddressLine>
+							<AddressLine>Australia</AddressLine>
+						</AddressLines>
+					</AddressDetails>
+					<AddressDetails AddressType="residential" CurrentStatus="moved" ValidFromDate="15 September 1995" ValidToDate="30 December 1999">
+						<Country>
+							<CountryName>Australia</CountryName>
+							<AdministrativeArea Type="State">
+								<AdministrativeAreaName>NSW</AdministrativeAreaName>
+								<Locality>
+									<LocalityName>NORTH RYDE</LocalityName>
+									<Thoroughfare>
+										<ThoroughfareNumber>47</ThoroughfareNumber>
+										<ThoroughfareName>KINGSTON</ThoroughfareName>
+										<ThoroughfareTrailingType>AVENUE</ThoroughfareTrailingType>
+										<ThoroughfarePostDirection>NORTH</ThoroughfarePostDirection>
+										<Premise Type="BUILDING">
+											<PremiseName TypeOccurrence="After">RIPPON</PremiseName>
+											<SubPremise Type="BLOCK">
+												<SubPremiseNumber>2</SubPremiseNumber>
+												<SubPremise Type="LEVEL">
+													<SubPremiseNumber>2</SubPremiseNumber>
+													<SubPremise Type="SUITE">
+														<SubPremiseNumber>1</SubPremiseNumber>
+														<SubPremiseNumberSuffix>A</SubPremiseNumberSuffix>
+													</SubPremise>
+												</SubPremise>
+											</SubPremise>
+										</Premise>
+									</Thoroughfare>
+									<PostalCode>
+										<PostalCodeNumber>2113</PostalCodeNumber>
+									</PostalCode>
+								</Locality>
+							</AdministrativeArea>
+						</Country>
+					</AddressDetails>
+				</xAL>
+				<PersonInfo xmlns="urn:oasis:names:tc:ciq:xsdschema:xCIL:2.0">
+					<ContactNumbers>
+						<ContactNumber Type="Telephone">
+							<Number>02-94128333</Number>
+						</ContactNumber>
+						<ContactNumber Type="Fax">
+							<Number>02-94134175</Number>
+						</ContactNumber>
+					</ContactNumbers>
+					<EmailAddresses>
+						<EmailAddress>msi@msi.com.au</EmailAddress>
+					</EmailAddresses>
+					<Occupations>
+						<Occupation>
+							<Position>
+								<PositionTitle>Account Manager</PositionTitle>
+							</Position>
+							<Department>
+								<DepartmentName>Insurance</DepartmentName>
+							</Department>
+							<NameOfOrganisation>
+								<OrganisationNameDetails>
+									<OrganisationName>MasterSoft International</OrganisationName>
+								</OrganisationNameDetails>
+							</NameOfOrganisation>
+						</Occupation>
+					</Occupations>
+				</PersonInfo>
+			</Customer>
+			<RelationshipInformation>
+				<RelationshipNature>BUSINESS CONTACT</RelationshipNature>
+			</RelationshipInformation>
+		</InRelationshipWith>
+	</RelationshipRecord>
+	<!-- Mrs. Mary Johnson and Mr.Patrick Johnson
+     23 Archer Street, Chatswood, NSW 2067
+-->
+	<RelationshipRecord>
+		<!-- PRIMARY CUSTOMER  -->
+		<Customer PartyType="Person">
+			<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+				<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+					<PersonName>
+						<Title>Mrs</Title>
+						<FirstName>Mary</FirstName>
+						<LastName>Johnson</LastName>
+					</PersonName>
+				</NameDetails>
+			</xNL>
+		</Customer>
+		<InRelationshipWith RelationshipType="Person-Person">
+			<!-- SECONDARY CUSTOMER -->
+			<Customer PartyType="Person">
+				<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+					<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+						<PersonName>
+							<NameLine>Mr.Patrick Johnson</NameLine>
+						</PersonName>
+					</NameDetails>
+				</xNL>
+			</Customer>
+			<RelationshipInformation>
+				<PrimaryCustomerRelationshipTitle>WIFE</PrimaryCustomerRelationshipTitle>
+				<SecondaryCustomerRelationshipTitle>HUSBAND</SecondaryCustomerRelationshipTitle>
+				<CommonEntities>
+					<a:AddressDetails AddressType="Postal">
+						<a:Address>23 Archer Street, Chatswood, NSW 2067</a:Address>
+					</a:AddressDetails>
+				</CommonEntities>
+			</RelationshipInformation>
+		</InRelationshipWith>
+	</RelationshipRecord>
+	<!--
+     Mrs.Mary Johnson & Mr.Patrick Johnson [ showing this as a relationship by itself ]
+     PO Box: 123, Chatswood, NSW 2067
+     "IN TRUST FOR"
+     Mr.John Johnson
+     14 St.Johns Crescent, St.Mary's, NSW 2760 
+-->
+	<RelationshipRecord>
+		<!-- PRIMARY CUSTOMERS  -->
+		<Customer PartyType="Person">
+			<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+				<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+					<PersonName>
+						<Title>Mrs</Title>
+						<FirstName>Mary</FirstName>
+						<LastName>Johnson</LastName>
+					</PersonName>
+				</NameDetails>
+			</xNL>
+			<InRelationshipWith RelationshipType="Person-Person">
+				<Customer PartyType="Person">
+					<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+						<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+							<PersonName>
+								<NameLine>Mr.Patrick Johnson</NameLine>
+							</PersonName>
+						</NameDetails>
+					</xNL>
+				</Customer>
+				<RelationshipInformation>
+					<PrimaryCustomerRelationshipTitle>WIFE</PrimaryCustomerRelationshipTitle>
+					<SecondaryCustomerRelationshipTitle>HUSBAND</SecondaryCustomerRelationshipTitle>
+					<CommonEntities>
+						<a:AddressDetails AddressType="Postal">
+							<a:Address>PO Box: 123, Chatswood, NSW 2067</a:Address>
+						</a:AddressDetails>
+					</CommonEntities>
+				</RelationshipInformation>
+			</InRelationshipWith>
+		</Customer>
+		<!-- THE RELATIONSHIP -->
+		<InRelationshipWith RelationshipType="Persons(Joint) - Person">
+			<!-- SECONDARY CUSTOMER -->
+			<Customer PartyType="Person">
+				<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+					<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+						<PersonName>
+							<NameLine>Mr.John Johnson</NameLine>
+						</PersonName>
+					</NameDetails>
+				</xNL>
+				<a:xAL>
+					<a:AddressDetails>
+						<a:Address>14 St.Johns Crescent, St.Mary's, NSW 2760</a:Address>
+					</a:AddressDetails>
+				</a:xAL>
+			</Customer>
+			<RelationshipInformation>
+				<RelationshipTitle>IN TRUST FOR</RelationshipTitle>
+				<PrimaryCustomerRelationshipTitle>TRUSTEES</PrimaryCustomerRelationshipTitle>
+				<SecondaryCustomerRelationshipTitle>BENEFICIARY</SecondaryCustomerRelationshipTitle>
+			</RelationshipInformation>
+		</InRelationshipWith>
+	</RelationshipRecord>
+	<!--
+     Mrs.Mary Johnson & Mr.Patrick Johnson [ showing this as a Joint Customer only with no relationships ]
+     PO Box: 123, Chatswood, NSW 2067
+     "IN TRUST FOR"
+     Mr.John Johnson
+     14 St.Johns Crescent, St.Mary's, NSW 2760 
+-->
+	<RelationshipRecord>
+		<!-- PRIMARY CUSTOMERS  -->
+		<Customer PartyType="Person">
+			<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+				<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+					<JointPersonName JointNameConnector="and">
+						<PersonName>
+							<Title>Mrs</Title>
+							<FirstName>Mary</FirstName>
+							<LastName>Johnson</LastName>
+						</PersonName>
+						<PersonName>
+							<NameLine>Mr.Patrick Johnson</NameLine>
+						</PersonName>
+					</JointPersonName>
+				</NameDetails>
+			</xNL>
+			<a:xAL>
+				<a:AddressDetails AddressType="Postal">
+					<a:Address>PO Box: 123, Chatswood, NSW 2067</a:Address>
+				</a:AddressDetails>
+			</a:xAL>
+		</Customer>
+		<!-- THE RELATIONSHIP -->
+		<InRelationshipWith RelationshipType="Persons(Joint) - Person">
+			<!-- SECONDARY CUSTOMER -->
+			<Customer PartyType="Person">
+				<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+					<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+						<PersonName>
+							<NameLine>Mr.John Johnson</NameLine>
+						</PersonName>
+					</NameDetails>
+				</xNL>
+				<a:xAL>
+					<a:AddressDetails>
+						<a:Address>14 St.Johns Crescent, St.Mary's, NSW 2760</a:Address>
+					</a:AddressDetails>
+				</a:xAL>
+			</Customer>
+			<RelationshipInformation>
+				<RelationshipTitle>IN TRUST FOR</RelationshipTitle>
+				<PrimaryCustomerRelationshipTitle>TRUSTEES</PrimaryCustomerRelationshipTitle>
+				<SecondaryCustomerRelationshipTitle>BENEFICIARY</SecondaryCustomerRelationshipTitle>
+			</RelationshipInformation>
+		</InRelationshipWith>
+	</RelationshipRecord>
+	<!--
+      Mr. John Smith
+      12 Gary Drive, North Ryde, NSW 2113
+      "IN TRUST FOR"
+	  Mr.Robyn Williams
+	  2 Warner Avenue, Mount Druitt, NSW 2754
+	  Tel: 02-98341234
+	  Email: rwilliams@ozemail.com.au
+-->
+	<RelationshipRecord>
+		<!-- PRIMARY CUSTOMER  -->
+		<Customer PartyType="Person">
+			<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+				<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+					<PersonName>
+						<Title>Mr</Title>
+						<FirstName>John</FirstName>
+						<LastName>Smith</LastName>
+					</PersonName>
+				</NameDetails>
+			</xNL>
+			<xAL xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+				<AddressDetails AddressType="Postal">
+					<Address>12 Gary Drive, North Ryde, NSW 2113</Address>
+				</AddressDetails>
+			</xAL>
+		</Customer>
+		<!-- THE RELATIONSHIP -->
+		<InRelationshipWith RelationshipType="Persons-Person">
+			<!-- SECONDARY CUSTOMER -->
+			<Customer PartyType="Person">
+				<xNL xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+					<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+						<PersonName>
+							<NameLine>Mr.Mr.Robyn Williams</NameLine>
+						</PersonName>
+					</NameDetails>
+				</xNL>
+				<xAL xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+					<AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+						<Address>2 Warner Avenue, Mount Druitt, NSW 2754</Address>
+					</AddressDetails>
+				</xAL>
+				<PersonInfo xmlns="urn:oasis:names:tc:ciq:xsdschema:xCIL:2.0">
+					<ContactNumbers>
+						<ContactNumber Type="Telephone">
+							<FreeTextLine>02-98341234</FreeTextLine>
+						</ContactNumber>
+					</ContactNumbers>
+					<EmailAddresses>
+						<EmailAddress>rwilliams@ozemail.com.au</EmailAddress>
+					</EmailAddresses>
+				</PersonInfo>
+			</Customer>
+			<RelationshipInformation>
+				<RelationshipTitle>IN TRUST FOR</RelationshipTitle>
+				<PrimaryCustomerRelationshipTitle>TRUSTEE</PrimaryCustomerRelationshipTitle>
+				<SecondaryCustomerRelationshipTitle>BENEFICIARY</SecondaryCustomerRelationshipTitle>
+			</RelationshipInformation>
+		</InRelationshipWith>
+	</RelationshipRecord>
+	<!--
+		Mrs. Mary Johnson 	 
+		PO Box:123, Chatswood, NSW 2067
+		AND Mr.Patrick Johnson
+		23 Archer Street, Chatswood, NSW 2067
+		"IN TRUST FOR"
+		Mr.John Johnson
+		14 St.Johns Crescent, St.Mary's, NSW 2760
+		"DOING BUSINESS AS"
+		JOHNSON and WESSON Pty. Ltd
+		PO Box: 2000, Sydney 2000
+-->
+	<RelationshipRecord>
+		<!-- PRIMARY CUSTOMERS  -->
+		<Customer PartyType="Person">
+			<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+				<PersonName>
+					<Title>Mrs</Title>
+					<FirstName>Mary</FirstName>
+					<LastName>Johnson</LastName>
+				</PersonName>
+			</NameDetails>
+			<AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+				<Address>PO Box:123, Chatswood, NSW 2067</Address>
+			</AddressDetails>
+			<InRelationshipWith RelationshipType="Person-Person">
+				<Customer PartyType="Person">
+					<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+						<PersonName>
+							<NameLine>Mr.Patrick Johnson</NameLine>
+						</PersonName>
+					</NameDetails>
+					<AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+						<Address>23 Archer Street, Chatswood, NSW 2067</Address>
+					</AddressDetails>
+				</Customer>
+				<RelationshipInformation>
+					<RelationshipNature>FRIENDS</RelationshipNature>
+				</RelationshipInformation>
+			</InRelationshipWith>
+		</Customer>
+		<!-- THE RELATIONSHIP -->
+		<InRelationshipWith RelationshipType="Persons(Joint) - Person">
+			<!-- SECONDARY CUSTOMER -->
+			<Customer PartyType="Person">
+				<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+					<PersonName>
+						<NameLine>Mr.John Johnson</NameLine>
+					</PersonName>
+				</NameDetails>
+				<AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+					<Address>14 St.Johns Crescent, St.Mary's, NSW 2760</Address>
+				</AddressDetails>
+				<InRelationshipWith RelationshipType="Person - Organisation">
+					<!-- SECONDARY CUSTOMER'S RELATIONSHIP WITH ANOTHER CUSTOMER -->
+					<Customer PartyType="Organisation">
+						<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+							<OrganisationNameDetails>
+								<OrganisationName>JOHNSON and WESSON</OrganisationName>
+								<OrganisationType>Pty.Ltd</OrganisationType>
+							</OrganisationNameDetails>
+						</NameDetails>
+						<AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+							<Address>PO Box: 2000, Sydney 2000</Address>
+						</AddressDetails>
+					</Customer>
+					<RelationshipInformation>
+						<RelationshipTitle>DOING BUSINESS AS</RelationshipTitle>
+						<PrimaryCustomerRelationshipTitle>OWNER</PrimaryCustomerRelationshipTitle>
+						<SecondaryCustomerRelationshipTitle>COMPANY</SecondaryCustomerRelationshipTitle>
+					</RelationshipInformation>
+				</InRelationshipWith>
+			</Customer>
+			<RelationshipInformation>
+				<RelationshipTitle>IN TRUST FOR</RelationshipTitle>
+				<PrimaryCustomerRelationshipTitle>TRUSTEES</PrimaryCustomerRelationshipTitle>
+				<SecondaryCustomerRelationshipTitle>BENEFICIARY</SecondaryCustomerRelationshipTitle>
+			</RelationshipInformation>
+		</InRelationshipWith>
+	</RelationshipRecord>
+	<!--    Richardson & Wrench Pty. Ltd
+		PO Box: 123, Willoughby, NSW 2064
+		"TRADING AS"
+		Capital One Estate Pty. Ltd
+		23 Capital Street, Sydney, NSW 2000
+-->
+	<RelationshipRecord>
+		<!-- PRIMARY CUSTOMER  -->
+		<Customer PartyType="Organisation">
+			<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+				<OrganisationNameDetails>
+					<OrganisationName>Richardson and Wrench</OrganisationName>
+					<OrganisationType>Pty. Ltd</OrganisationType>
+				</OrganisationNameDetails>
+			</NameDetails>
+			<AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+				<Address>PO Box: 123, Willoughby, NSW 2064</Address>
+			</AddressDetails>
+		</Customer>
+		<!-- THE RELATIONSHIP -->
+		<InRelationshipWith RelationshipType="Organisation-Organisation">
+			<Customer PartyType="Organisation">
+				<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+					<OrganisationNameDetails>
+						<OrganisationName>Capital One Estate</OrganisationName>
+						<OrganisationType>Pty. Ltd</OrganisationType>
+					</OrganisationNameDetails>
+				</NameDetails>
+				<AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+					<Address>23 Capital Street, Sydney, NSW 2000</Address>
+				</AddressDetails>
+			</Customer>
+			<RelationshipInformation>
+				<RelationshipTitle>TRADING AS</RelationshipTitle>
+				<RelationshipNature>Legal</RelationshipNature>
+			</RelationshipInformation>
+		</InRelationshipWith>
+	</RelationshipRecord>
+	<!--
+		MasterSoft Research Pty. Ltd
+		PO Box: 773, Chatswood, NSW 2065
+		"SUBSIDIARY OF"
+		MSI Business Solutions Pty. Ltd
+		Level 12, 67 Archer Street, Chatswood, NSW 2067
+-->
+	<RelationshipRecord>
+		<Customer PartyType="Organisation">
+			<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+				<OrganisationNameDetails>
+					<OrganisationName>MasterSoft Research Pty. Ltd</OrganisationName>
+				</OrganisationNameDetails>
+			</NameDetails>
+			<AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" AddressType="Postal">
+				<AdministrativeArea>
+					<AdministrativeAreaName>NSW</AdministrativeAreaName>
+					<Locality>
+						<LocalityName>Chatswood</LocalityName>
+						<PostBox Type="PO Box">
+							<PostBoxNumber>773</PostBoxNumber>
+						</PostBox>
+						<PostalCode>
+							<PostalCodeNumber>2057</PostalCodeNumber>
+						</PostalCode>
+					</Locality>
+				</AdministrativeArea>
+			</AddressDetails>
+		</Customer>
+		<!-- THE RELATIONSHIP -->
+		<InRelationshipWith RelationshipType="Organisation-Organisation">
+			<Customer>
+				<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0" PartyType="Organisation">
+					<OrganisationNameDetails>
+						<OrganisationName>MSI Business Solutions</OrganisationName>
+						<OrganisationType>Pty.Ltd</OrganisationType>
+					</OrganisationNameDetails>
+				</NameDetails>
+				<AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+					<Country>
+						<CountryName>Australia</CountryName>
+						<AdministrativeArea>
+							<AdministrativeAreaName>NSW</AdministrativeAreaName>
+							<Locality>
+								<LocalityName>Chatswood</LocalityName>
+								<Thoroughfare>
+									<ThoroughfareNumber>67</ThoroughfareNumber>
+									<ThoroughfareName>Archer Street</ThoroughfareName>
+									<Premise Type="Building">
+										<SubPremise Type="LEVEL">
+											<SubPremiseNumber>12</SubPremiseNumber>
+										</SubPremise>
+									</Premise>
+								</Thoroughfare>
+								<PostalCode>
+									<PostalCodeNumber>2067</PostalCodeNumber>
+								</PostalCode>
+							</Locality>
+						</AdministrativeArea>
+					</Country>
+				</AddressDetails>
+			</Customer>
+			<RelationshipInformation>
+				<RelationshipTitle>SUBSIDIARY OF</RelationshipTitle>
+				<PrimaryCustomerRelationshipTitle>SUBSIDIARY</PrimaryCustomerRelationshipTitle>
+				<SecondaryCustomerRelationshipTitle>PARENT</SecondaryCustomerRelationshipTitle>
+			</RelationshipInformation>
+		</InRelationshipWith>
+	</RelationshipRecord>
+	<!--
+		Cognito, Inc
+		Level 12, 67 Albert Avenue, Chatswood, NSW 2067
+		SUBSIDIARIES:
+		MasterSoft Research Pty. Ltd
+		Level 12, 67 Albert Avenue, Chatswood, NSW 2067
+		
+		MSI Business Solutions Pty. Ltd
+		PO Box: 773, Chatswood, NSW 2057
+-->
+	<RelationshipRecord>
+		<Customer PartyType="Organisation">
+			<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+				<OrganisationNameDetails>
+					<OrganisationName>Cognito, Inc</OrganisationName>
+				</OrganisationNameDetails>
+			</NameDetails>
+			<AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+				<Address>Level 12, 67 Albert Avenue, Chatswood, NSW 2067</Address>
+			</AddressDetails>
+		</Customer>
+		<!-- THE RELATIONSHIP -->
+		<InRelationshipWith RelationshipType="Business-Business">
+			<Customer PartyType="Organisation">
+				<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+					<OrganisationNameDetails>
+						<OrganisationName>MasterSoft Research</OrganisationName>
+						<OrganisationType>Pty. Ltd</OrganisationType>
+					</OrganisationNameDetails>
+				</NameDetails>
+				<AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+					<Address>Level 12, 67 Albert Avenue, Chatswood, NSW 2067</Address>
+				</AddressDetails>
+			</Customer>
+			<RelationshipInformation>
+				<PrimaryCustomerRelationshipTitle>PARENT</PrimaryCustomerRelationshipTitle>
+				<SecondaryCustomerRelationshipTitle>SUBSIDIARY</SecondaryCustomerRelationshipTitle>
+				<RelationshipNature>SUBSIDIARY ORGANISATION</RelationshipNature>
+			</RelationshipInformation>
+		</InRelationshipWith>
+		<InRelationshipWith RelationshipType="Business-Business">
+			<Customer PartyType="Organisation">
+				<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+					<NameLine Type="OrganisationName">MSI Business Solutions Pty. Ltd</NameLine>
+				</NameDetails>
+				<AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+					<Address>PO Box: 773, Chatswood, NSW 2057, Australia</Address>
+				</AddressDetails>
+			</Customer>
+			<RelationshipInformation>
+				<PrimaryCustomerRelationshipTitle>PARENT</PrimaryCustomerRelationshipTitle>
+				<SecondaryCustomerRelationshipTitle>SUBSIDIARY</SecondaryCustomerRelationshipTitle>
+				<RelationshipNature>SUBSIDIARY ORGANISATION</RelationshipNature>
+			</RelationshipInformation>
+		</InRelationshipWith>
+	</RelationshipRecord>
+	<!-- ORGANISATION STRUCTURE 
+
+		C
+		|
+		|
+A +++++ B
+ 		|   
+  		|	 |++++ E
+   		D++++|++++ F	  |++++ H	
+  			 |++++ G ++++ |
+  	  					  |++++ I
+   						  
+ABC Systems, Inc
+23 Walter Street 
+Ann Arbour
+MI 48086 
+
+Mr. Robin Smith  (A)
+CEO
+
+Mrs. Cathy Freeman, CIO (B) 
+Mr. John McDonald, CFO  (C)
+Mr. Peter Craike, CTO (D)
+   Mrs. Latha Srikant, Development Manager (G) 
+       Miss. Jenny Chang, Programmer (H)
+       Miss. Carolyne Hastings, Programmer (I)
+   Mr. James Scott, Tester (F)
+   Mr. Rodney Matt, Technical Writer (E) 
+-->
+	<RelationshipRecord>
+		<Customer PartyType="Organisation">
+			<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+				<OrganisationNameDetails>
+					<NameLine>ABC Systems, Inc</NameLine>
+				</OrganisationNameDetails>
+			</NameDetails>
+			<AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+				<AddressLines>
+					<AddressLine Type="Line 1">23 Walter Street</AddressLine>
+					<AddressLine Type="Line 2">Ann Arbour</AddressLine>
+					<AddressLine Type="Line 3">MI 48086</AddressLine>
+				</AddressLines>
+			</AddressDetails>
+		</Customer>
+		<InRelationshipWith RelationshipType="Organisation-Person">
+			<Customer PartyType="Person">
+				<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+					<PersonName>
+						<NameLine>Mr. Robin Smith</NameLine>
+					</PersonName>
+					<Function>CEO</Function>
+				</NameDetails>
+				<InRelationshipWith RelationshipType="Person-Person">
+					<Customer>
+						<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0" PartyType="Person">
+							<PersonName>
+								<NameLine>Mrs. Cathy Freeman</NameLine>
+							</PersonName>
+							<Function>CIO</Function>
+						</NameDetails>
+					</Customer>
+					<RelationshipInformation>
+						<RelationshipTitle>BOSS-SUBORDINATE</RelationshipTitle>
+						<RelationshipNature>REPORTING TO CEO</RelationshipNature>
+					</RelationshipInformation>
+				</InRelationshipWith>
+				<InRelationshipWith RelationshipType="Person-Person">
+					<Customer>
+						<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0" PartyType="Person">
+							<PersonName>
+								<NameLine>Mr.John McDonald</NameLine>
+							</PersonName>
+							<Function>CFO</Function>
+						</NameDetails>
+					</Customer>
+					<RelationshipInformation>
+						<RelationshipTitle>BOSS-SUBORDINATE</RelationshipTitle>
+						<RelationshipNature>REPORTING TO CEO</RelationshipNature>
+					</RelationshipInformation>
+				</InRelationshipWith>
+				<InRelationshipWith RelationshipType="Person-Person">
+					<Customer>
+						<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0" PartyType="Person">
+							<PersonName>
+								<NameLine>Mr. Peter Craike</NameLine>
+							</PersonName>
+							<Function>CTO</Function>
+						</NameDetails>
+						<InRelationshipWith RelationshipType="Person-Person">
+							<Customer>
+								<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0" PartyType="Person">
+									<PersonName>
+										<NameLine>Mr. Rodney Matt</NameLine>
+									</PersonName>
+									<Function>Technical Writer</Function>
+								</NameDetails>
+							</Customer>
+							<RelationshipInformation>
+								<RelationshipTitle>BOSS-SUBORDINATE</RelationshipTitle>
+								<RelationshipNature>REPORTING TO CTO</RelationshipNature>
+							</RelationshipInformation>
+						</InRelationshipWith>
+						<InRelationshipWith RelationshipType="Person-Person">
+							<Customer>
+								<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0" PartyType="Person">
+									<PersonName>
+										<NameLine>Mr. James Scott</NameLine>
+									</PersonName>
+									<Function>Tester</Function>
+								</NameDetails>
+							</Customer>
+							<RelationshipInformation>
+								<RelationshipTitle>BOSS-SUBORDINATE</RelationshipTitle>
+								<RelationshipNature>REPORTING TO CTO</RelationshipNature>
+							</RelationshipInformation>
+						</InRelationshipWith>
+						<InRelationshipWith RelationshipType="Person-Person">
+							<Customer>
+								<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0" PartyType="Person">
+									<PersonName>
+										<NameLine>Mrs. Latha Srikant</NameLine>
+									</PersonName>
+									<Function>Development Manager</Function>
+								</NameDetails>
+								<InRelationshipWith RelationshipType="Person-Person">
+									<Customer>
+										<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0" PartyType="Person">
+											<PersonName>
+												<NameLine>Miss. Jenny Chang</NameLine>
+											</PersonName>
+											<Function>Programmer</Function>
+										</NameDetails>
+									</Customer>
+									<RelationshipInformation>
+										<RelationshipTitle>BOSS-SUBORDINATE</RelationshipTitle>
+										<RelationshipNature>REPORTING TO Development Manager</RelationshipNature>
+									</RelationshipInformation>
+								</InRelationshipWith>
+								<InRelationshipWith RelationshipType="Person-Person">
+									<Customer>
+										<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0" PartyType="Person">
+											<PersonName>
+												<NameLine>Miss. Carolyne Hastings</NameLine>
+											</PersonName>
+											<Function>Programmer</Function>
+										</NameDetails>
+									</Customer>
+									<RelationshipInformation>
+										<RelationshipTitle>BOSS-SUBORDINATE</RelationshipTitle>
+										<RelationshipNature>REPORTING TO Development Manager</RelationshipNature>
+									</RelationshipInformation>
+								</InRelationshipWith>
+							</Customer>
+							<RelationshipInformation>
+								<RelationshipTitle>BOSS-SUBORDINATE</RelationshipTitle>
+								<RelationshipNature>REPORTING TO CTO</RelationshipNature>
+							</RelationshipInformation>
+						</InRelationshipWith>
+					</Customer>
+					<RelationshipInformation>
+						<RelationshipTitle>BOSS-SUBORDINATE</RelationshipTitle>
+						<RelationshipNature>REPORTING TO CEO</RelationshipNature>
+					</RelationshipInformation>
+				</InRelationshipWith>
+			</Customer>
+		</InRelationshipWith>
+	</RelationshipRecord>
+	<!-- A GROUP HAVING A RELATIONSHIP WITH ANOTHER GROUP -->
+	<!--- Golf Club of Turramurra 
+    	  20 Warner Avenue, Turramurra, NSW 2074
+    	  Phone: 02-94400044
+    	  Fax: 02-94400045
+    	  Members: Chris Perkins, 2 Adams St, Turramurra
+             	   Ram Kumar and Shantha Devi, 10 Adams Street, Turramurra
+                   David Griffin, 3, Adams Street, Turramurra
+          MEMBER OF:  
+    			   Golf Club of North Shore
+    			   PO Box:2000, Hornsby, NSW 2078
+    			   Phone: 02-94321234
+    	  		   Fax:   02-94321235
+    -->
+	<RelationshipRecord>
+		<Customer PartyType="Golf Club">
+			<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+				<OrganisationNameDetails>
+					<OrganisationName>Golf Club of Turramurra</OrganisationName>
+				</OrganisationNameDetails>
+			</NameDetails>
+			<AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+				<Address>20 Warner Avenue, Turramurra, NSW 2074</Address>
+			</AddressDetails>
+			<OrganisationInfo xmlns="urn:oasis:names:tc:ciq:xsdschema:xCIL:2.0">
+				<ContactNumbers>
+					<ContactNumber Type="Telephone">
+						<Number>02-94400044</Number>
+					</ContactNumber>
+					<ContactNumber Type="Telephone">
+						<Number>02-94400045</Number>
+					</ContactNumber>
+				</ContactNumbers>
+			</OrganisationInfo>
+		</Customer>
+		<!-- MEMBERS -->
+		<InRelationshipWith RelationshipType="Organisation-Person">
+			<Customer>
+				<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0" PartyType="Person">
+					<PersonName>
+						<NameLine>Chris Perkins</NameLine>
+					</PersonName>
+				</NameDetails>
+				<a:AddressDetails>
+					<a:Address>2 Adams St, Turramurra</a:Address>
+				</a:AddressDetails>
+			</Customer>
+			<RelationshipInformation>
+				<RelationshipTitle>PARENT-MEMBER</RelationshipTitle>
+				<RelationshipNature>MEMBERS</RelationshipNature>
+			</RelationshipInformation>
+		</InRelationshipWith>
+		<InRelationshipWith RelationshipType="Organisation-Persons">
+			<Customer PartyType="Person">
+				<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+					<PersonName>
+						<NameLine>Ram Kumar</NameLine>
+					</PersonName>
+				</NameDetails>
+				<InRelationshipWith RelationshipType="Person-Person">
+					<Customer PartyType="Person">
+						<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+							<PersonName>
+								<NameLine>Shantha Devi</NameLine>
+							</PersonName>
+						</NameDetails>
+					</Customer>
+					<RelationshipInformation>
+						<PrimaryCustomerRelationshipTitle>HUSBAND</PrimaryCustomerRelationshipTitle>
+						<SecondaryCustomerRelationshipTitle>WIFE</SecondaryCustomerRelationshipTitle>
+						<CommonEntities>
+							<a:AddressDetails>
+								<a:Address>10 Adams Street, Turramurra</a:Address>
+							</a:AddressDetails>
+						</CommonEntities>
+					</RelationshipInformation>
+				</InRelationshipWith>
+			</Customer>
+			<RelationshipInformation>
+				<RelationshipTitle>PARENT-MEMBER</RelationshipTitle>
+				<RelationshipNature>MEMBERS</RelationshipNature>
+			</RelationshipInformation>
+		</InRelationshipWith>
+		<InRelationshipWith RelationshipType="Person-Organisation">
+			<Customer>
+				<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0" PartyType="Person">
+					<PersonName>
+						<NameLine>David Griffins</NameLine>
+					</PersonName>
+				</NameDetails>
+				<a:AddressDetails>
+					<a:Address>3 Adams St, Turramurra</a:Address>
+				</a:AddressDetails>
+			</Customer>
+			<RelationshipInformation>
+				<RelationshipTitle>PARENT-MEMBER</RelationshipTitle>
+				<RelationshipNature>MEMBERS</RelationshipNature>
+			</RelationshipInformation>
+		</InRelationshipWith>
+		<!-- MEMBER OF A GOLF CLUB -->
+		<InRelationshipWith RelationshipType="Organisation-Organisation">
+			<Customer PartyType="Golf Club">
+				<NameDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xNL:2.0">
+					<NameLine>Golf Club of North Shore</NameLine>
+				</NameDetails>
+				<AddressDetails xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+					<Address>PO Box:2000, Hornsby, NSW 2078</Address>
+				</AddressDetails>
+				<OrganisationInfo xmlns="urn:oasis:names:tc:ciq:xsdschema:xCIL:2.0">
+					<ContactNumbers>
+						<ContactNumber Type="Telephone">
+							<Number>02-94321234</Number>
+						</ContactNumber>
+						<ContactNumber Type="Telephone">
+							<Number>02-94321235</Number>
+						</ContactNumber>
+					</ContactNumbers>
+				</OrganisationInfo>
+			</Customer>
+			<RelationshipInformation>
+				<RelationshipTitle>MEMBER-PARENT</RelationshipTitle>
+				<RelationshipNature>MEMBER</RelationshipNature>
+			</RelationshipInformation>
+		</InRelationshipWith>
+	</RelationshipRecord>
+</xCRL>

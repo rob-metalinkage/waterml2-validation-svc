@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.4-b01-. --><definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/XSLTransformWSDL" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="XSLTransformWSDL" targetNamespace="http://j2ee.netbeans.org/wsdl/XSLTransformWSDL">
+    <types></types>
+    <message name="XSLTransformWSDLOperationRequest">
+        <part name="xsl" type="xsd:string"></part>
+        <part name="xmlContent" type="xsd:string"></part>
+    </message>
+    <message name="XSLTransformWSDLOperationResponse">
+        <part name="result" type="xsd:string"></part>
+    </message>
+    <portType name="XSLTransformWSDLPortType">
+        <operation name="XSLTransformWSDLOperation">
+            <input name="input1" message="tns:XSLTransformWSDLOperationRequest"></input>
+            <output name="output1" message="tns:XSLTransformWSDLOperationResponse"></output>
+        </operation>
+    </portType>
+    <binding name="XSLTransformWSDLBinding" type="tns:XSLTransformWSDLPortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"></soap:binding>
+        <operation name="XSLTransformWSDLOperation">
+            <soap:operation></soap:operation>
+            <input name="input1">
+                <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/XSLTransformWSDL"></soap:body>
+            </input>
+            <output name="output1">
+                <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/XSLTransformWSDL"></soap:body>
+            </output>
+        </operation>
+    </binding>
+    <service name="XSLTransformWSDLService">
+        <port name="XSLTransformWSDLPort" binding="tns:XSLTransformWSDLBinding">
+            <soap:address location="http://localhost:8084/XSLTransform/XSLTransformWSDLService"></soap:address>
+        </port>
+    </service>
+    <plnk:partnerLinkType name="XSLTransformWSDL">
+        <!-- A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes. 
+In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
+A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
+        <plnk:role name="XSLTransformWSDLPortTypeRole" portType="tns:XSLTransformWSDLPortType"></plnk:role>
+    </plnk:partnerLinkType>
+</definitions>

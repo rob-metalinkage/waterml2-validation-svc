@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:swes="http://www.opengis.net/swes/2.0" targetNamespace="http://www.opengis.net/swes/2.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+    <include schemaLocation="swesCommon.xsd"/><!-- ================================================= -->
+    <element name="UpdateSensorDescription" substitutionGroup="swes:ExtensibleRequest" type="swes:UpdateSensorDescriptionType"/>
+    <complexType name="UpdateSensorDescriptionType">
+        <complexContent>
+            <extension base="swes:ExtensibleRequestType">
+                <sequence>
+                    <element name="procedureIdentifier" type="gml:CodeType"/>
+                    <element name="procedureDescriptionFormat" type="gml:CodeType"/>
+                    <element name="description">
+                        <complexType>
+                            <sequence>
+                                <element ref="swes:SensorDescription"/>
+                            </sequence>
+                        </complexType>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="UpdateSensorDescriptionPropertyType">
+        <sequence minOccurs="0">
+            <element ref="swes:UpdateSensorDescription"/>
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup"/>
+        <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+    </complexType><!-- ================================================= -->
+    <element name="UpdateSensorDescriptionResponse" substitutionGroup="swes:ExtensibleResponse" type="swes:UpdateSensorDescriptionResponseType"/>
+    <complexType name="UpdateSensorDescriptionResponseType">
+        <complexContent>
+            <extension base="swes:ExtensibleResponseType">
+                <sequence>
+                    <element name="updatedProcedureIdentifier" type="gml:CodeType"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="UpdateSensorDescriptionResponsePropertyType">
+        <sequence minOccurs="0">
+            <element ref="swes:UpdateSensorDescriptionResponse"/>
+        </sequence>
+        <attributeGroup ref="gml:AssociationAttributeGroup"/>
+        <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+    </complexType>
+</schema>

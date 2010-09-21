@@ -1,0 +1,374 @@
+body {
+background:#FFFFFF none repeat scroll 0 0;
+color:#000000;
+}
+body, th, td, p, ul, ol, li, span, div {
+font-family:arial,sans-serif;
+font-size:10pt;
+}
+pre {
+font-family:courier new,monospace;
+}
+h1 {
+color:#0F5499;
+font-size:1.6em;
+}
+h2 {
+color:#0F5499;
+font-size:1.4em;
+}
+h3 {
+color:#0F5499;
+font-size:1.2em;
+}
+h4 {
+font-size:1.1em;
+}
+h5 {
+color:#0F5499;
+}
+h6 {
+}
+.norm12 {
+color:#000000;
+font-family:arial,sans-serif;
+font-size:12px;
+text-decoration:none;
+}
+.blue12 {
+color:#006699;
+font-family:arial,sans-serif;
+font-size:12px;
+text-decoration:none;
+}
+.subheading {
+color:#006699;
+font-family:arial,sans-serif;
+font-size:12pt;
+font-weight:bold;
+text-decoration:none;
+}
+.subheadingorange {
+color:#FF9933;
+font-family:arial,sans-serif;
+font-size:12pt;
+font-weight:bold;
+text-decoration:none;
+}
+.subheadingteal {
+color:#008080;
+font-family:arial,sans-serif;
+font-size:12pt;
+font-weight:bold;
+text-decoration:none;
+}
+.footeritem {
+color:#000000;
+font-family:arial,sans-serif;
+font-size:11px;
+text-decoration:none;
+}
+strong, b {
+font-weight:bold;
+}
+.navlink {
+color:#000099;
+font-family:arial,sans-serif;
+font-size:12px;
+text-decoration:none;
+}
+.navlink:link {
+color:#000099;
+text-decoration:none;
+}
+.navlink:visited {
+color:#006699;
+text-decoration:none;
+}
+.navlink:hover {
+color:#FF9966;
+text-decoration:none;
+}
+.navblack {
+color:#000000;
+font-family:arial,sans-serif;
+font-size:10pt;
+text-decoration:none;
+}
+.navblack:link {
+color:#000000;
+text-decoration:underline;
+}
+.navblack:visited {
+color:#000000;
+text-decoration:underline;
+}
+.navblack:hover {
+color:#000000;
+text-decoration:underline;
+}
+.smaller {
+font-family:arial,sans-serif;
+font-size:80%;
+}
+.bigger {
+font-family:arial,sans-serif;
+font-size:120%;
+}
+.biggest {
+font-family:arial,sans-serif;
+font-size:140%;
+}
+.bold {
+font-family:arial,sans-serif;
+font-weight:bold;
+}
+.italic {
+font-family:arial,sans-serif;
+font-style:italic;
+}
+.bolditalic {
+font-family:arial,sans-serif;
+font-style:italic;
+font-weight:bold;
+}
+.blue {
+color:#006699;
+font-family:arial,sans-serif;
+}
+.bluebold {
+color:#006699;
+font-family:arial,sans-serif;
+font-weight:bold;
+}
+.bluesmall {
+color:#006699;
+font-family:arial,sans-serif;
+font-size:80%;
+}
+.bluebig {
+color:#006699;
+font-family:arial,sans-serif;
+font-size:120%;
+}
+.orange {
+color:#FF6633;
+font-family:arial,sans-serif;
+}
+.orange:link {
+color:#FF6633;
+font-family:arial,sans-serif;
+text-decoration:none;
+}
+.orangebold {
+color:#FF6633;
+font-family:arial,sans-serif;
+font-weight:bold;
+}
+.orangesmall {
+color:#FF6633;
+font-family:arial,sans-serif;
+font-size:80%;
+}
+.orangebig {
+color:#FF9933;
+font-family:arial,sans-serif;
+font-size:120%;
+}
+.orangebigger {
+color:#FF9933;
+font-family:arial,sans-serif;
+font-size:140%;
+}
+.white {
+color:#FFFFFF;
+font-family:arial,sans-serif;
+}
+.whitesmall {
+color:#FFFFFF;
+font-family:arial,sans-serif;
+font-size:80%;
+}
+.whitebig {
+color:#FFFFFF;
+font-family:arial,sans-serif;
+font-size:120%;
+}
+div.box {
+border:thin solid;
+width:100%;
+}
+a {
+color:#000099;
+font-family:arial,sans-serif;
+}
+a:link {
+color:#000099;
+font-family:arial,sans-serif;
+}
+a:active {
+font-family:arial,sans-serif;
+}
+a:visited {
+color:#006699;
+font-family:arial,sans-serif;
+}
+a:hover {
+color:#FF6633;
+font-family:arial,sans-serif;
+text-decoration:none;
+}
+.blackline {
+background:#000000 none repeat scroll 0 0;
+}
+.indent5mm {
+text-indent:5mm;
+}
+.small {
+font-size:11px;
+}
+.greyBold14px {
+color:#666666;
+font-size:14px;
+font-weight:bold;
+}
+td.darkblue {
+background:#003366 none repeat scroll 0 0;
+color:#FFFFFF;
+font-size:11px;
+margin:0;
+padding:0 4px 0 0;
+}
+td.darkblue a {
+color:#FFFFFF;
+font-size:12px;
+line-height:18px;
+text-decoration:none;
+}
+td.darkblue a:link {
+color:#FFFFFF;
+font-size:12px;
+text-decoration:none;
+}
+td.darkblue a:active {
+color:#FFFFFF;
+font-size:12px;
+text-decoration:none;
+}
+td.darkblue a:visited {
+color:#FFFFFF;
+font-size:12px;
+text-decoration:none;
+}
+td.darkblue a:hover {
+color:#FFFFFF;
+font-size:12px;
+text-decoration:none;
+}
+td.bluenav {
+background:#1964AA url(http://www.bom.gov.au/images/stripe.gif) repeat-y scroll 0 0;
+color:#FFFFFF;
+font-size:11px;
+padding:0 4px 0 0;
+}
+td.bluenav a {
+color:#FFFFFF;
+font-size:12px;
+text-decoration:none;
+}
+td.bluenav a:link {
+color:#FFFFFF;
+font-size:12px;
+text-decoration:none;
+}
+td.bluenav a:active {
+color:#FFFFFF;
+font-size:12px;
+text-decoration:none;
+}
+td.bluenav a:visited {
+color:#FFFFFF;
+font-size:12px;
+text-decoration:none;
+}
+td.bluenav a:hover {
+color:#FFFFFF;
+font-size:12px;
+text-decoration:none;
+}
+td.khakinav {
+background:#CCCC99 none repeat scroll 0 0;
+color:#000000;
+font-size:11px;
+margin:0;
+padding:0 4px 0 0;
+}
+td.khakinav a {
+color:#000000;
+font-size:12px;
+line-height:18px;
+text-decoration:none;
+}
+td.khakinav a:link {
+color:#000000;
+font-size:12px;
+text-decoration:none;
+}
+td.khakinav a:active {
+color:#000000;
+font-size:12px;
+text-decoration:none;
+}
+td.khakinav a:visited {
+color:#000000;
+font-size:12px;
+text-decoration:none;
+}
+td.khakinav a:hover {
+color:#000000;
+font-size:12px;
+text-decoration:none;
+}
+.lineBlue2 {
+background:#0033CC none repeat scroll 0 0;
+}
+.lineBlue {
+background:#3399CC none repeat scroll 0 0;
+}
+.search {
+color:#FFFFFF;
+font-size:11px;
+line-height:13px;
+margin-top:0;
+padding-right:4px;
+padding-top:0;
+vertical-align:bottom;
+}
+.searchfield {
+color:#000000;
+font-size:11px;
+margin-top:0;
+padding-right:4px;
+padding-top:0;
+vertical-align:bottom;
+}
+.searchform {
+margin-top:2px;
+padding-top:2px;
+}
+.lineKhaki {
+background:#666600 none repeat scroll 0 0;
+}
+.lineKhaki2 {
+background:#FFFFCC none repeat scroll 0 0;
+}
+acronym {
+font-style:normal;
+}
+abbr {
+font-style:normal;
+}
+.nospace {
+margin:0;
+padding:0;
+}

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swe:DataRecord
+	gml:id="DR27246"
+	xmlns:gml="http://www.opengis.net/gml/3.2"
+	xmlns:swe="http://www.opengis.net/swe/2.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xsi:schemaLocation="http://www.opengis.net/swe/2.0 ../../../sweCommon/2.0/swe.xsd">
+	<swe:field
+		name="time">
+		<swe:Time 
+			gml:id="Tiso8601"
+			definition="urn:ogc:def:phenomenon:time:iso8601"><swe:uom/></swe:Time>
+	</swe:field>
+	<swe:field
+		name="AirTemperature">
+		<swe:Quantity
+			gml:id="QAirTemperature"
+			definition="urn:ogc:def:phenomenon:OGC:AirTemperature">
+			<swe:uom
+				xlink:href="urn:ogc:def:uom:OGC:degC"/>
+		</swe:Quantity>
+	</swe:field>
+	<swe:field
+		name="WindSpeed">
+		<swe:Quantity
+			gml:id="QWindSpeed"
+			definition="urn:ogc:def:phenomenon:OGC:WindSpeed">
+			<swe:uom
+				xlink:href="urn:ogc:def:uom:OGC:m_s"/>
+		</swe:Quantity>
+	</swe:field>
+	<swe:field
+		name="WindDirection">
+		<swe:Quantity
+			gml:id="QWindDirectionToNorth"
+			definition="urn:ogc:def:phenomenon:OGC:WindDirectionToNorth">
+			<swe:uom
+				xlink:href="urn:ogc:def:uom:OGC:deg"/>
+		</swe:Quantity>
+	</swe:field>
+	<swe:field
+		name="AtmosphericPressure">
+		<swe:Quantity
+			gml:id="QAtmosphericPressure"
+			definition="http://sweet.jpl.nasa.gov/ontology/property.owl#AtmosphericPressure">
+			<swe:uom
+				xlink:href="urn:ogc:def:uom:OGC:hPa"/>
+		</swe:Quantity>
+	</swe:field>
+	<swe:field
+		name="RelativeHumidity">
+		<swe:Quantity
+			gml:id="QRelativeHumidity"
+			definition="http://sweet.jpl.nasa.gov/ontology/property.owl#RelativeHumidity">
+			<swe:uom
+				xlink:href="urn:ogc:def:uom:OGC:percent"/>
+		</swe:Quantity>
+	</swe:field>
+	<swe:field
+		name="Visibility">
+		<swe:Category
+			gml:id="CVisibility"
+			definition="http://sweet.jpl.nasa.gov/ontology/property.owl#Visibility"> </swe:Category>
+	</swe:field>
+</swe:DataRecord>
