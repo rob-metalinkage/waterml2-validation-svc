@@ -1,5 +1,6 @@
 * text=auto !eol
 /CatalogManager.properties -text
+/README.txt -text
 /XMLXSDValidationServiceService.wsdl -text
 /XMLXSDValidationServiceService_schema1.xsd -text
 /build.xml -text
