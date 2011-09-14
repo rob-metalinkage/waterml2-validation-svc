@@ -55,11 +55,6 @@
 
     </head>
     <body>
-<!--
-<jsp:include page="bureau_header.html" />
-
-<div id="nav-path"><a href="/jsp/wdtf/wdtf-validation/">WDTF Validation Service</a> &gt; Validation report</div>
--->
 
 <h1> Validation report </h1>
 
@@ -121,10 +116,10 @@ Content Version: <c:out value="${contentWDTFVersion}"/>
 
                 <c:choose >
                     <c:when test="${numContentValidationErrors>0 || schematronError || !structureValidationResult }">
-                    Content validation failed
-                </c:when>
+                        Content validation failed
+                    </c:when>
                     <c:when test="${numContentValidationMessages>0}">
-                    Valid with warning messages
+                        Valid with warning messages
                     </c:when>
                 <c:otherwise>
                     Valid
@@ -193,8 +188,6 @@ Content Version: <c:out value="${contentWDTFVersion}"/>
 
         <a href="/jsp/wdtf/wdtf-validation">back to home page</a>
         -->
-
-<jsp:include page="copyright.html" />
 
     </body>
 </html>

@@ -9,9 +9,12 @@
 	attributeFormDefault="unqualified"
 	version="2.0.0">
 	<annotation>
-		<documentation> observation.xsd Observations and Measurements - XML Implementation is an OGC
-			Standard Copyright (c) [2010] Open Geospatial Consortium, Inc. All Rights Reserved. To
-			obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
+		<documentation> observation.xsd
+
+			Observations and Measurements - XML Implementation is an OGC Standard.
+
+			Copyright (c) [2010] Open Geospatial Consortium, Inc. All Rights Reserved.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
 		</documentation>
 	</annotation>
 	<!-- ====================================================================== -->
@@ -22,6 +25,7 @@
 	<import
 		namespace="http://www.isotc211.org/2005/gmd"
 		schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd"/>
+
 	<!-- ====================================================================== -->
 	<!-- ====================================================================== -->
 	<!-- ===== Common properties of observations ====== -->
@@ -35,6 +39,7 @@
 				Concrete observation types must add a *result* property of a suitable type.
 			</documentation>
 		</annotation>
+
 		<sequence>
 			<element
 				name="type"
@@ -53,6 +58,7 @@
 				type="gmd:MD_Metadata_PropertyType"
 				minOccurs="0">
 				<annotation>
+
 					<documentation> If present, the association Metadata shall link the
 						OM_Observation to descriptive metadata. </documentation>
 				</annotation>
@@ -71,6 +77,7 @@
 						OM_Observation, with the role name relatedObservation for the target.
 					</documentation>
 				</annotation>
+
 			</element>
 			<element
 				name="phenomenonTime"
@@ -85,7 +92,10 @@
 			</element>
 			<element
 				name="resultTime"
-				type="gml:TimeInstantPropertyType">
+				type="gml:TimeInstantPropertyType"
+				block="#all">
+				<!-- om:resultTime is used in schematron-based validaty tests, so must not be changed -->
+
 				<annotation>
 					<documentation> The attribute resultTime:TM_Instant shall describe the time when
 						the result became available, typically when the procedure (6.2.2.10)
@@ -101,11 +111,13 @@
 				<annotation>
 					<documentation> If present, the attribute validTime:TM_Period shall describe the
 						time period during which the result is intended to be used. </documentation>
+
 				</annotation>
 			</element>
 			<element
 				name="procedure"
-				type="om:OM_ProcessPropertyType">
+				type="om:OM_ProcessPropertyType"
+				nillable="true">
 				<annotation>
 					<documentation> The association ProcessUsed shall link the OM_Observation to the
 						OM_Process (6.2.3) used to generate the result. The process has the role
@@ -118,6 +130,7 @@
 				type="om:NamedValuePropertyType"
 				minOccurs="0"
 				maxOccurs="unbounded">
+
 				<annotation>
 					<documentation> If present, the attributes parameter:NamedValue shall describe
 						an arbitrary event-specific parameter. This might be an environmental
@@ -136,10 +149,12 @@
 			</element>
 			<element
 				name="observedProperty"
-				type="gml:ReferenceType">
+				type="gml:ReferenceType"
+				nillable="true">
 				<annotation>
 					<appinfo>
 						<gml:targetElement>xs:anyType</gml:targetElement>
+
 					</appinfo>
 					<documentation> The association Phenomenon shall link the OM_Observation to the
 						GFI_PropertyType (C.2.2) for which the OM_Observation:result (6.2.2.9)
@@ -155,7 +170,8 @@
 			</element>
 			<element
 				name="featureOfInterest"
-				type="gml:FeaturePropertyType">
+				type="gml:FeaturePropertyType"
+				nillable="true">
 				<annotation>
 					<documentation> The association Domain shall link the OM_Observation to the
 						GFI_Feature (C.2.1) that is the subject of the observation and carries the
@@ -165,6 +181,7 @@
 						object, as described in Clause 8 of this International Standard. An
 						observation instance serves as a propertyValueProvider for its feature of
 						interest. </documentation>
+
 				</annotation>
 			</element>
 			<element
@@ -183,6 +200,7 @@
 				</annotation>
 			</element>
 		</sequence>
+
 	</group>
 	<!-- ====================================================================== -->
 	<!-- ===== Generic Observation result ======= -->
@@ -201,6 +219,7 @@
 				(6.2.2.8) is a spatial operation or function, the type of the result may be a
 				coverage, NOTE 2 In some contexts, particularly in earth and environmental sciences,
 				the term “observation” is used to refer to the result itself. </documentation>
+
 		</annotation>
 	</element>
 	<!-- ====================================================================== -->
@@ -214,6 +233,7 @@
 					<element ref="gml:metaDataProperty" minOccurs="0" maxOccurs="unbounded"/>
 					<element ref="gml:description" minOccurs="0"/>
 					<element ref="gml:name" minOccurs="0" maxOccurs="unbounded"/> -->
+
 				<!--    from AbstractFeatureType
 				<element ref="gml:boundedBy" minOccurs="0"/> -->
 			</documentation>
@@ -227,6 +247,7 @@
 					<element
 						ref="om:result"/>
 				</sequence>
+
 			</extension>
 		</complexContent>
 	</complexType>
@@ -240,6 +261,7 @@
 				of a property of the feature of interest. The observed property may be any property
 				associated with the type of the feature of interest.</documentation>
 		</annotation>
+
 	</element>
 	<!-- ...................... -->
 	<complexType
@@ -253,6 +275,7 @@
 			ref="gml:AssociationAttributeGroup"/>
 	</complexType>
 	<!-- ====================================================================== -->
+
 	<!-- ===== Observation Context  ======= -->
 	<!-- ====================================================================== -->
 	<complexType
@@ -269,9 +292,10 @@
 			<element
 				name="role"
 				type="gml:ReferenceType">
+
 				<annotation>
-					<documentation>The attribute 'role' shall describe the relationship of
-						the target OM_Observation to the source OM_Observation. </documentation>
+					<documentation>The attribute 'role' shall describe the relationship of the
+						target OM_Observation to the source OM_Observation. </documentation>
 				</annotation>
 			</element>
 			<element
@@ -280,6 +304,7 @@
 				<annotation>
 					<appinfo>
 						<gml:targetElement>om:OM_Observation</gml:targetElement>
+
 					</appinfo>
 					<documentation> Some observations depend on other observations to provide
 						context which is important, sometimes essential, in understanding the
@@ -296,6 +321,7 @@
 	<element
 		name="ObservationContext"
 		type="om:ObservationContextType">
+
 		<annotation>
 			<documentation> Some observations depend on other observations to provide context which
 				is important, sometimes essential, in understanding the result. These dependencies
@@ -311,6 +337,7 @@
 		<annotation>
 			<documentation>ObservationContext is a dataType, without identity, so may only be used
 				inline</documentation>
+
 		</annotation>
 		<sequence>
 			<element
@@ -320,27 +347,33 @@
 	<!-- ====================================================================== -->
 	<!-- ===== Observation process  ======= -->
 	<!-- ====================================================================== -->
-	<element
-		name="OM_Process"
-		abstract="true">
-		<annotation>
-			<documentation>OM_Process is abstract, and has no attributes, operations or associations. It serves as the base class for observation processes. The purpose of an observation process is to generate an observation result. An instance of OM_Process is often an instrument or sensor, but may be a human observer, a simulator, or a process or algorithm applied to more primitive results used as inputs. 
-				
-				NOTE	ISO 19115-2:2008 provides MI_Instrument, LE_Processing and LE_Algorithm, which could all be modelled as specializations of OM_Process. OGC SensorML [10] provides a model which is suitable for many observation procedures. </documentation>
-		</annotation>
-	</element>
-	<!-- ...................... -->
 	<complexType
 		name="OM_ProcessPropertyType">
+
 		<annotation>
-			<documentation>OM_Process is abstract, and has no attributes, operations or associations. It serves as the base class for observation processes. The purpose of an observation process is to generate an observation result. An instance of OM_Process is often an instrument or sensor, but may be a human observer, a simulator, or a process or algorithm applied to more primitive results used as inputs. 
-				
-				NOTE	ISO 19115-2:2008 provides MI_Instrument, LE_Processing and LE_Algorithm, which could all be modelled as specializations of OM_Process. OGC SensorML [10] provides a model which is suitable for many observation procedures. </documentation>
+			<documentation> The purpose of an observation process is to generate an observation
+				result. An instance is often an instrument or sensor, but may be a human observer, a
+				simulator, or a process or algorithm applied to more primitive results used as
+				inputs. The model for OM_Process is abstract, and has no attributes, operations, or
+				associations. NOTE ISO 19115-2:2008 provides MI_Instrument, LE_Processing and
+				LE_Algorithm, which could all be modelled as specializations of OM_Process. Any
+				suitable XML may be used to describe the observation process in line, provided that
+				it is contained in a single XML element. If reference to a schema is provided it
+				must also be valid. OGC SensorML provides a model which is suitable for many
+				observation procedures. </documentation>
 		</annotation>
 		<sequence
 			minOccurs="0">
-			<element
-				ref="om:OM_Process"/>
+			<any
+				namespace="##any"
+				processContents="lax">
+				<annotation>
+					<documentation> Any suitable XML may be used to describe the observation process
+						in line, provided that it is contained in a single XML element. If refernece
+						to a schema is provided it must also be valid. </documentation>
+
+				</annotation>
+			</any>
 		</sequence>
 		<attributeGroup
 			ref="gml:AssociationAttributeGroup"/>
@@ -350,18 +383,20 @@
 	<!-- ====================================================================== -->
 	<complexType
 		name="NamedValueType">
+
 		<annotation>
-			<documentation> The class 'NamedValue' provides for a generic soft-typed parameter value.
-				NamedValue shall support two attributes. </documentation>
+			<documentation> The class 'NamedValue' provides for a generic soft-typed parameter
+				value. NamedValue shall support two attributes. </documentation>
 		</annotation>
 		<sequence>
 			<element
 				name="name"
 				type="gml:ReferenceType">
 				<annotation>
-					<documentation> The attribute 'name' shall indicate the meaning of the
-						named value. Its value should be taken from a well-governed source if
-						possible. </documentation>
+					<documentation> The attribute 'name' shall indicate the meaning of the named
+						value. Its value should be taken from a well-governed source if possible.
+					</documentation>
+
 				</annotation>
 			</element>
 			<element
@@ -373,19 +408,25 @@
 				</annotation>
 			</element>
 		</sequence>
+
 	</complexType>
 	<!-- ......................... -->
 	<element
 		name="NamedValue"
 		type="om:NamedValueType">
 		<annotation>
-			<documentation> The class 'NamedValue' provides for a generic soft-typed parameter value.
-				NamedValue shall support two attributes. </documentation>
+			<documentation> The class 'NamedValue' provides for a generic soft-typed parameter
+				value. NamedValue shall support two attributes. </documentation>
 		</annotation>
 	</element>
 	<!-- ...................... -->
+
 	<complexType
 		name="NamedValuePropertyType">
+		<annotation>
+			<documentation> The class 'NamedValue' provides for a generic soft-typed parameter
+				value. NamedValue shall support two attributes. </documentation>
+		</annotation>
 		<sequence
 			minOccurs="0">
 			<element
@@ -393,6 +434,7 @@
 		</sequence>
 		<attributeGroup
 			ref="gml:AssociationAttributeGroup"/>
+
 	</complexType>
 	<!-- ====================================================================== -->
 	<!-- ===== TimeObjectProperty  ======= -->
@@ -402,6 +444,7 @@
 		<annotation>
 			<documentation>This property type is not provided directly by GML</documentation>
 		</annotation>
+
 		<sequence
 			minOccurs="0">
 			<element
@@ -414,3 +457,4 @@
 	<!-- ====================================================================== -->
 	<!-- ====================================================================== -->
 </schema>
+

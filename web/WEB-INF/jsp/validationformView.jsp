@@ -99,14 +99,6 @@
 </head>
 
 <body>
-<!-- <jsp:include page="bureau_header.html" /> -->
-
-<!--
-<div >
-<img width="800" height="60" align="right" src="http://www.bom.gov.au/water/images/curve.gif" alt="Water Division" border="0"/>
-<h1 align="center" style="color:black; width: 100%;">WDTF Validation Service</h1>
-</div>
--->
 
 <table style="width: 100%;" cellpadding="0" cellspacing="0">
     <tr>
@@ -305,8 +297,5 @@
 </div> <!-- tabs -->
 </div> <!-- sections -->
 
-<!--
-<jsp:include page="copyright.html" />
--->
 </body>
 </html>

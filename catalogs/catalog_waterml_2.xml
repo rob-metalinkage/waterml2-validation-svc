@@ -83,7 +83,44 @@
 	<system
 		systemId="../gmx/gmx.xsd"
 		uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/iso/19139/20070417/gmx/gmx.xsd"/>
-	
+
+
+      	<!-- the schemas refs used by USGS -->
+
+        <uri
+		name="../observation.xsd"
+		uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/om/2.0/observation.xsd"/>
+
+        <uri
+		name="http://schemas.opengis.net/om/2.0/observation.xsd"
+		uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/om/2.0/observation.xsd"/>
+
+        <system
+		systemId="../observation.xsd"
+		uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/om/2.0/observation.xsd"/>
+
+
+        <uri
+		name="http://schemas.opengis.net/gml/3.2.1/gml.xsd"
+		uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/gml/3.2.1/gml.xsd"/>
+
+
+	<system
+		systemId="http://schemas.opengis.net/gml/3.2.1/gml.xsd"
+		uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/gml/3.2.1/gml.xsd"/>
+
+
+
+        <uri
+		name="../samplingFeature.xsd"
+		uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/sampling/2.0/samplingFeature.xsd"/>
+	<system
+		systemId="../samplingFeature.xsd"
+		uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/sampling/2.0/samplingFeature.xsd"/>
+
+
+               
+
 	<!-- ===================================================== -->
 	<!-- The following groups of elements provide local paths for a set of resources as an alternative to web paths -->
 	<!-- The first entry in each pair uses the "uri" version, and the second the "system" version of the redirect -->
@@ -122,7 +159,17 @@
 		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET/gml/3.2.1"/>
 	<rewriteSystem
 		systemIdStartString="http://www.opengis.net/gml/3.2"
-		rewritePrefix="&xmmlhome;/gml/3.2.1"/> -->
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET/gml/3.2.1"/> 
+
+<!--
+        <rewriteURI
+		uriStartString="http://schemas.opengis.net/gml/3.2.1"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET/gml/3.2.1"/>
+
+        <rewriteSystem
+		systemStartString="http://schemas.opengis.net/gml/3.2.1"
+		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET/gml/3.2.1"/>
+-->
 
 	<!-- Exact copy of  SWE Common schema  -->
 	<!-- the schemas in the OGC rep use relpaths for schemaLocation references to other OGC schemas - yuck -->
@@ -207,15 +254,40 @@
 	<rewriteSystem
 		systemIdStartString="file:///C:/OGC/SCHEMAS_OPENGIS_NET"
 		rewritePrefix="&xmmlhome;/SCHEMAS_OPENGIS_NET"/>
-	<!-- ===================================================== -->
 
-	<systemSuffix systemIdSuffix="WaterCollection.xsd" uri="&waterml2;/WaterCollection.xsd"/>
+
+
+
+	<!-- ==== O & M ================================================ -->
+	<!--<systemSuffix systemIdSuffix="observation.xsd" uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/om/2.0/observation.xsd"/>-->
+
+        <!-- ==== GML 3.2 ================================================ -->
+        <!--<systemSuffix systemIdSuffix="gml.xsd" uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/gml/3.2.1/gml.xsd"/>-->
+        
+        
+        <!-- ==== Sampling features 2.0 ================================================ -->
+        <!--<systemSuffix systemIdSuffix="samplingFeature.xsd" uri="&xmmlhome;/SCHEMAS_OPENGIS_NET/sampling/2.0/samplingFeature.xsd"/>-->
+
+
+        
+
+        <!-- ===================================================== -->
+        
         <systemSuffix systemIdSuffix="waterml2.xsd" uri="&waterml2;/waterml2.xsd"/>
 
+<!--
+        <systemSuffix systemIdSuffix="WaterCollection.xsd" uri="&waterml2;/WaterCollection.xsd"/>
         <systemSuffix systemIdSuffix="waterSampling.xsd" uri="&waterml2;/waterSampling.xsd"/>
         <systemSuffix systemIdSuffix="waterProperty.xsd" uri="&waterml2;/waterProperty.xsd"/>
         <systemSuffix systemIdSuffix="waterObservation.xsd" uri="&waterml2;/waterObservation.xsd"/>
         <systemSuffix systemIdSuffix="waterResultsCoverage.xsd" uri="&waterml2;/waterResultsCoverage.xsd"/>
+    -->
+        <systemSuffix systemIdSuffix="monitoringPoint.xsd" uri="&waterml2;/monitoringPoint.xsd"/>
+        <systemSuffix systemIdSuffix="collection.xsd" uri="&waterml2;/collection.xsd"/>
+        <systemSuffix systemIdSuffix="observationProcess.xsd" uri="&waterml2;/observationProcess.xsd"/>
+        <systemSuffix systemIdSuffix="timeseriesObservationMetadata.xsd" uri="&waterml2;/timeseriesObservationMetadata.xsd"/>
+        <systemSuffix systemIdSuffix="timeseries.xsd" uri="&waterml2;/timeseries.xsd"/>
+
 
 
 </catalog>

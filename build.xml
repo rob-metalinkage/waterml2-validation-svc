@@ -7,9 +7,9 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="Validation1.0.1" default="default" basedir=".">
+<project name="WaterML2Validation" default="default" basedir=".">
     <description>Builds, tests, and runs the project Validation1.0.1.</description>
-    <import file="nbproject/build-impl.xml"/>
+    <!--<import file="nbproject/build-impl.xml"/>-->
     <!--
 
     There exist several targets which are by default empty and which can be 
@@ -68,4 +68,78 @@
     nbproject/build-impl.xml file. 
 
     -->
+	
+    <property name="dest.dir" value="${basedir}/bin" />
+	<property name="build.dir" value="${basedir}/build"/>
+    <property name="dist.dir" value="${basedir}/dist"/>
+        
+    <!-- source directory for java code -->
+    <property name="src.dir" value="${basedir}/src/java"/> 
+
+	
+	<!-- libraries required by the java APIs -->
+    <path id="build.class.path">
+		<fileset dir="${basedir}/lib">
+			<include name="**/*.jar" />
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+    <target name="help">
+	    <echo>Run > ant build-cmdline
+	</echo>
+    </target>
+	
+    <target name="build-cmdline" depends="compile"/>
+
+
+    <target name="clean_all">
+    	<echo>Cleaning compilation directories... </echo>
+    		    <delete dir="build" failonerror="false" />
+    		    <delete dir="bin" failonerror="false" />
+    		    <delete dir="${deployment_dir}" failonerror="false" />
+	</target>
+
+	<target name="clean_build">
+	    	<echo>Cleaning compilation and dist directories... </echo>
+	        <delete dir="build" failonerror="false" />
+			<delete dir="dist" failonerror="false" />
+	    	<delete dir="bin" failonerror="false" />
+	    	
+	</target>
+	
+	<target name="compile" depends="clean_build">
+
+	    <echo>Compiling java sources...</echo>
+	    <mkdir dir="${dest.dir}"/>
+	    <!--<javac srcdir="${src.dir}:${reg.src.dir}" destdir="${dest.dir}" debug="true">-->
+	    <javac srcdir="${src.dir}" destdir="${dest.dir}" debug="true">
+		    <classpath refid="build.class.path" />		    
+	    </javac>
+
+	    <echo>Copying all non-java files into build directory: ${dest.dir}</echo>
+	    <copy todir="${dest.dir}">
+		<fileset dir="${src.dir}" excludes="**/*.java"/>
+		<!-- <fileset dir="${reg.src.dir}" excludes="**/*.java"/> -->
+	    </copy>
+    </target>
+	
+	<target name="war" depends="compile">
+	    <mkdir dir="${dist.dir}"/>
+	
+		<war destfile="${dist.dir}/WaterML2Validation.war" webxml="web/WEB-INF/web.xml">
+		  
+		  <fileset dir="web"/>
+		  <lib dir="lib">
+			<exclude name="jdbc1.jar"/>
+		  </lib>
+		  <classes dir="bin"/>
+		  <zipfileset dir="schemas" prefix="schemas"/>
+		  <zipfileset dir="extSchemas" prefix="schemas/externalSchemas"/>
+		  <zipfileset dir="format" prefix="format"/>
+		  <zipfileset dir="catalogs" />
+		  
+		  
+		</war>
+	</target>
 </project>
