@@ -122,6 +122,15 @@
 		<fileset dir="${src.dir}" excludes="**/*.java"/>
 		<!-- <fileset dir="${reg.src.dir}" excludes="**/*.java"/> -->
 	    </copy>
+		
+		<echo>Compiling Schematron rules down to XSL</echo>
+		<java classname="org.csiro.wdts.validation.waterml2.config.DoCompileRules2XSL">
+			<classpath>
+				<path refid="build.class.path"/>
+				<dirset dir="${dest.dir}"/>
+			</classpath>
+       </java>
+		
     </target>
 	
 	<target name="war" depends="compile">
