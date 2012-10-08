@@ -1861,6 +1861,8 @@ src/java/config.properties -text
 src/java/org/csiro/wdts/validation/waterml2/config/ConfigProp.java -text
 src/java/org/csiro/wdts/validation/waterml2/config/DoCompileRules2XSL.java -text
 src/java/org/csiro/wdts/validation/waterml2/config/server.properties -text
+src/java/org/csiro/wdts/validation/waterml2/controller/NoDefinedProfileException.java -text
+src/java/org/csiro/wdts/validation/waterml2/controller/WMLNamespaceContext.java -text
 src/java/org/csiro/wdts/validation/waterml2/controller/WaterMl2ValidationController.java -text
 /temp.txt -text
 /wdtf-validation.xml -text
