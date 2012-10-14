@@ -1882,7 +1882,15 @@ web/WEB-INF/wsdl/client/XSLTransformWSDLService/localhost_8084/XSLTransform/XSLT
 web/contentRules/README.txt -text
 web/contentRules/categorical-timeseries-tvp-observation.sch -text
 web/contentRules/categorical-timeseries-tvp.sch -text
+web/contentRules/compiled-categorical-timeseries-tvp-observation.xsl -text
+web/contentRules/compiled-measurement-timeseries-tvp-observation.xsl -text
+web/contentRules/compiled-measurement-timeseries-tvp.xsl -text
+web/contentRules/compiled-monitoring-point-feature-of-interest.xsl -text
+web/contentRules/compiled-timeseries-observation.xsl -text
+web/contentRules/compiled-timeseries-tvp-observation.xsl -text
+web/contentRules/compiled-timeseries.xsl -text
 web/contentRules/compiled-waterml2.xsl -text
+web/contentRules/compiled-xml-rules.xsl -text
 web/contentRules/measurement-timeseries-tvp-observation.sch -text
 web/contentRules/measurement-timeseries-tvp.sch -text
 web/contentRules/monitoring-point-feature-of-interest.sch -text
