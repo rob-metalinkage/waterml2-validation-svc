@@ -4,7 +4,8 @@ WaterML 2.0 Validation Service.
 This package contains the libraries, code, and schemas for WaterML 2.0 validation service 
 based on the architecture of the Water Data Transfer Format (WDTF) validation service (Yu et al. 2011).
 
-It extends the validation-svc-base framework for a two pass XML validation service. 
+It extends the validation-svc-base framework for a two pass XML validation service
+(see https://github.com/CSIRO-enviro-informatics/validation-svc-base). 
 First pass XSD validation and second pass Schematron validation. Specific extensions are 
 to the Java validation code for WaterML2.0 validation.
 
