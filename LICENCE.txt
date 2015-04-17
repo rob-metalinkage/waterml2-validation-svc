@@ -1,0 +1,165 @@
+CSIRO Open Source Software License Agreement (GPLv3)
+Copyright (c) 2015, Commonwealth Scientific and Industrial Research 
+Organisation (CSIRO) ABN 41 687 119 230.
+
+All rights reserved. CSIRO is willing to grant you a license to <insert name> 
+on the terms of the GNU General Public License version 3 as published by the 
+Free Software Foundation (http://www.gnu.org/licenses/gpl.html), except where 
+otherwise indicated for third party material.
+
+The following additional terms apply under clause 7 of that license:
+EXCEPT AS EXPRESSLY STATED IN THIS AGREEMENT AND TO THE FULL EXTENT PERMITTED 
+BY APPLICABLE LAW, THE SOFTWARE IS PROVIDED "AS-IS". CSIRO MAKES NO 
+REPRESENTATIONS, WARRANTIES OR CONDITIONS OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO ANY REPRESENTATIONS, WARRANTIES OR CONDITIONS 
+REGARDING THE CONTENTS OR ACCURACY OF THE SOFTWARE, OR OF TITLE, 
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, THE 
+ABSENCE OF LATENT OR OTHER DEFECTS, OR THE PRESENCE OR ABSENCE OF ERRORS, 
+WHETHER OR NOT DISCOVERABLE.
+
+TO THE FULL EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL CSIRO BE 
+LIABLE ON ANY LEGAL THEORY (INCLUDING, WITHOUT LIMITATION, IN AN ACTION FOR 
+BREACH OF CONTRACT, NEGLIGENCE OR OTHERWISE) FOR ANY CLAIM, LOSS, DAMAGES OR 
+OTHER LIABILITY HOWSOEVER INCURRED.  WITHOUT LIMITING THE SCOPE OF THE 
+PREVIOUS SENTENCE THE EXCLUSION OF LIABILITY SHALL INCLUDE: LOSS OF 
+PRODUCTION OR OPERATION TIME, LOSS, DAMAGE OR CORRUPTION OF DATA OR RECORDS; 
+OR LOSS OF ANTICIPATED SAVINGS, OPPORTUNITY, REVENUE, PROFIT OR GOODWILL, OR 
+OTHER ECONOMIC LOSS; OR ANY SPECIAL, INCIDENTAL, INDIRECT, CONSEQUENTIAL, 
+PUNITIVE OR EXEMPLARY DAMAGES, ARISING OUT OF OR IN CONNECTION WITH THIS 
+AGREEMENT, ACCESS OF THE SOFTWARE OR ANY OTHER DEALINGS WITH THE SOFTWARE, 
+EVEN IF CSIRO HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH CLAIM, LOSS, 
+DAMAGES OR OTHER LIABILITY.
+
+APPLICABLE LEGISLATION SUCH AS THE AUSTRALIAN CONSUMER LAW MAY APPLY 
+REPRESENTATIONS, WARRANTIES, OR CONDITIONS, OR IMPOSES OBLIGATIONS OR 
+LIABILITY ON CSIRO THAT CANNOT BE EXCLUDED, RESTRICTED OR MODIFIED TO THE 
+FULL EXTENT SET OUT IN THE EXPRESS TERMS OF THIS CLAUSE ABOVE "CONSUMER 
+GUARANTEES".  TO THE EXTENT THAT SUCH CONSUMER GUARANTEES CONTINUE TO APPLY, 
+THEN TO THE FULL EXTENT PERMITTED BY THE APPLICABLE LEGISLATION, THE 
+LIABILITY OF CSIRO UNDER THE RELEVANT CONSUMER GUARANTEE IS LIMITED (WHERE 
+PERMITTED AT CSIRO’S OPTION) TO ONE OF FOLLOWING REMEDIES OR SUBSTANTIALLY 
+EQUIVALENT REMEDIES:
+(a)               THE REPLACEMENT OF THE SOFTWARE, THE SUPPLY OF EQUIVALENT 
+                  SOFTWARE, OR SUPPLYING RELEVANT SERVICES AGAIN;
+(b)               THE REPAIR OF THE SOFTWARE;
+(c)               THE PAYMENT OF THE COST OF REPLACING THE SOFTWARE, OF 
+                  ACQUIRING EQUIVALENT SOFTWARE, HAVING THE RELEVANT 
+                  SERVICES SUPPLIED AGAIN, OR HAVING THE SOFTWARE REPAIRED.
+
+IN THIS CLAUSE, CSIRO INCLUDES ANY THIRD PARTY AUTHOR OR OWNER OF ANY PART OF 
+THE SOFTWARE OR MATERIAL DISTRIBUTED WITH IT.  CSIRO MAY ENFORCE ANY RIGHTS 
+ON BEHALF OF THE RELEVANT THIRD PARTY.
+
+Third Party Components
+
+The following third party components are distributed with the Software.  You 
+agree to comply with the license terms for these components as part of 
+accessing the Software.  Other third party software may also be identified in 
+separate files distributed with the Software.
+___________________________________________________________________
+cglib-2.2
+https://github.com/cglib/cglib
+Copyright 2012 The Apache Software Foundation
+
+This product includes software developed by
+The Apache Software Foundation (http://www.apache.org/).
+This software is licensed under Apache Licence Version 2.0.
+___________________________________________________________________
+ 
+Apache Commons FileUpload 1.2.1 
+https://github.com/apache/commons-fileupload
+Copyright 2002-2008 The Apache Software Foundation
+
+This product includes software developed by
+The Apache Software Foundation (http://www.apache.org/).
+This software is licensed under Apache Licence Version 2.0.
+___________________________________________________________________
+
+Apache Commons IO 1.4
+https://github.com/apache/commons-io
+Copyright 2002-2008 The Apache Software Foundation
+
+This product includes software developed by
+The Apache Software Foundation (http://www.apache.org/).
+This software is licensed under Apache Licence Version 2.0.
+___________________________________________________________________
+
+Apache Commons Logging 1.0.4
+https://github.com/apache/commons-logging
+Copyright 2002-2007 The Apache Software Foundation
+
+This product includes software developed by
+The Apache Software Foundation (http://www.apache.org/).
+This software is licensed under Apache Licence Version 2.0.
+___________________________________________________________________
+
+JSP Standard Tag Library
+https://jstl.java.net
+Copyright (C) 1989, 1991 Free Software Foundation, Inc.
+51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
+
+Everyone is permitted to copy and distribute verbatim copies
+of this license document, but changing it is not allowed.
+This software is licensed under GPLv2.
+___________________________________________________________________
+
+Apache XML Commons Resolver
+Copyright 2006 The Apache Software Foundation.
+
+This product includes software developed at
+The Apache Software Foundation http://www.apache.org/
+
+Portions of this code are derived from classes placed in the
+public domain by Arbortext on 10 Apr 2000. See:
+http://www.arbortext.com/customer_support/updates_and_technical_notes/catalogs/docs/README.htm
+This software is licensed under Apache Licence Version 2.0.
+___________________________________________________________________
+
+   Apache Xalan (Xalan serializer)
+   Copyright 1999-2006 The Apache Software Foundation
+
+   This product includes software developed at
+   The Apache Software Foundation (http://www.apache.org/).
+
+   Portions of this software was originally based on the following:
+     - software copyright (c) 1999-2002, Lotus Development Corporation.,
+       http://www.lotus.com.
+     - software copyright (c) 2001-2002, Sun Microsystems.,
+       http://www.sun.com.
+     - software copyright (c) 2003, IBM Corporation., 
+       http://www.ibm.com.
+
+   This software is licensed under Apache Licence Version 2.0.
+___________________________________________________________________
+
+Apache Xerces Java
+   Copyright 1999-2010 The Apache Software Foundation
+
+   This product includes software developed at
+   The Apache Software Foundation (http://www.apache.org/).
+
+   Portions of this software were originally based on the following:
+     - software copyright (c) 1999, IBM Corporation., http://www.ibm.com.
+     - software copyright (c) 1999, Sun Microsystems., http://www.sun.com.
+     - voluntary contributions made by Paul Eng on behalf of the 
+       Apache Software Foundation that were originally developed at iClick, Inc.,
+       software copyright (c) 1999.
+
+   This software is licensed under Apache Licence Version 2.0.
+
+___________________________________________________________________
+
+Saxon-B 9.2
+Copyright 2009 Saxonica.
+
+This software is licensed under  Mozilla Public License 1.0 (MPL).
+ 
+
+___________________________________________________________________
+
+Spring Framework and Web MVC 2.5
+Copyright 2012 Pivotal Software
+
+This software is licensed under Apache Licence Version 2.0.
+
+___________________________________________________________________
