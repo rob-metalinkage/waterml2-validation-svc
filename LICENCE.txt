@@ -2,10 +2,11 @@ CSIRO Open Source Software License Agreement (GPLv3)
 Copyright (c) 2015, Commonwealth Scientific and Industrial Research 
 Organisation (CSIRO) ABN 41 687 119 230.
 
-All rights reserved. CSIRO is willing to grant you a license to <insert name> 
-on the terms of the GNU General Public License version 3 as published by the 
-Free Software Foundation (http://www.gnu.org/licenses/gpl.html), except where 
-otherwise indicated for third party material.
+All rights reserved. CSIRO is willing to grant you a license to the
+WaterML 2.0 Validation Service on the terms of the GNU General Public 
+License version 3 as published by the Free Software Foundation 
+(http://www.gnu.org/licenses/gpl.html), except where otherwise 
+indicated for third party material.
 
 The following additional terms apply under clause 7 of that license:
 EXCEPT AS EXPRESSLY STATED IN THIS AGREEMENT AND TO THE FULL EXTENT PERMITTED 
