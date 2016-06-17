@@ -5,23 +5,27 @@ xmlns:gml="http://www.opengis.net/gml"
 xmlns:owcs="http://www.opengis.net/wcs/1.1/ows" 
 xmlns:ows="http://www.opengis.net/ows" 
 xmlns:wcs="http://www.opengis.net/wcs/1.1" 
-elementFormDefault="qualified" version="1.1.0" xml:lang="en">
+elementFormDefault="qualified" xml:lang="en" version="1.1.0.2">
 	<annotation>
-		<appinfo>wcsDescribeCoverage.xsd 2006-10-13</appinfo>
+		<appinfo>wcsDescribeCoverage.xsd</appinfo>
 		<appinfo>
 			<GMLProfileSchema>http://schemas.opengis.net/wcs/1.1.0/gml4wcs.xsd</GMLProfileSchema>
 		</appinfo>
-		<documentation>This XML Schema Document defines the DescribeCoverage operation request and response XML elements and types, used by the OGC Web Coverage Service (WCS). 
-		Copyright (c) 2006 Open Geospatial Consortium, Inc, All Rights Reserved. </documentation>
+		<documentation>This XML Schema Document defines the DescribeCoverage operation request and response XML elements and types, used by the OGC Web Coverage Service (WCS).
+			
+			WCS is an OGC Standard.
+			Copyright (c) 2006,2010 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+		</documentation>
 	</annotation>
 	<!-- ==============================================================
 		includes and imports	
 	============================================================== -->
 	<include schemaLocation="wcsCommon.xsd"/>
 	<include schemaLocation="wcsGridCRS.xsd"/>
-	<import namespace="http://www.opengis.net/ows" schemaLocation="../../ows/1.0.0/owsAll.xsd"/>
-	<import namespace="http://www.opengis.net/wcs/1.1/ows" schemaLocation="owcsAll.xsd"/>
-	<import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
+	<import namespace="http://www.opengis.net/ows" schemaLocation="http://schemas.opengis.net/ows/1.0.0/owsAll.xsd"/>
+	<import namespace="http://www.opengis.net/wcs/1.1/ows" schemaLocation="http://schemas.opengis.net/wcs/1.1.0/owcsAll.xsd"/>
+	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
 	<!-- ==============================================================    
 	   elements and types	
 	============================================================== -->

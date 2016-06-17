@@ -5,7 +5,7 @@ xmlns="http://www.w3.org/2001/XMLSchema"
 xmlns:om="http://www.opengis.net/om/1.0" 
 xmlns:swe="http://www.opengis.net/swe/1.0.1" 
         targetNamespace="http://www.opengis.net/om/1.0" 
-		elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0">
+		elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.3">
 	<annotation>
 		<documentation>observationSpecialization_override.xsd
 
@@ -13,12 +13,15 @@ An implementation of the OandM model for SWE
 This document contains various specializations of the basic observation pattern, by fixing the type of the result. 
 In this version, the specialization is achieved by restricting om:ObservationType to have a result of the correct type
 
-Copyright (c) 2007 Open Geospatial Consortium - see http://www.opengeospatial.org/ogc/software</documentation>
+Observations and Measurements is an OGC Standard.
+Copyright (c) 2007,2010 Open Geospatial Consortium.
+To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+		</documentation>
 	</annotation>
 	<!-- ====================================================================== -->
 	<!-- bring in other schemas -->
-	<import namespace="http://www.opengis.net/gml" schemaLocation="../../../gml/3.1.1/base/gml.xsd"/>
-	<import namespace="http://www.opengis.net/swe/1.0.1" schemaLocation="../../../sweCommon/1.0.1/swe.xsd"/>
+	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+	<import namespace="http://www.opengis.net/swe/1.0.1" schemaLocation="http://schemas.opengis.net/sweCommon/1.0.1/swe.xsd"/>
 	<include schemaLocation="../observation.xsd"/>
 	<!-- ====================================================================== -->
 	<!-- ====================================================================== -->

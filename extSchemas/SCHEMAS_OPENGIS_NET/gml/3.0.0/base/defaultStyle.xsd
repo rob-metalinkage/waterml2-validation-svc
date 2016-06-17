@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema targetNamespace="http://www.opengis.net/gml" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" xmlns:smil20="http://www.w3.org/2001/SMIL20/" elementFormDefault="qualified" version="3.0.0">
+<xsd:schema targetNamespace="http://www.opengis.net/gml" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" xmlns:smil20="http://www.w3.org/2001/SMIL20/" elementFormDefault="qualified" version="3.0.0.1">
   <xsd:annotation>
     <xsd:appinfo source="urn:opengis:specification:gml:schema-defaultStyle:v3.0.0">defaultStyle.xsd</xsd:appinfo>
     <xsd:documentation>
       <name>defaultStyle.xsd</name>
-      <version>3.0</version>
+      <version>3.0 updated 2010-01-26</version>
       <scope/>
       <description>Default Style schema for GML 3.0</description>
-      <copyright>Copyright (c) 2001-2002 OGC, All Rights Reserved.</copyright>
+      <copyright>
+        GML is an OGC Standard.
+        Copyright (c) 2001,2002,2010 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+      </copyright>
       <conformance>reference to ISO Specifications</conformance>
     </xsd:documentation>
   </xsd:annotation>
@@ -15,7 +19,7 @@
        includes and imports
 	============================================================== -->
   <xsd:include schemaLocation="measures.xsd"/>
-  <xsd:import namespace="http://www.w3.org/2001/SMIL20/" schemaLocation="../smil/smil20.xsd"/>
+  <xsd:import namespace="http://www.w3.org/2001/SMIL20/" schemaLocation="http://schemas.opengis.net/gml/3.0.0/smil/smil20.xsd"/>
   <!-- ==============================================================
       the property
 	============================================================== -->

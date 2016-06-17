@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema targetNamespace="http://www.opengis.net/gml" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:sch="http://www.ascc.net/xml/schematron" xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.1">
+<schema targetNamespace="http://www.opengis.net/gml" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:sch="http://www.ascc.net/xml/schematron" xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.1.0.2">
+  <!-- This version of ols/1.1 was previously versioned as '1.1.1' . -->
 	<annotation>
-		<documentation>Copyright (c) 2006 Open Geospatial Consortium, Inc. All Rights Reserved.  To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .</documentation>
+		<documentation>
+			Copyright (c) 2006,2010 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+		</documentation>
 	</annotation>
 	<annotation>
 		<documentation>GML Subset schema for gml:_Object,gml:metaDataProperty,gml:_association,gml:AssociationType,gml:members,gml:Array,gml:curveProperty,gml:LineString,gml:LinearRing,gml:exterior,gml:interior,gml:Polygon,gml:surfaceMember,gml:surfaceProperty,gml:MultiSurface,gml:multiSurfaceProperty,gml:SurfaceInterpolationType,gml_Feature,gml:featureProperty,gml:featureMembers,gml:_FeatureCollection,gml:featureMember,gml:featureMembers,gml:_FeatureCollection,gml:Dictionary,gml:doubleList,gml:pos,gml:pointRep,gml:CircleByCenterPoint,  written by gmlSubset.xslt. 
@@ -17,7 +21,7 @@ All changes indicated [SJDC]
 
 </documentation>
 	</annotation>
-	<import namespace="http://www.w3.org/1999/xlink" schemaLocation="../../xlink/1.0.0/xlinks.xsd"/>
+	<import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
 	<!-- ================================================= -->
 	<element name="_Object" abstract="true">
 		<annotation>

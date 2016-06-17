@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    SWE Common is an OGC Standard.
+    Copyright (c) 2010 Open Geospatial Consortium. 
+    To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+-->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
     <sch:title>Additional validation rules for XML instances including block data components</sch:title>
     <sch:ns uri="http://www.opengis.net/swe/2.0" prefix="swe"/>
@@ -18,4 +23,12 @@
             </sch:assert>
         </sch:rule>
     </sch:pattern>
+  <sch:pattern>
+      <sch:title>Req 51</sch:title>
+      <sch:rule context="//swe:Matrix/swe:elementType[*]">
+          <sch:assert test="swe:Matrix | swe:Count | swe:Quantity | swe:Time">
+              The element type of a Matrix shall be a nested Matrix or a scalar numerical component (Req 51)
+          </sch:assert>
+      </sch:rule>
+  </sch:pattern>
 </sch:schema>

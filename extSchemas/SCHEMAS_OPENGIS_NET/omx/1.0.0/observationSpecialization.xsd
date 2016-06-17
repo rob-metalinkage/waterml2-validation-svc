@@ -6,7 +6,7 @@ xmlns:omx="http://www.opengis.net/omx/1.0"
 xmlns:swe="http://www.opengis.net/swe/1.0.1" 
 xmlns:sch="http://purl.oclc.org/dsdl/schematron" 
         targetNamespace="http://www.opengis.net/omx/1.0" 
-elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0">
+elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.2">
 	<annotation>
 		<appinfo source="urn:ogc:specification:om:doc-is(07-022r3):1.0.0">
 			<sch:title>Schematron validation</sch:title>
@@ -24,13 +24,17 @@ An implementation of the OandM model for SWE
 This document contains various specializations of the basic observation pattern, by fixing the type of the result. 
 The specialization is achieved by using Schematron to constrain the type of the result element from om:ObservationType
 
-Copyright (c) 2008 Open Geospatial Consortium - see http://www.opengeospatial.org/ogc/software</documentation>
+Observation Extensions is an OGC Standard.
+Copyright (c) 2007,2008,2010 Open Geospatial Consortium.
+To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+		</documentation>
 	</annotation>
 	<!-- ====================================================================== -->
 	<!-- bring in other schemas -->
-	<import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
-	<import namespace="http://www.opengis.net/swe/1.0.1" schemaLocation="../../sweCommon/1.0.1/swe.xsd"/>
-	<import namespace="http://www.opengis.net/om/1.0"  schemaLocation="../../om/1.0.0/om.xsd"/>
+	<include schemaLocation="om_extended.xsd"/>
+	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+	<import namespace="http://www.opengis.net/swe/1.0.1" schemaLocation="http://schemas.opengis.net/sweCommon/1.0.1/swe.xsd"/>
+	<import namespace="http://www.opengis.net/om/1.0"  schemaLocation="http://schemas.opengis.net/om/1.0.0/om.xsd"/>
 	<!-- ====================================================================== -->
 	<!-- ====================================================================== -->
 	<!-- ===== Scalar Observations ====== -->

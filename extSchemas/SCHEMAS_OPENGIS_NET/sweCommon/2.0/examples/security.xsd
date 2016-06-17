@@ -4,10 +4,10 @@
 	xmlns:swe="http://www.opengis.net/swe/2.0"
 	elementFormDefault="qualified">
 	<!-- -->
-	<include schemaLocation="../../../ic/2.0/IC-ISM-v2.xsd"/>
-	<import namespace="http://www.opengis.net/swe/2.0" schemaLocation="../swe.xsd"/>
+	<include schemaLocation="http://schemas.opengis.net/ic/2.0/IC-ISM-v2.xsd"/>
+	<import namespace="http://www.opengis.net/swe/2.0" schemaLocation="http://schemas.opengis.net/sweCommon/2.0/swe.xsd"/>
 	<!-- -->
-	<element name="security" substitutionGroup="swe:AbstractDataComponentExtensibilityPoint">
+	<element name="security">
 		<complexType>
 			<attributeGroup ref="ism:SecurityAttributesGroup"/>
 		</complexType>

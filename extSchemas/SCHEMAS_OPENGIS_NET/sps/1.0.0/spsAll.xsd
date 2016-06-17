@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema targetNamespace="http://www.opengis.net/sps/1.0" xmlns:sps="http://www.opengis.net/sps/1.0"
-    xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="0.0"
+    xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0.0.2"
     xml:lang="en">
     <annotation>
-        <appinfo>spsAll.xsd 2005/09/29</appinfo>
+        <appinfo>spsAll.xsd</appinfo>
         <documentation>
             <description>This XML Schema includes and imports, directly and indirectly, all the XML
             Schemas defined by the OGC Sensor Planning Service (SPS).</description>
             <copyright>
-                Copyright (c) 2007 OGC, All Rights Reserved.
-                For conditions, see OGC Software Notice
-                http://www.opengeospatial.org/legal/
+                SPS is an OGC Standard.
+                Copyright (c) 2007,2010 Open Geospatial Consortium.
+                To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
             </copyright> 
         </documentation>
     </annotation>

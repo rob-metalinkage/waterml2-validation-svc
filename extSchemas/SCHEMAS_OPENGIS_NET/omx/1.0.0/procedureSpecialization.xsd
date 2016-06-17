@@ -6,22 +6,25 @@ xmlns:omx="http://www.opengis.net/omx/1.0"
 xmlns:sml="http://www.opengis.net/sensorML/1.0.1" 
 xmlns:gml="http://www.opengis.net/gml" 
 targetNamespace="http://www.opengis.net/omx/1.0"
-elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0">
+elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.2">
 	<annotation>
 		<documentation>specializedProcedure.xsd
 
 Components to describe procedures used in observations and measurements, and other events.
 
-Copyright (c) 2007 Open Geospatial Consortium - see http://www.opengeospatial.org/ogc/software</documentation>
+Observation Extensions is an OGC Standard.
+Copyright (c) 2007,2008,2010 Open Geospatial Consortium.
+To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+		</documentation>
 	</annotation>
 	<!-- ====================================================================== -->
 	<!-- bring in other schemas -->
-	<import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
-	<!-- can't use ISO Metadata schema with GML 3.1.1
-	<import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="../../../../gml/trunk/gml/3.1.1/gmd/gmd.xsd"/>
-	-->
-	<import namespace="http://www.opengis.net/sensorML/1.0.1" schemaLocation="../../sensorML/1.0.1/sensorML.xsd"/>
-	<import namespace="http://www.opengis.net/om/1.0"  schemaLocation="../../om/1.0.0/om.xsd"/>
+	<include schemaLocation="om_extended.xsd"/>
+	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+	<!-- can't use ISO Metadata schema with GML 3.1.1 -->
+	<!-- <import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="../../../../gml/trunk/gml/3.1.1/gmd/gmd.xsd"/> -->
+	<import namespace="http://www.opengis.net/sensorML/1.0.1" schemaLocation="http://schemas.opengis.net/sensorML/1.0.1/sensorML.xsd"/>
+	<import namespace="http://www.opengis.net/om/1.0"  schemaLocation="http://schemas.opengis.net/om/1.0.0/om.xsd"/>
 	<!-- ====================================================================== -->
 	<!-- ====================================================================== -->
 	<!-- === Specialised Procedure types === -->

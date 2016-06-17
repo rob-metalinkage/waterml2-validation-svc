@@ -14,10 +14,11 @@
 			This example shows how to generate a
 			specialized observation type for XML Schema validation 
 			
-			Observations and Measurements -
-			XML Implementation is an OGC Standard Copyright (c) [2010] Open Geospatial Consortium,
-			Inc. All Rights Reserved. To obtain additional rights of use, visit
-			http://www.opengeospatial.org/legal/. </documentation>
+			Observations and Measurements - XML Implementation is an OGC Standard.
+			
+			Copyright (c) [2010] Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/. 
+		</documentation>
 	</annotation>
 	<!-- ====================================================================== -->
 	<!-- bring in other schemas -->

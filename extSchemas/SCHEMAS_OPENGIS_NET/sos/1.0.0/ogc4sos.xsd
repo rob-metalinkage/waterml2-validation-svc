@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" xmlns:ogc="http://www.opengis.net/ogc" targetNamespace="http://www.opengis.net/ogc" elementFormDefault="qualified" version="1.0.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" xmlns:ogc="http://www.opengis.net/ogc" targetNamespace="http://www.opengis.net/ogc" elementFormDefault="qualified" version="1.0.0.2">
+  <!-- This version of sos/1.0.0 was previously versioned as '1.0.1' . -->
   <xs:annotation>
-    <xs:documentation>
-   ogc4sos.xs
-    Utility schema which simply includes the OGC schema documents required for the OGC SOS schemas</xs:documentation>
+    <xs:documentation>ogc4sos.xsd
+    Utility schema which simply includes the OGC schema documents required for the OGC SOS schemas
+    
+    SOS is an OGC Standard.
+    Copyright (c) 2006,2010 Open Geospatial Consortium.
+    To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+    </xs:documentation>
   </xs:annotation>
   <!-- ==============================================================
        includes and imports
        ============================================================== -->
-  <xs:import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
-  <xs:include schemaLocation="../../filter/1.1.0/filter.xsd"/>
+  <xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+  <xs:include schemaLocation="http://schemas.opengis.net/filter/1.1.0/filter.xsd"/>
   <!-- =================================================================== -->
   <!-- TEMPORAL OPERATORS                                                  -->
   <!-- =================================================================== -->

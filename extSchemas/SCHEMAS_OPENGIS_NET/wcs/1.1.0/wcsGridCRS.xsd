@@ -3,20 +3,24 @@
 	xmlns:wcs="http://www.opengis.net/wcs/1.1" 
 	xmlns:gml="http://www.opengis.net/gml" 
 	xmlns="http://www.w3.org/2001/XMLSchema" 
-	elementFormDefault="qualified" version="1.1.0" xml:lang="en">
+	elementFormDefault="qualified" version="1.1.0.2" xml:lang="en">
 	<annotation>
-		<appinfo>wcsGridCRS.xsd 2006-09-23</appinfo>
+		<appinfo>wcsGridCRS.xsd</appinfo>
 		<appinfo>
 			<GMLProfileSchema>http://schemas.opengis.net/gml/3.1.1/profiles/GridCRSs/1.0.0/gmlGridCRSsProfile.xsd</GMLProfileSchema>
 		</appinfo>
 		<documentation>This XML Schema Document defines a GridCRS element that is much simpler but otherwise similar to a specialization of gml:DerivedCRS. This GridCRS roughly corresponds to the CV_RectifiedGrid class in ISO 19123, without inheritance from CV_Grid. This GridCRS is designed for use by the OGC Web Coverage Service (WCS) and elsewhere. 
 		This XML Schema Document is not a GML Application Schema, although it uses the GML 3.1.1 CRS support profile that is specified in document OGC 05-094r1. 
-		Copyright (c) 2006 Open Geospatial Consortium, Inc. All Rights Reserved. </documentation>
+		
+		WCS is an OGC Standard.
+		Copyright (c) 2006,2010 Open Geospatial Consortium.
+		To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+		</documentation>
 	</annotation>
 	<!-- ========================================================
            includes and imports
 	======================================================== -->
-	<import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
+	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
 	<!-- ========================================================
 		elements and types
 	======================================================== -->

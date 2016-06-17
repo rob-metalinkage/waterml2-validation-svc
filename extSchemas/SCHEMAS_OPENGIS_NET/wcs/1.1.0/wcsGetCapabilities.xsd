@@ -4,17 +4,22 @@ xmlns:wcs="http://www.opengis.net/wcs/1.1"
 xmlns:owcs="http://www.opengis.net/wcs/1.1/ows" 
 xmlns:ows="http://www.opengis.net/ows" 
 xmlns="http://www.w3.org/2001/XMLSchema" 
-elementFormDefault="qualified" version="1.1.0" xml:lang="en">
+elementFormDefault="qualified" xml:lang="en"
+version="1.1.0.2">
 	<annotation>
-		<appinfo>wcsGetCapabilities.xsd v1.1.0 2006-08-03</appinfo>
+		<appinfo>wcsGetCapabilities.xsd v1.1.0</appinfo>
 		<documentation>This XML Schema Document encodes the GetCapabilities operation request and response used by the OGC Web Coverage Service (WCS). 
-		Copyright (c) 2006 Open Geospatial Consortium, Inc, All Rights Reserved. </documentation>
+			
+			WCS is an OGC Standard.
+			Copyright (c) 2006,2010 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+		</documentation>
 	</annotation>
 	<!-- ==============================================================
        includes and imports
 	============================================================== -->
 	<include schemaLocation="wcsContents.xsd"/>
-	<import namespace="http://www.opengis.net/wcs/1.1/ows" schemaLocation="owsGetCapabilities.xsd"/>
+	<import namespace="http://www.opengis.net/wcs/1.1/ows" schemaLocation="http://schemas.opengis.net/wcs/1.1.0/owsGetCapabilities.xsd"/>
 	<!-- ==============================================================
        elements and types
 	============================================================== -->

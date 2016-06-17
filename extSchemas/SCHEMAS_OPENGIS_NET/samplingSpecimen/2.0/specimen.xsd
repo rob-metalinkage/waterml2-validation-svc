@@ -11,8 +11,11 @@
 	attributeFormDefault="unqualified"
 	version="2.0.0">
 	<annotation>
-		<documentation> specimen.xsd Observations and Measurements - XML Implementation is an OGC
-			Standard Copyright (c) [2010] Open Geospatial Consortium, Inc. All Rights Reserved. To
+		<documentation> specimen.xsd 
+			
+			Observations and Measurements - XML Implementation is an OGC Standard.
+			
+			Copyright (c) [2010] Open Geospatial Consortium. To
 			obtain additional rights of use, visit http://www.opengeospatial.org/legal/.
 		</documentation>
 	</annotation>
@@ -46,20 +49,20 @@
 				<sequence>
 					<element
 						name="materialClass"
-						type="gml:ReferenceType">
+						type="gml:ReferenceType"
+						nillable="true">
 						<annotation>
 							<documentation> The attribute materialClass:GenericName shall provide a
-								basic classification of the material type of the specimen. 
-								EXAMPLE soil, water, rock, aqueous, liquid, tissue, vegetableMatter, food, gas, solid.
-								A basic register of material-classes is provided by OGC at
-								http://www.opengis.net/def/material/OGC-OM/2.0/  
-							</documentation>
+								basic classification of the material type of the specimen. EXAMPLE
+								soil, water, rock, aqueous, liquid, tissue, vegetableMatter, food,
+								gas, solid. A basic register of material-classes may be provided by OGC
+								at http://www.opengis.net/def/material/OGC-OM/2.0/ </documentation>
 						</annotation>
 					</element>
 					<element
 						name="samplingTime"
 						type="om:TimeObjectPropertyType"
-						minOccurs="0">
+						nillable="true">
 						<annotation>
 							<documentation> The attribute samplingTime:TM_Object shall record when
 								the specimen was retrieved from the sampled feature.
@@ -68,7 +71,7 @@
 					</element>
 					<element
 						name="samplingMethod"
-						type="spec:SF_ProcessPropertyType"
+						type="sam:SF_ProcessPropertyType"
 						minOccurs="0">
 						<annotation>
 							<documentation> If present, the attribute samplingMethod:SF_Process
@@ -139,6 +142,16 @@
 								be omitted or carry a suitable null indicator. </documentation>
 						</annotation>
 					</element>
+					<element
+						name="specimenType"
+						type="gml:ReferenceType"
+						minOccurs="0">
+						<annotation>
+							<documentation>If present, the attribute specimenType:GenericName shall describe the basic form of the specimen. 
+								EXAMPLE	polished section; core; pulp; solution. 
+							</documentation>
+						</annotation>
+					</element>
 				</sequence>
 			</extension>
 		</complexContent>
@@ -155,30 +168,6 @@
 			minOccurs="0">
 			<element
 				ref="spec:SF_Specimen"/>
-		</sequence>
-		<attributeGroup
-			ref="gml:AssociationAttributeGroup"/>
-	</complexType>
-	<!-- ====================================================================== -->
-	<!-- ===== Sampling feature process  ======= -->
-	<!-- ====================================================================== -->
-	<element
-		name="SF_Process"
-		abstract="true">
-		<annotation>
-			<documentation>SF_Process is abstract, and has no attributes, operations or associations. It serves as the base class for processes associated with the design and preparation of sampling features. The purpose of a sampling process is to generate or transform a sampling feature.  </documentation>
-		</annotation>
-	</element>
-	<!-- ...................... -->
-	<complexType
-		name="SF_ProcessPropertyType">
-		<annotation>
-			<documentation>SF_Process is abstract, and has no attributes, operations or associations. It serves as the base class for processes associated with the design and preparation of sampling features. The purpose of a sampling process is to generate or transform a sampling feature.  </documentation>
-		</annotation>
-		<sequence
-			minOccurs="0">
-			<element
-				ref="spec:SF_Process"/>
 		</sequence>
 		<attributeGroup
 			ref="gml:AssociationAttributeGroup"/>
@@ -225,7 +214,7 @@
 				type="gml:ReferenceType">
 				<annotation>
 					<appinfo>
-						<gml:targetElement>spec:SF_Process</gml:targetElement>
+						<gml:targetElement>sam:SF_Process</gml:targetElement>
 					</appinfo>
 				</annotation>
 			</element>

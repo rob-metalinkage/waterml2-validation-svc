@@ -2,23 +2,22 @@
 <xs:schema xmlns:swe="http://www.opengis.net/swe/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:sps="http://www.opengis.net/sps/1.0" xmlns:gml="http://www.opengis.net/gml"
     targetNamespace="http://www.opengis.net/sps/1.0" elementFormDefault="qualified"
-    attributeFormDefault="unqualified" xml:lang="en">
+    attributeFormDefault="unqualified" xml:lang="en" version="1.0.0.2">
     <!-- ==============================================================
         includes and imports
         ============================================================== -->
-    <xs:import namespace="http://www.opengis.net/swe/1.0"
-        schemaLocation="../../sweCommon/1.0.0/swe.xsd"/>
-    <xs:import namespace="http://www.opengis.net/gml"
-        schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
+    <xs:include schemaLocation="spsAll.xsd"/>
+    <xs:import namespace="http://www.opengis.net/swe/1.0" schemaLocation="http://schemas.opengis.net/sweCommon/1.0.0/swe.xsd"/>
+    <xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
     <xs:annotation>
-        <xs:appinfo>spsCommon.xsd 2005/06/29</xs:appinfo>
+        <xs:appinfo>spsCommon.xsd 2010-02-01</xs:appinfo>
         <xs:documentation>
             <description>This XML Schema encodes the elements and types that are shared by muliple
             SPS operations.</description>
             <copyright>
-                Copyright (c) 2007 OGC, All Rights Reserved.
-                For conditions, see OGC Software Notice
-                http://www.opengeospatial.org/legal/
+                SPS is an OGC Standard.
+                Copyright (c) 2007,2010 Open Geospatial Consortium.
+                To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
             </copyright> 
         </xs:documentation>
     </xs:annotation>

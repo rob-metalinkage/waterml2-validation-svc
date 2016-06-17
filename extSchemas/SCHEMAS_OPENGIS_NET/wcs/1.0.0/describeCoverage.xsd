@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://www.opengis.net/wcs" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.opengis.net/wcs" xmlns:gml="http://www.opengis.net/gml" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.1" xml:lang="en">
+<xs:schema targetNamespace="http://www.opengis.net/wcs" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.opengis.net/wcs" xmlns:gml="http://www.opengis.net/gml" elementFormDefault="qualified" attributeFormDefault="unqualified" xml:lang="en" version="1.0.0.3">
+  <!-- This version of wcs/1.0.0 was previously versioned as '1.0.2 2010-02-01' . -->
 	<xs:annotation>
-		<xs:appinfo>describeCoverage.xsd v1.0.1 2005-07-18</xs:appinfo>
+		<xs:appinfo>describeCoverage.xsd v1.0.2 2010-02-01</xs:appinfo>
 		<xs:documentation>This schema defines the DescribeCoverage operation request and reply XML elements and types, used by an OGC Web Coverage Service (WCS). </xs:documentation>
+		<xs:documentation>
+			WCS is an OGC Standard.
+			Copyright (c) 2003,2010 Open Geospatial Consortium.
+			To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+		</xs:documentation>
 		<xs:documentation>JDE 2003-07-24 changes:
 		Changed first and third "include" below to "import" so as to bring more than one namespace
 		Made spatialDomain a global element so as to substitute for it in GetCoverage spatialSubset
@@ -32,9 +38,10 @@
 	<!-- ==============================================================
            includes and imports
 	============================================================== -->
+	<xs:include schemaLocation="./wcsAll.xsd"/>
 	<xs:include schemaLocation="./wcsCapabilities.xsd"/>
 	<xs:include schemaLocation="./values.xsd"/>
-	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="./gml4wcs.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/wcs/1.0.0/gml4wcs.xsd"/>
 	<!-- ==============================================================
        elements and types
 	============================================================== -->

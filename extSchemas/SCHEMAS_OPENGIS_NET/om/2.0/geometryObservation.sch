@@ -8,14 +8,13 @@
     <!--
         This Schematron schema checks that the type of the observation result is correct. 
         
-        Observations and Measurements - XML
-        Implementation is an OGC Standard Copyright (c) [2010] Open Geospatial Consortium, Inc.
-        All Rights Reserved. To obtain additional rights of use, visit
-        http://www.opengeospatial.org/legal/. 
+        Observations and Measurements - XML Implementation is an OGC Standard.
+        Copyright (c) [2010] Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/. 
     -->
 
     <title>Geometry observation validation</title>
-    <p>Verifies that all instances of OM_Observation have a result that matches the pattern for GeometryObservations</p>
+    <p>Verifies that all instances of OM_Observation or elements derived from OM_Observation (i.e. having an om:resultTime property) have a result that matches the pattern for GeometryObservations</p>
     <ns
         prefix="gml"
         uri="http://www.opengis.net/gml/3.2"/>
@@ -35,7 +34,7 @@
     <pattern
         id="observation-type-geometry">
         <rule
-            context="//om:OM_Observation">
+            context="//*[om:resultTime]">
             <include href="./result-geometry.sch"/>
         </rule>
     </pattern>

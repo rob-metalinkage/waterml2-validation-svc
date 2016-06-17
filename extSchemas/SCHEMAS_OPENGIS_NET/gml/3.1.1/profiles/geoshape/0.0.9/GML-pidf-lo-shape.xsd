@@ -5,22 +5,23 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:gml="http://www.opengis.net/gml"
     elementFormDefault="qualified"
-    attributeFormDefault="unqualified">
+    attributeFormDefault="unqualified"
+    version="0.0.9 2010-01-28">
 
   <xs:annotation>
     <xs:appinfo
         source="urn:ietf:params:xml:schema:pidf:geopriv10:geoShape">
       GEOPRIV Geodetic Shapes
     </xs:appinfo>
-    <xs:documentation source="http://www.ietf.org/rfc/rfcXXXX.txt">
-<!-- [[NOTE TO RFC-EDITOR: Please replace above URL with URL of
-                       published RFC and remove this note.]] -->
+    <xs:documentation source="http://www.ietf.org/rfc/rfc4119.txt">
       This document defines geodetic shape types for PIDF-LO.
+      
+      Copyright (c) 2005,2010 Open Geospatial Consortium.
+      To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
     </xs:documentation>
   </xs:annotation>
 
-  <xs:import namespace="http://www.opengis.net/gml"
-             schemaLocation="geometryPrimitives.xsd"/>
+  <xs:import namespace="http://www.opengis.net/gml" schemaLocation="geometryPrimitives.xsd"/>
 
   <xs:element name="Circle" type="gs:CircleType"
               substitutionGroup="gml:_Surface"/>

@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema targetNamespace="http://www.opengis.net/gml" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" elementFormDefault="qualified" xml:lang="en" version="3.0.0">
+<xsd:schema targetNamespace="http://www.opengis.net/gml" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" elementFormDefault="qualified" xml:lang="en" version="3.0.0.1">
   <xsd:annotation>
     <xsd:appinfo source="urn:opengis:specification:gml:schema-coordinateSystems:v3.0.0"/>
     <xsd:documentation>
       <name>coordinateSystems.xsd</name>
-      <version>3.0</version>
+      <version>3.0 updated 2010-01-26</version>
       <scope>How to encode coordinate system definitions. </scope>
-      <description>Builds on referenceSystems.xsd to encode the data needed to define coordinate systems, including the specific subtypes of coordinate systems. GML 3.0 candidate schema, primary editor: Arliss Whiteside. Last updated 2002/11/21. </description>
-      <copyright>Copyright (c) 2001-2002 OpenGIS, All Rights Reserved.</copyright>
+      <description>Builds on referenceSystems.xsd to encode the data needed to define coordinate systems, including the specific subtypes of coordinate systems. GML 3.0 candidate schema, primary editor: Arliss Whiteside.</description>
+      <copyright>
+        GML is an OGC Standard.
+        Copyright (c) 2001,2002,2010 Open Geospatial Consortium.
+        To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+      </copyright>
       <conformance>This schema encodes the Coordinate System (CS_) package of the extended UML Model for OGC Abstract Specification Topic 2: Spatial Referencing by Coordinates. That UML model is adapted from ISO 19111 - Spatial referencing by coordinates, as described in Annex B of Topic 2. </conformance>
     </xsd:documentation>
   </xsd:annotation>

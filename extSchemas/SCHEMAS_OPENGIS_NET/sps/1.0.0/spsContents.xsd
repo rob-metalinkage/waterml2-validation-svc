@@ -2,25 +2,25 @@
 <xs:schema xmlns:gml="http://www.opengis.net/gml" xmlns:sps="http://www.opengis.net/sps/1.0"
     xmlns:ows="http://www.opengis.net/ows" xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.opengis.net/sps/1.0"
-    elementFormDefault="qualified" attributeFormDefault="unqualified" xml:lang="en">
+    elementFormDefault="qualified" attributeFormDefault="unqualified" xml:lang="en" version="1.0.0.2">
+    
     <xs:annotation>
         <xs:documentation>
             <description>This XML Schema encodes the Contents section of the SPS GetCapabilities
                 operation response.</description>
             <copyright>
-                Copyright (c) 2007 OGC, All Rights Reserved.
-                For conditions, see OGC Software Notice
-                http://www.opengeospatial.org/legal/
+                SPS is an OGC Standard.
+                Copyright (c) 2007,2010 Open Geospatial Consortium.
+                To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
             </copyright> 
         </xs:documentation>
     </xs:annotation>
     <!-- ==============================================================
         includes and imports
         ============================================================== -->
-    <xs:import namespace="http://www.opengis.net/gml"
-        schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
-    <xs:import namespace="http://www.opengis.net/ows"
-        schemaLocation="http://schemas.opengis.net/ows/1.0.0/owsCommon.xsd"/>
+    <xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+    <xs:import namespace="http://www.opengis.net/ows" schemaLocation="http://schemas.opengis.net/ows/1.0.0/owsCommon.xsd"/>
+    <xs:include schemaLocation="./spsAll.xsd"/>
     <xs:include schemaLocation="./spsCommon.xsd"/>
     <!-- ==============================================================
         elements and types

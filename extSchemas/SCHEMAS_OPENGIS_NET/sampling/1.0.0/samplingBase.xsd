@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns:gml="http://www.opengis.net/gml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:swe="http://www.opengis.net/swe/1.0.1" xmlns:om="http://www.opengis.net/om/1.0" xmlns="http://www.w3.org/2001/XMLSchema"
-        xmlns:sa="http://www.opengis.net/sampling/1.0" targetNamespace="http://www.opengis.net/sampling/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0">
+        xmlns:sa="http://www.opengis.net/sampling/1.0" targetNamespace="http://www.opengis.net/sampling/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.3">
 	<annotation>
 		<documentation>samplingBase.xsd
 
@@ -10,20 +10,23 @@ Abstract SamplingFeature, and collections are described in this schema document
 SamplingPoint, SamplingCurve, SamplingSurface and SamplingSolid are described in samplingManifold.xsd
 Specimen and LocatedSpecimen are described in specimen.xsd
 
-Copyright (c) 2007 Open Geospatial Consortium - see http://www.opengeospatial.org/ogc/software</documentation>
+Sampling is an OGC Standard.
+Copyright (c) 2007,2010 Open Geospatial Consortium.
+To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+		</documentation>
 	</annotation>
 	<!-- ====================================================================== -->
 	<!-- bring in other schemas -->
-	<import namespace="http://www.opengis.net/gml" schemaLocation="../../gml/3.1.1/base/gml.xsd"/>
+	<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
 	<!-- GMD schema does not work with GML 3.1.1
-	<import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="../../../../gml/trunk/gml/3.1.1/gmd/gmd.xsd"/>
+		<import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd"/>
 	-->
 	<!--
 	<import namespace="http://www.opengis.net/cv/0.2" schemaLocation="http://schemas.opengis.net/cv/0.2.0/cv.xsd"/>
 	-->
-	<import namespace="http://www.opengis.net/swe/1.0.1" schemaLocation="../../sweCommon/1.0.1/swe.xsd"/>
-	<import namespace="http://www.opengis.net/om/1.0" schemaLocation="../../om/1.0.0/om.xsd"/>
-	<include schemaLocation="./surveyProcedure.xsd"/>
+	<import namespace="http://www.opengis.net/swe/1.0.1" schemaLocation="http://schemas.opengis.net/sweCommon/1.0.1/swe.xsd"/>
+	<import namespace="http://www.opengis.net/om/1.0" schemaLocation="http://schemas.opengis.net/om/1.0.0/om.xsd"/>
+	<include schemaLocation="./sampling.xsd"/>
 	<!-- ====================================================================== -->
 	<!-- ====================================================================== -->
 	<!-- ===== Feature types in Site hierarchy ====== -->
